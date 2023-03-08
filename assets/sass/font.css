@@ -1,0 +1,29 @@
+@import url('https://use.typekit.net/jum3skv.css');
+@import url('https://use.typekit.net/fsn3pii.css');
+
+/* */
+
+@font-face {
+	font-family: 'College Alt';
+	font-style: normal;
+	font-weight: 400;
+	src: url('~static/fonts/college.woff') format('woff');
+}
+@font-face {
+	font-family: 'College Alt';
+	font-style: normal;
+	font-weight: 700;
+	src: url('~static/fonts/collegeb.woff') format('woff');
+}
+@font-face {
+	font-family: 'College Alt Condensed';
+	font-style: normal;
+	font-weight: 400;
+	src: url('~static/fonts/collegec.woff') format('woff');
+}
+@font-face {
+	font-family: 'College Alt Semi-condensed';
+	font-style: normal;
+	font-weight: 400;
+	src: url('~static/fonts/colleges.woff') format('woff');
+}

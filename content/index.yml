@@ -1,0 +1,276 @@
+intro:
+    title: Think you’re a “Big Game” advertising expert?
+    copy: 'From iconic ads to internet winners to big-time $$$$$ – play our quiz/carnival-style football game to show off your pigskin and Big Game trivia skills.'
+    start: Let's Play!
+    leaderboard: The Leaderboard
+    button: Bring It On
+    disclaimer: This game is designed for fun and is intended for entertainment purposes only. Renegade is not an official sponsor of the NFL or the Super Bowl, and we do not claim ownership of an .gifs or images featured on this site.
+howto:
+    title: How To Play
+    title2: Now Let's Throw Some Footballs
+    copy: See if you can be the champ on our leaderboard!
+    copy1: "<strong style='margin-bottom: 1rem; display: block;'>After each question</strong><p>throw a pass to earn points</p>"
+    copy2: "<strong style='margin-bottom: 1rem; display: block;'>Answer correctly</strong><p>and you can score double the points</p>"
+    copy3: "<strong style='margin-bottom: 1rem; display: block;'>To throw</strong><p>Click on the football and hold to pull it back</p><span style='display: block;height: 30px;'></span><p>Release to throw the ball down the field</p>&nbsp;"
+    image1: howto1.svg
+    image2: howto2.svg
+    button1: Throw for it!
+    button2: I'm Ready!
+form:
+    title: CLAIM YOUR SPOT
+    endTitle: THANKS FOR PLAYING!
+    copy: Enter your score in the Big Game Hall of Fame!
+    emailCopy: (Don't worry. We won't email you unless you ask us to.  This is just for verification.)
+    formResponse: 'Your score has been entered on the Big Game: Ad-Demonium leaderboard. See how you stack up against the competition, or just play again!'
+    image: 'entry.gif'
+questions:
+    - text: 'An unheard of power outage in Super Bowl XLVII (2013) led to this brand nearly breaking the internet with a timely tweet noting, “Power out? No problem. You can still dunk in the dark.”'
+      options:
+          -
+          - Chips Ahoy
+          - Oreo
+          - Spalding
+          - Wilson
+      correct: 2
+      right: Score!
+      wrong: flag on the play!
+      image: '01.gif'
+      response: 'Oreo had a commercial during the game, but their social media savvy led to a timely tweet that was retweeted 15,000+ times and made Super Bowl advertising history.'
+    - text: 'Looking to disrupt the traditional approach to Super Bowl commercials, this snack brand launched their annual fan-sourced “Crash the Super Bowl” contest in 2006.'
+      options:
+          -
+          - Avocados from Mexico
+          - Carl’s Jr.
+          - Doritos
+          - Oreo
+      correct: 3
+      right: Score!
+      wrong: flag on the play!
+      image: '02.gif'
+      response: Running from 2006 – 2016, the winning Doritos spots were often voted among the best Super Bowl commercials of the year, showing you can make great creative without celebrities or million-dollar budgets.
+    - text: The Super Bowl halftime show sponsor won the Twitter “Brand-Bowl MVP” from 2020 – 2022.
+      options:
+          -
+          - Budweiser
+          - Coca Cola
+          - Coors
+          - Pepsi
+      correct: 4
+      right: Score!
+      wrong: flag on the play!
+      image: '03.gif'
+      response: Pepsi drove the largest amount of Twitter conversations during the game, and in 2022 included NFT giveaways and exclusive behind-the-scenes access to the halftime show.
+    - text: What action-packed commercial was the most viewed Super Bowl ad of 2022?
+      options:
+          -
+          - Amazon “Mind Reader”
+          - BMW “Zeus & Hera”
+          - Nissan “Thrill Driver”
+          - Lay’s “Golden Memories”
+      correct: 3
+      right: Score!
+      wrong: flag on the play!
+      image: '04.gif'
+      response: “Thrill Driver” garnered 46.6 M views across top video platforms and sites that week. Although Amazon’s “Mind Reader” had the most views on YouTube’s AdBlitz channel on gameday.
+    - text: According to Neilsen, how many total viewers did Super Bowl LVI (2022) draw?
+      options:
+          -
+          - 95 million
+          - 99 million
+          - 101 million
+          - 105 million
+      correct: 3
+      right: Score!
+      wrong: flag on the play!
+      image: '05.gif'
+      response: Including data from out-of-home viewing and DTVR – the game drew an avg. of 99 M viewers, with an avg. of 1.9 M Telemundo viewers, for a total 101 M. That’s up 7 M from 2021.
+    - text: Frequently featuring spokesperson and NASCAR driver Danica Patrick, this brand’s controversial Super Bowl ads often generated significant upticks in site traffic.
+      options:
+          -
+          - Amazon
+          - GoDaddy
+          - Google
+          - E*Trade
+      correct: 2
+      right: Score!
+      wrong: flag on the play!
+      image: '06.gif'
+      response: Known for racy commercials, GoDaddy often drove people to their website to watch extended or “banned” versions of their spots, a TV-to-web approach many advertisers have emulated since.
+    - text: Which relatively small brand produced the shortest Super Bowl commercial ever?
+      options:
+          -
+          - Geico
+          - Ivar’s Seafood Restaurants
+          - Reddit
+          - Miller
+      correct: 2
+      right: Score!
+      wrong: flag on the play!
+      image: '07b.gif'
+      response: In 2021 Reddit produced a 5-second spot. In 2009 Miller ran a series of 1-second ads. But in 2009, Seattle-based Ivar’s Seafood Restaurants purchased a $50,000 regional commercial that was just half a second long.
+    - text: How much will Super Bowl ads cost this year?
+      options:
+          -
+          - $2 million
+          - $5 million
+          - $7 million
+          - $10 million
+      correct: 3
+      right: Score!
+      wrong: flag on the play!
+      image: '08.gif'
+      response: According to Mark Evans, Fox Sports EVP of Sales, they’ve already charged $7 M per 30-second Super Bowl spot, and all spots were sold before the first game of the season even kicked off!
+    - text: How much does Fox Sports expect to make off Super Bowl commercial sales?
+      options:
+          -
+          - $250 million
+          - $450 million
+          - $750 million
+          - $1 billion
+      correct: 2
+      right: Score!
+      wrong: flag on the play!
+      image: '09.gif'
+      response: Experts predict companies will spend a record-breaking $450 million on Super Bowl ads in 2023. According to one breakdown, for $5 M you could show 6 banner ads to every American with an internet connection age 18 and 49.
+    - text: Approximately, how much did a 30-second commercial cost in the first Super Bowl in 1967?
+      options:
+          -
+          - $10,000
+          - $25,000
+          - $40,000
+          - $100,000
+      correct: 3
+      right: Score!
+      wrong: flag on the play!
+      image: '10.gif'
+      response: Super Bowl I aired on both CBS and NBC, which charged different rates ($42,500 and $37,500), meaning a Super Bowl spot cost roughly $40,000 in 1966. By 1996, the cost was more than $1 M.
+    - text: Airing for 8 of 9 Super Bowls between 1989 and 1997, Budweiser and Bud Light faced off in what commercial parody of the Super Bowl.
+      options:
+          -
+          - Beer Fest
+          - Bud Bowl
+          - Super Bowel
+          - Weiser Championship
+      correct: 2
+      right: Score!
+      wrong: flag on the play!
+      image: '11.gif'
+      response: Over the years, the Bud Bowl featured iconic players and announcers like Joe Namath, Mike Ditka and Terry Bradshaw. And in some years, people noted the Bud Bowl was actually more exciting than the Super Bowl.
+    - text: A 2000 spot from this Super Bowl newcomer featured a monkey standing on a bucket and famously noted, “Well, we just wasted 2 million bucks.”
+      options:
+          -
+          - E*Trade
+          - Pets.com
+          - S-Dax
+          - TurboTax
+      correct: 1
+      right: Score!
+      wrong: flag on the play!
+      image: '12.gif'
+      response: E*Trade has made numerous memorable Super Bowl commercials over the years, including 2001’s “Ghost Town” that highlighted the dot-com bubble, and 2008’s “E*Trade Baby.”
+    - text: These hard-working animals have become synonymous with Budweiser ads.
+      options:
+          -
+          - Clydesdales
+          - Geckos
+          - Polar bears
+          - Owls
+      correct: 1
+      right: Score!
+      wrong: flag on the play!
+      image: '13.gif'
+      response: The first Clydesdales commercial aired during Super Bowl XX in 1986. Budweiser considered not running a Clydesdales spot during the 2010 Super Bowl but reversed course after the results of a Facebook poll.
+    - text: Apple’s groundbreaking “1984” commercial that aired during Super Bowl XVIII was helmed by what director of Alien, Blade Runner and Gladiator?
+      options:
+          -
+          - Michael Bay
+          - James Cameron
+          - Ridley Scott
+          - Stephen Spielberg
+      correct: 3
+      right: Score!
+      wrong: flag on the play!
+      image: '14.gif'
+      response: Widely considered one of the greatest commercials of all time, filmmaker Ridley Scott directed the spot that only ever aired twice as a paid commercial on American television.
+    - text: The first commercial of this long-running candy bar campaign aired during Super Bowl XLIV (2010) and featured celebrities and the slogan, “YOU’RE NOT YOU WHEN YOU’RE HUNGRY.”
+      options:
+          -
+          - Butterfinger
+          - Hershey Bar
+          - Nestle Crunch
+          - Snickers
+      correct: 4
+      right: Score!
+      wrong: flag on the play!
+      image: '15.gif'
+      response: Having featured numerous celebrities, such as Elton John, over the years, the first Snickers spot featured actors Betty White and Abe Vigoda getting tackled during a game of pickup football.
+    - text: A highly memorable 2011 Super Bowl commercial for Volkswagen featured a small, costumed boy trying to use the “force” powers of what iconic villain?
+      options:
+          -
+          - Darth Vader
+          - The Joker
+          - Pennywise the Clown
+          - Voldemort
+      correct: 1
+      right: Score!
+      wrong: flag on the play!
+      image: '16.gif'
+      response: Little Darth Vader trying to use “The Force” was considered by many to be the best Super Bowl ad of the year, and marked an advertising shift where brands saw Super Bowl commercials as part of an integrated campaign, rather than an annual one-off.
+    - text: This classic 1984 Wendy’s Super Bowl commercial featured three elderly women examining a seemingly large hamburger, as one repeated, “Where’s the ______?”
+      options:
+          -
+          - Beef
+          - Cheese
+          - Pickle
+          - Sesame seed bun
+      correct: 1
+      right: Score!
+      wrong: flag on the play!
+      image: '17.gif'
+      response: The memorable spot helped Wendy’s sales increase by 31% through 1985, and Ad Age named “Where’s the Beef?” as one of the top 10 ad slogans of the 20th century.
+    - text: A 1993 spot titled “The Showdown” featured NBA legends Michael Jordan and Larry Bird playing a game of h-o-r-s-e for what?
+      options:
+          -
+          - Arch Deluxe & fries
+          - Big Mac & fries
+          - Wendy’s Single & fries
+          - Whopper & fries
+      correct: 2
+      right: Score!
+      wrong: flag on the play!
+      image: '18.gif'
+      response: The ad featured the two superstars making increasingly difficult shots to win Jordan’s Big Mac and popularized the phrase “nothing but net,” but it was never shown who actually won their game.
+    - text: An official sponsor of the Super Bowl since 1989, this 1999 Budweiser ad featured a group of friends repeating what viral catchphrase?
+      options:
+          -
+          - Rubber Baby Buggy Bumpers!
+          - Uh-oh! Somersault Jump!
+          - Whassup!
+          - Wubalubadubdub!
+      correct: 3
+      right: Score!
+      wrong: flag on the play!
+      image: '19.gif'
+      response: WHASSUP! The spot that spawned multiple commercials was based off a short film by director Charles Stone III, known for music videos and movies, such as Drumline and Uncle Drew.
+    - text: The sock puppet mascot for this now defunct brand starred in his own Super Bowl commercial in 2000, and an E*Trade commercial featuring his demise in 2001.
+      options:
+          -
+          - Boo.com
+          - Pets.com
+          - Webvan
+          - eToys.com
+      correct: 2
+      right: Score!
+      wrong: flag on the play!
+      image: '20.gif'
+      response: Pets.com ran one of the 21 dot-com ads during the 2000 Super Bowl that many dubbed the “Dot-com Bowl.” Due to a large number of crypto currency spots, many have called the 2022 Super Bowl the “Crypto Bowl.”
+results:
+    title: YOU SCORED
+    button1: Enter My Score
+    button2: Play Again
+    win:
+        copy: 'Touchdown! You’ve got some serious Big Game knowledge, and the football skills to match!<br> Now enter your name to see if you’re the overall champ on our leaderboard.'
+        image: 'win.gif'
+    lose:
+        copy: 'Everyone who plays is a winner in our book! Now enter your score or play again and rack up more points.<br>Enter your score in the Big Game: Ad-Demonium Hall of Fame!'
+        image: 'lose.gif'

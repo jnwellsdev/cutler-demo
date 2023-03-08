@@ -8,7 +8,16 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
+    "@modyfi/vite-plugin-yaml": "^1.0.4",
     "@nuxtjs/tailwindcss": "^6.4.1",
-    "nuxt": "^3.2.3"
+    "nuxt": "^3.2.3",
+    "sass": "^1.58.3",
+    "vite-plugin-pug": "^0.3.2",
+    "vite-plugin-singlefile": "^0.13.3",
+    "vite-plugin-yaml2": "^1.1.5"
+  },
+  "dependencies": {
+    "@pinia/nuxt": "^0.4.7",
+    "pinia": "^2.0.32"
   }
 }
