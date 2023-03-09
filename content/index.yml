@@ -1,276 +1,176 @@
 intro:
-    title: Think you’re a “Big Game” advertising expert?
-    copy: 'From iconic ads to internet winners to big-time $$$$$ – play our quiz/carnival-style football game to show off your pigskin and Big Game trivia skills.'
-    start: Let's Play!
-    leaderboard: The Leaderboard
-    button: Bring It On
-    disclaimer: This game is designed for fun and is intended for entertainment purposes only. Renegade is not an official sponsor of the NFL or the Super Bowl, and we do not claim ownership of an .gifs or images featured on this site.
-howto:
-    title: How To Play
-    title2: Now Let's Throw Some Footballs
-    copy: See if you can be the champ on our leaderboard!
-    copy1: "<strong style='margin-bottom: 1rem; display: block;'>After each question</strong><p>throw a pass to earn points</p>"
-    copy2: "<strong style='margin-bottom: 1rem; display: block;'>Answer correctly</strong><p>and you can score double the points</p>"
-    copy3: "<strong style='margin-bottom: 1rem; display: block;'>To throw</strong><p>Click on the football and hold to pull it back</p><span style='display: block;height: 30px;'></span><p>Release to throw the ball down the field</p>&nbsp;"
-    image1: howto1.svg
-    image2: howto2.svg
-    button1: Throw for it!
-    button2: I'm Ready!
+    title: Do You Know Cutler?
+    copy: 'From  backstage at New York Fashion Week to the streets of Midtown and beyond—we’ve been cutting and coloring the hair of New York City for over 20 years.<br><br> Our salons are home to talented, creative stylists, colorists  and more, with the expertise and flair to bring out the right look for our clients.'
+    cta: So, we want to know … Do You Know Cutler?
+    button: Take the Quiz
+    reminder: "– PLEASE, TURN ON YOUR AUDIO –"
 form:
-    title: CLAIM YOUR SPOT
-    endTitle: THANKS FOR PLAYING!
-    copy: Enter your score in the Big Game Hall of Fame!
-    emailCopy: (Don't worry. We won't email you unless you ask us to.  This is just for verification.)
-    formResponse: 'Your score has been entered on the Big Game: Ad-Demonium leaderboard. See how you stack up against the competition, or just play again!'
-    image: 'entry.gif'
+    title: REGISTER
+    endTitle: YOU'RE ALL SET
+    copy: Please provide your contact info.
+    formResponse: ''
+    button: Submit
 questions:
-    - text: 'An unheard of power outage in Super Bowl XLVII (2013) led to this brand nearly breaking the internet with a timely tweet noting, “Power out? No problem. You can still dunk in the dark.”'
-      options:
-          -
-          - Chips Ahoy
-          - Oreo
-          - Spalding
-          - Wilson
-      correct: 2
-      right: Score!
-      wrong: flag on the play!
-      image: '01.gif'
-      response: 'Oreo had a commercial during the game, but their social media savvy led to a timely tweet that was retweeted 15,000+ times and made Super Bowl advertising history.'
-    - text: 'Looking to disrupt the traditional approach to Super Bowl commercials, this snack brand launched their annual fan-sourced “Crash the Super Bowl” contest in 2006.'
-      options:
-          -
-          - Avocados from Mexico
-          - Carl’s Jr.
-          - Doritos
-          - Oreo
-      correct: 3
-      right: Score!
-      wrong: flag on the play!
-      image: '02.gif'
-      response: Running from 2006 – 2016, the winning Doritos spots were often voted among the best Super Bowl commercials of the year, showing you can make great creative without celebrities or million-dollar budgets.
-    - text: The Super Bowl halftime show sponsor won the Twitter “Brand-Bowl MVP” from 2020 – 2022.
-      options:
-          -
-          - Budweiser
-          - Coca Cola
-          - Coors
-          - Pepsi
-      correct: 4
-      right: Score!
-      wrong: flag on the play!
-      image: '03.gif'
-      response: Pepsi drove the largest amount of Twitter conversations during the game, and in 2022 included NFT giveaways and exclusive behind-the-scenes access to the halftime show.
-    - text: What action-packed commercial was the most viewed Super Bowl ad of 2022?
-      options:
-          -
-          - Amazon “Mind Reader”
-          - BMW “Zeus & Hera”
-          - Nissan “Thrill Driver”
-          - Lay’s “Golden Memories”
-      correct: 3
-      right: Score!
-      wrong: flag on the play!
-      image: '04.gif'
-      response: “Thrill Driver” garnered 46.6 M views across top video platforms and sites that week. Although Amazon’s “Mind Reader” had the most views on YouTube’s AdBlitz channel on gameday.
-    - text: According to Neilsen, how many total viewers did Super Bowl LVI (2022) draw?
-      options:
-          -
-          - 95 million
-          - 99 million
-          - 101 million
-          - 105 million
-      correct: 3
-      right: Score!
-      wrong: flag on the play!
-      image: '05.gif'
-      response: Including data from out-of-home viewing and DTVR – the game drew an avg. of 99 M viewers, with an avg. of 1.9 M Telemundo viewers, for a total 101 M. That’s up 7 M from 2021.
-    - text: Frequently featuring spokesperson and NASCAR driver Danica Patrick, this brand’s controversial Super Bowl ads often generated significant upticks in site traffic.
-      options:
-          -
-          - Amazon
-          - GoDaddy
-          - Google
-          - E*Trade
-      correct: 2
-      right: Score!
-      wrong: flag on the play!
-      image: '06.gif'
-      response: Known for racy commercials, GoDaddy often drove people to their website to watch extended or “banned” versions of their spots, a TV-to-web approach many advertisers have emulated since.
-    - text: Which relatively small brand produced the shortest Super Bowl commercial ever?
-      options:
-          -
-          - Geico
-          - Ivar’s Seafood Restaurants
-          - Reddit
-          - Miller
-      correct: 2
-      right: Score!
-      wrong: flag on the play!
-      image: '07b.gif'
-      response: In 2021 Reddit produced a 5-second spot. In 2009 Miller ran a series of 1-second ads. But in 2009, Seattle-based Ivar’s Seafood Restaurants purchased a $50,000 regional commercial that was just half a second long.
-    - text: How much will Super Bowl ads cost this year?
-      options:
-          -
-          - $2 million
-          - $5 million
-          - $7 million
-          - $10 million
-      correct: 3
-      right: Score!
-      wrong: flag on the play!
-      image: '08.gif'
-      response: According to Mark Evans, Fox Sports EVP of Sales, they’ve already charged $7 M per 30-second Super Bowl spot, and all spots were sold before the first game of the season even kicked off!
-    - text: How much does Fox Sports expect to make off Super Bowl commercial sales?
-      options:
-          -
-          - $250 million
-          - $450 million
-          - $750 million
-          - $1 billion
-      correct: 2
-      right: Score!
-      wrong: flag on the play!
-      image: '09.gif'
-      response: Experts predict companies will spend a record-breaking $450 million on Super Bowl ads in 2023. According to one breakdown, for $5 M you could show 6 banner ads to every American with an internet connection age 18 and 49.
-    - text: Approximately, how much did a 30-second commercial cost in the first Super Bowl in 1967?
-      options:
-          -
-          - $10,000
-          - $25,000
-          - $40,000
-          - $100,000
-      correct: 3
-      right: Score!
-      wrong: flag on the play!
-      image: '10.gif'
-      response: Super Bowl I aired on both CBS and NBC, which charged different rates ($42,500 and $37,500), meaning a Super Bowl spot cost roughly $40,000 in 1966. By 1996, the cost was more than $1 M.
-    - text: Airing for 8 of 9 Super Bowls between 1989 and 1997, Budweiser and Bud Light faced off in what commercial parody of the Super Bowl.
-      options:
-          -
-          - Beer Fest
-          - Bud Bowl
-          - Super Bowel
-          - Weiser Championship
-      correct: 2
-      right: Score!
-      wrong: flag on the play!
-      image: '11.gif'
-      response: Over the years, the Bud Bowl featured iconic players and announcers like Joe Namath, Mike Ditka and Terry Bradshaw. And in some years, people noted the Bud Bowl was actually more exciting than the Super Bowl.
-    - text: A 2000 spot from this Super Bowl newcomer featured a monkey standing on a bucket and famously noted, “Well, we just wasted 2 million bucks.”
-      options:
-          -
-          - E*Trade
-          - Pets.com
-          - S-Dax
-          - TurboTax
-      correct: 1
-      right: Score!
-      wrong: flag on the play!
-      image: '12.gif'
-      response: E*Trade has made numerous memorable Super Bowl commercials over the years, including 2001’s “Ghost Town” that highlighted the dot-com bubble, and 2008’s “E*Trade Baby.”
-    - text: These hard-working animals have become synonymous with Budweiser ads.
-      options:
-          -
-          - Clydesdales
-          - Geckos
-          - Polar bears
-          - Owls
-      correct: 1
-      right: Score!
-      wrong: flag on the play!
-      image: '13.gif'
-      response: The first Clydesdales commercial aired during Super Bowl XX in 1986. Budweiser considered not running a Clydesdales spot during the 2010 Super Bowl but reversed course after the results of a Facebook poll.
-    - text: Apple’s groundbreaking “1984” commercial that aired during Super Bowl XVIII was helmed by what director of Alien, Blade Runner and Gladiator?
-      options:
-          -
-          - Michael Bay
-          - James Cameron
-          - Ridley Scott
-          - Stephen Spielberg
-      correct: 3
-      right: Score!
-      wrong: flag on the play!
-      image: '14.gif'
-      response: Widely considered one of the greatest commercials of all time, filmmaker Ridley Scott directed the spot that only ever aired twice as a paid commercial on American television.
-    - text: The first commercial of this long-running candy bar campaign aired during Super Bowl XLIV (2010) and featured celebrities and the slogan, “YOU’RE NOT YOU WHEN YOU’RE HUNGRY.”
-      options:
-          -
-          - Butterfinger
-          - Hershey Bar
-          - Nestle Crunch
-          - Snickers
-      correct: 4
-      right: Score!
-      wrong: flag on the play!
-      image: '15.gif'
-      response: Having featured numerous celebrities, such as Elton John, over the years, the first Snickers spot featured actors Betty White and Abe Vigoda getting tackled during a game of pickup football.
-    - text: A highly memorable 2011 Super Bowl commercial for Volkswagen featured a small, costumed boy trying to use the “force” powers of what iconic villain?
-      options:
-          -
-          - Darth Vader
-          - The Joker
-          - Pennywise the Clown
-          - Voldemort
-      correct: 1
-      right: Score!
-      wrong: flag on the play!
-      image: '16.gif'
-      response: Little Darth Vader trying to use “The Force” was considered by many to be the best Super Bowl ad of the year, and marked an advertising shift where brands saw Super Bowl commercials as part of an integrated campaign, rather than an annual one-off.
-    - text: This classic 1984 Wendy’s Super Bowl commercial featured three elderly women examining a seemingly large hamburger, as one repeated, “Where’s the ______?”
-      options:
-          -
-          - Beef
-          - Cheese
-          - Pickle
-          - Sesame seed bun
-      correct: 1
-      right: Score!
-      wrong: flag on the play!
-      image: '17.gif'
-      response: The memorable spot helped Wendy’s sales increase by 31% through 1985, and Ad Age named “Where’s the Beef?” as one of the top 10 ad slogans of the 20th century.
-    - text: A 1993 spot titled “The Showdown” featured NBA legends Michael Jordan and Larry Bird playing a game of h-o-r-s-e for what?
-      options:
-          -
-          - Arch Deluxe & fries
-          - Big Mac & fries
-          - Wendy’s Single & fries
-          - Whopper & fries
-      correct: 2
-      right: Score!
-      wrong: flag on the play!
-      image: '18.gif'
-      response: The ad featured the two superstars making increasingly difficult shots to win Jordan’s Big Mac and popularized the phrase “nothing but net,” but it was never shown who actually won their game.
-    - text: An official sponsor of the Super Bowl since 1989, this 1999 Budweiser ad featured a group of friends repeating what viral catchphrase?
-      options:
-          -
-          - Rubber Baby Buggy Bumpers!
-          - Uh-oh! Somersault Jump!
-          - Whassup!
-          - Wubalubadubdub!
-      correct: 3
-      right: Score!
-      wrong: flag on the play!
-      image: '19.gif'
-      response: WHASSUP! The spot that spawned multiple commercials was based off a short film by director Charles Stone III, known for music videos and movies, such as Drumline and Uncle Drew.
-    - text: The sock puppet mascot for this now defunct brand starred in his own Super Bowl commercial in 2000, and an E*Trade commercial featuring his demise in 2001.
-      options:
-          -
-          - Boo.com
-          - Pets.com
-          - Webvan
-          - eToys.com
-      correct: 2
-      right: Score!
-      wrong: flag on the play!
-      image: '20.gif'
-      response: Pets.com ran one of the 21 dot-com ads during the 2000 Super Bowl that many dubbed the “Dot-com Bowl.” Due to a large number of crypto currency spots, many have called the 2022 Super Bowl the “Crypto Bowl.”
+    section1:
+      - sectionTitle: The Cutler Brand
+      - text: 'What year was Cutler founded?'
+        options:
+            -
+            - 1973
+            - 1990
+            - 2001
+            - 2010
+        correct: 3
+        right: JUST RIGHT!
+        wrong: INCORRECT
+        response: 'Younger than Rita Ora, but older than Olivia Rodrigo, Cutler was founded in 2001.'
+      - text: 'What was the location of the first Cutler Salon?'
+        options:
+            -
+            - Midtown, Manhattan
+            - Melbourne, Australia
+            - West Broadway
+            - West Hollywood
+        correct: 1
+        right: CORRECT!
+        wrong: INCORRECT
+        response: 'Although Rodney Cutler is from Melbourne, Australia, the first Cutler Salon opened on 57th St. in New York City.'
+      - text: 'How does Cutler view its own identity?'
+        options:
+            -
+            - Australian Beachy Cool
+            - Beverly Hills Posh
+            - A Corporate Franchise
+            - Cool, Craft, Creativity, Connectivity
+        correct: 1
+        right: CREATIVE CHOICE!
+        wrong: INCORRECT
+        response: 'We want to be cool, we want to nail the craft, we want to provide a space for stylists to be creative, and we want to connect with our partners and clients.'
+      - text: 'Why does Cutler want to be “cool”?'
+        options:
+            -
+            - To be individualized, authentic & ahead of the curve
+            - To attract billionaire bank account clients
+            - To be inspired by the ethos of New York	 
+            - Both A and C
+        correct: 1
+        right: INSPIRED ANSWER! 
+        wrong: INCORRECT
+        response: 'Inspired by the ethos of New York, Cutler wants to be cool to help draw clients in, but it’s also an effort to be individualized and authentic.'
+      - text: 'What is most important to Culter?'
+        options:
+            -
+            - The craft, because it’s what keeps creativity flowing
+            - Having only celebrity clients in our chairs 
+            - Overcharging for services 
+            - Starting our own reality show about the salon
+        correct: 1
+        right: CRAFTY CHOICE!
+        wrong: INCORRECT
+        response: 'With in-house education and instruction, we prioritize nailing the craft (and not the 90s movie kind … unless that’s the look you’re going for).'
+      - text: 'How does Cutler, as a brand, present creativity?'
+        options:
+            -
+            - Being heavily involved in New York Fashion Week 
+            - Doing the same trendy haircut on every client
+            - Having Rodney’s face on every product bottle 
+            - Putting up billboards across the city 
+        correct: 1
+        right: CREATIVE & CORRECT 
+        wrong: INCORRECT
+        response: 'We showcase our creativity every day working with our clients, but where our creativity really shines is when working major events like Fashion Week. '
+      - text: 'Who has Cutler forged connecting partnerships with?'
+        options:
+            -
+            - Dyson 
+            - The Knicks
+            - Peter Luger Steakhouse 
+            - Redken 
+        correct: 1
+        right: NAILED IT!
+        wrong: INCORRECT
+        response: 'Cutler has developed a strong relationship with Redken. We exclusively use only the Redken color line and are also a Redken flagship.'
+    section2:
+      - sectionTitle: SERVICES & PRODUCTS
+      - text: 'If a guest is having a color service done, which shampoo would you use to rinse out the color?'
+        options:
+            -
+            - Aussie Total Miracle Shampoo
+            - Color Extend Magnetics
+            - Homemade apple cider vinegar shampoo
+            - Pantene Illuminating Color Care Shampoo
+        correct: 2
+        right: CORRECT!
+        wrong: INCORRECT
+        videoId: ''
+      - text: 'After shampooing, to make brushing out the hair easier, what product would you use?'
+        options:
+            -
+            - Coconut oil
+            - Honey
+            - Johnson's No More Tangles spray
+            - Redken One United Leave In 
+        correct: 4
+        right: CORRECT!
+        wrong: INCORRECT
+        videoId: ''
+      - text: 'You take the client back to the bowl and find they have very dry, damaged hair. What would you suggest they take home to refresh and restore?'
+        options:
+            -
+            - Coconut milk conditioner
+            - Mayo 
+            - Sea salt spray 
+            - Redken Acidic Bonding Concentrate line 
+        correct: 4
+        right: CORRECT!
+        wrong: INCORRECT
+        videoId: ''
+      - text: "It's a hot and humid day in the city, and your client wants to maintain a frizz free look. What shampoo would you use at the bowl to help?"
+        options:
+            -
+            - Frizz Dismiss Shampoo + Conditioner
+            - Ice water 
+            - Sunscreen infused shampoo 
+            - Tell them to stay in air conditioning 
+        correct: 1
+        right: CORRECT!
+        wrong: INCORRECT
+        videoId: ''
+      - text: 'When you’ve finished shampooing a client, do you …'
+        options:
+            -
+            - Detangle by brushing bottom to top
+            - Detangle by brushing top to bottom
+            - Leave it in knots
+            - Ignore the whole situation
+        correct: 1
+        right: CORRECT!
+        wrong: INCORRECT
+        videoId: ''
+      - text: 'What type of shampoo do you use before a Keratin service?'
+        options:
+            -
+            - Curly hair shampoo 
+            - Moroccan oil shampoo
+            - Redken Hair Cleansing Cream 
+            - Suave Smoothing Shampoo 
+        correct: 3
+        right: CORRECT!
+        wrong: INCORRECT
+        videoId: ''
+      - text: 'After finishing shampooing a guest, you should … '
+        options:
+            -
+            - Don’t bother with conditioner, unless they ask
+            - Leave the client and go order lunch, it’s on us 
+            - Ask if they want conditioner all over or just the ends 
+            - Talk about yourself the whole time, clients love that 
+        correct: 3
+        right: CORRECT!
+        wrong: INCORRECT
+        videoId: ''
 results:
-    title: YOU SCORED
-    button1: Enter My Score
-    button2: Play Again
-    win:
-        copy: 'Touchdown! You’ve got some serious Big Game knowledge, and the football skills to match!<br> Now enter your name to see if you’re the overall champ on our leaderboard.'
-        image: 'win.gif'
-    lose:
-        copy: 'Everyone who plays is a winner in our book! Now enter your score or play again and rack up more points.<br>Enter your score in the Big Game: Ad-Demonium Hall of Fame!'
-        image: 'lose.gif'
+    score1: YOU SCORED
+    score2: OUT OF 14
+    button1: Go To CutlerSalons.com
+    copy: 'Thank you for taking our <strong>Do You Know Cutler</strong>? quiz. <br> To find out more about the style and attitude of Cutler Salons, visit CutlerSalon.com, our blog or check us out on Facebook, Instagram and YouTube.'

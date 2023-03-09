@@ -3,22 +3,18 @@
     import { storeToRefs} from 'pinia'
 const gameStore = useGameStore()
 
-const { introCopy } = storeToRefs(gameStore)
+const { introCopy, isIntro } = storeToRefs(gameStore)
 const { handleView } = useGameStore()
 </script >
 <template lang='pug'>
 .intro-module
-    include ../assets/pug/index
-    .welcome(:class='{alt:gameStore.isIntro}')
-        header
-            a(href='#' target='_blank') 
-                +logo
+    .welcome
         section
-            h1(v-if='gameStore.isIntro' v-html='gameStore.testText')
-            .modal(v-if='gameStore.intro')
+            .modal(v-if='isIntro')
                 header
                 section
                     span(v-html='introCopy.copy')
+                    span.cta(v-html="introCopy.cta")
                 footer
                     button.primary(@click="handleView()") {{introCopy.button}}
         footer
@@ -40,15 +36,6 @@ const { handleView } = useGameStore()
         header
             position: relative
             min-height: 110px
-            a
-                width: 100%
-                max-width: 600px
-                z-index: 2
-            .ren-logo
-                width: 100%
-                max-width: 600px
-                top: -13px
-                position: absolute
         section
             position: relative
             h1
@@ -61,12 +48,6 @@ const { handleView } = useGameStore()
                 line-height: 1.15
                 margin: -1rem 0 2rem 0
                 // opacity: 0 
-            .fb-logo
-                width: 44%
-                position: absolute
-                display: flex
-                align-self: flex-start
-                pointer-events: none
             .modal
                 z-index: 10000
                 display: grid
@@ -77,7 +58,7 @@ const { handleView } = useGameStore()
                 border: 4px solid 
                 color: $fb-white
                 // opacity: 0 
-                translate: 0 50% 
+                // translate: 0 50% 
                 background: rgb(16 58 36 / 65%)
                 background-image: url(~static/bg-modal-top.svg), url(~static/bg-modal-btm.svg)
                 background-size: 100%
@@ -101,6 +82,11 @@ const { handleView } = useGameStore()
                         text-shadow: 0 0 30px rgb(0 34 17 / 80%)
                         span
                             display: block
+                        &.cta
+                            font-size: 2rem
+                            margin-top: 50px
+                            font-weight: 700
+
             .option
                 width: 100%
                 display: flex
@@ -118,4 +104,5 @@ const { handleView } = useGameStore()
                     pointer-events: none
             section
                 flex-flow: column
+
 </style>

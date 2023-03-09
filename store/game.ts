@@ -4,31 +4,64 @@ import data from '~/content/index.yml'
 export const useGameStore = defineStore({
     id: 'game-store',
     state: () => ({
-        colors: ['green', 'pink', 'white', 'red'],
-        colorIndex: 0,
-        counter: 0,
-        testText: 'Monkey',
         data: data,
         view: 'intro',
         intro: true,
+        formData: {
+            first_name: '',
+            last_name: '',
+            email: '',
+            score: ''
+        },
+        response: false,
+        correct: null,
+        freeze: false,
+        answered: false,
+        currentSection: 'section1'
     }),
     actions: {
         handleView() {
-            console.log('test monkey')
+            //do some View stuff here
         },
-        incrementCounter() {
-            this.counter++
+        handleForm(payload) {
+            this.formData = payload
         },
-        changeColor() {
-            this.colorIndex++
-            this.colorIndex > 3 ? this.colorIndex = 0 : null
+        handleOptionClick(event) {
+            console.log(event.target.dataset.option == this.currentQuestion.correct)
+            event.target.dataset.option == this.currentQuestion.correct
+                ? this.handleAnswer(true)
+                : (this.handleAnswer(false),
+                    this.handleFreeze(true, 2500),
+            setTimeout(() => this.handleResponse(true), 2000))
+        },
+        handleAnswer(val) {
+            this.correct = val
+            this.answered = true
+            console.log( this.isCorrect)
+        },
+        handleResponse(val) {
+            this.response = val
+            this.answered = false  
+        },
+        handleFreeze(val, time) {
+            this.freeze = val
+            setTimeout(() => this.setFreeze(!val), time)
+        },
+        setFreeze(val) {
+            this.freeze = val
         }
     },
     getters:{
-        getCounter: (state) => state.counter,
-        introCopy: (state) => state.data.intro,
+        isIntro: (state) => state.intro,
         currentView: (state) =>state.view,
-        isIntro: (state) => state.intro
+        introCopy: (state) => state.data.intro,
+        formCopy: (state) => state.data.form,
+        currentQuestion: (state) => state.data.questions[state.currentSection][1],
+        currentOptions: (state) => state.data.questions[state.currentSection][1].options.slice(1),
+        isResponse: (state) => state.response,
+        isFreeze: (state) => state.freeze,
+        isCorrect: (state) => state.correct,
+        isAnswered: (state) => state.answered,
     }
 })
 
