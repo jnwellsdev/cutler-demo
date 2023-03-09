@@ -17,31 +17,41 @@ export const useGameStore = defineStore({
         correct: null,
         freeze: false,
         answered: false,
-        currentSection: 'section1'
+        currentSection: 'section1',
+        formResponse:null
     }),
     actions: {
-        handleView() {
-            //do some View stuff here
+        handleNext() {
+            console.log(this.view)
+            switch(this.view){
+                case 'intro':
+                    this.handleView('form')
+                    break;
+                case 'form':
+                    this.handleView('video')
+                    break;
+            }
+        },
+        handleView(val) {
+          this.view = val
         },
         handleForm(payload) {
             this.formData = payload
+            this.formResponse = this.formCopy.response
         },
         handleOptionClick(event) {
-            console.log(event.target.dataset.option == this.currentQuestion.correct)
+            console.log(event.target.dataset.option == this.currentQuestion.correct),
             event.target.dataset.option == this.currentQuestion.correct
-                ? this.handleAnswer(true)
-                : (this.handleAnswer(false),
-                    this.handleFreeze(true, 2500),
-            setTimeout(() => this.handleResponse(true), 2000))
+                ? (this.handleAnswer(true), event.currentTarget.classList.add('correct'))
+                : (this.handleAnswer(false), event.currentTarget.classList.add('incorrect')),
+            this.handleFreeze(true, 2500),
+            setTimeout(() => this.handleResponse(true), 2000)
         },
         handleAnswer(val) {
             this.correct = val
-            this.answered = true
-            console.log( this.isCorrect)
         },
         handleResponse(val) {
             this.response = val
-            this.answered = false  
         },
         handleFreeze(val, time) {
             this.freeze = val

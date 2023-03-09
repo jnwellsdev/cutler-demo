@@ -3,53 +3,28 @@
     import { storeToRefs} from 'pinia'
     const gameStore = useGameStore()
     const { currentQuestion, isResponse, isFreeze, isCorrect, isAnswered } = storeToRefs(gameStore)
-    const {handleOptionClick} = gameStore
+    const {handleOptionClick, handleView} = gameStore
 </script >
 <template lang='pug'>
 .question-module
     .question
         header
         section
-            .modal(:class='{alt: response}')
+            .modal(:class='{alt: isResponse}')
                 header
-                    h1(v-if='response') {{ answer ? currentQuestion.right : currentQuestion.wrong }}
+                    h1(v-if='isResponse') {{ answer ? currentQuestion.right : currentQuestion.wrong }}
                     h1(v-else v-html='currentQuestion.text')
                 section
-                    .response(v-if='response')
+                    .isResponse(v-if='isResponse')
                         p {{ currentQuestion.response }}
                     p(v-else) {{ currentQuestion.text }}
                 footer
-                    button(v-if='response' @click='handleView').primary NEXT
+                    button(v-if='isResponse' @click='handleView').primary NEXT
                     .option(v-else v-for='option, i in currentQuestion.options.slice(1)')
-                        button(@click='handleOptionClick' :data-choice='option' :data-option='i + 1' :class='(isCorrect && isAnswered) ? "correct" : (!isCorrect && isAnswered) ? "incorrect":""') {{ option }}
+                        button(@click='handleOptionClick' :data-choice='option' :data-option='i + 1' ) {{ option }}
         footer
 </template>
-<script>
 
-export default {
-        methods: {
-        // handleAnswer(event) {
-        //         console.log(event.target.dataset.option)
-        //     // +event.target.dataset.option === this.gameStore.currentQuestion.correct
-        //     // ? (this.gameStore.commit('handleAnswer', true),
-        //     // event.currentTarget.classList.add('correct'))
-        //     // : (this.gameStore.commit('handleAnswer', false),
-        //     // event.currentTarget.classList.add('incorrect'))
-        //     // this.gameStore.commit('handleFreeze', { val: true, time: 2500 })
-        //     // this.gameStore.commit('handleTimer')
-        //     // setTimeout(() => this.gameStore.commit('handleResponse', true), 2000)
-
-        //     //SET UP ANALYTICS
-        //     //   this.$store.commit('GA_DATAHANDLE', {
-        //     //       question: this.data.text,
-        //     //       choice: event.target.dataset.choice,
-        //     //       category: 'Love That Mobile | ' + 'Category: ' + this.category,
-        //     //   }
-        //     // )
-        // }
-    }
-}
-</script>
 
 
 <style lang='sass' scoped>

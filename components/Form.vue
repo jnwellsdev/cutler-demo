@@ -3,7 +3,7 @@ import { useGameStore } from '~/store/game'
 import { storeToRefs} from 'pinia'
 const gameStore = useGameStore()
 const { formCopy, formResponse, formData } = storeToRefs(gameStore)
-const { handleForm } = gameStore
+const { handleForm, handleNext } = gameStore
 </script >
 
 <template lang='pug'>
@@ -38,7 +38,7 @@ const { handleForm } = gameStore
                     footer
                         button.primary(@click='handleForm(formData)' v-if='!formResponse') Submit
                         .option(v-else)
-                            button.primary(@click='handleView("introVideo")') NEXT
+                            button.primary(@click='handleNext') NEXT
         footer
 </template>
 

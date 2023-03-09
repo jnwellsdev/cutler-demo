@@ -4,19 +4,19 @@
 const gameStore = useGameStore()
 
 const { introCopy, isIntro } = storeToRefs(gameStore)
-const { handleView } = useGameStore()
+const { handleView, handleNext} = useGameStore()
 </script >
 <template lang='pug'>
 .intro-module
     .welcome
         section
-            .modal(v-if='isIntro')
+            .modal
                 header
                 section
                     span(v-html='introCopy.copy')
                     span.cta(v-html="introCopy.cta")
                 footer
-                    button.primary(@click="handleView()") {{introCopy.button}}
+                    button.primary(@click="handleNext") {{introCopy.button}}
         footer
 </template>
 <style lang='sass'>

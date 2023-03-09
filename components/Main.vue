@@ -2,7 +2,7 @@
 import { useGameStore } from '~/store/game'
 import { storeToRefs} from 'pinia'
 const gameStore = useGameStore()
-const {currentView,introCopy} = storeToRefs(gameStore)
+const {currentView, introCopy} = storeToRefs(gameStore)
 </script >
 
 <template lang='pug'>
@@ -12,11 +12,12 @@ include ../assets/pug/index
         h1 {{introCopy.title}}
         +logo
     section
-        // <Intro/>
-        // <Form/>
-        <Questions/>
+        <Intro v-if="currentView == 'intro'"/>
+        <Form v-if="currentView == 'form'"/>
+        <Questions v-if="currentView == 'questions'"/>
     footer
         h2 footer
+    ModulesBackground
 </template>
 
 <style lang='sass'>
