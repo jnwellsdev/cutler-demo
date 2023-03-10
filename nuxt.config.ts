@@ -14,7 +14,8 @@ export default defineNuxtConfig({
             // <meta name="description" content="My amazing site">
             { name: 'description', content: 'How well do you know Cutler Salons?' }
         ],
-        }
+        },
+        baseURL: process.env.NODE_ENV === 'production' ? '/cutler/public' : '/'
     },
     modules: [
         '@nuxtjs/tailwindcss',
