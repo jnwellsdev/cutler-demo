@@ -28,7 +28,7 @@ export const useGameStore = defineStore({
                     this.handleView('form')
                     break;
                 case 'form':
-                    this.handleView('video')
+                    this.handleView('questions')
                     break;
             }
         },

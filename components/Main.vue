@@ -3,7 +3,7 @@ import { useGameStore } from '~/store/game'
 import { storeToRefs} from 'pinia'
 const gameStore = useGameStore()
 const {currentView, introCopy} = storeToRefs(gameStore)
-</script >
+</script>
 
 <template lang='pug'>
 include ../assets/pug/index
