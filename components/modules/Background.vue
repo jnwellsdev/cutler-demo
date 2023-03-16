@@ -29,9 +29,9 @@
         padding: 0 3vw
         text-align: center
     .bg-main
-        background-image: url(~/img/bg.jpg)
+        background-image: url(/img/bg.jpg)
     .bg-game
-        background-image: url(~/img/bg-game.jpg)
+        background-image: url(/img/bg-game.jpg)
         opacity: 0 //
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 920px) and (orientation: portrait)

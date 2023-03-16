@@ -17,7 +17,8 @@ export default defineNuxtConfig({
             script: [
                 { src: '/player.js' }
             ]
-        }
+        },
+        baseURL: process.env.NODE_ENV === 'production' ? '/cutler/public' : '/'
     },
     modules: [
         '@nuxtjs/tailwindcss',
