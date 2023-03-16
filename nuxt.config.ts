@@ -18,14 +18,13 @@ export default defineNuxtConfig({
                 { src: '/player.js' }
             ]
         },
-        baseURL: process.env.NODE_ENV === 'production' ? '/cutler/public' : '/'
+        baseURL: process.env.NODE_ENV === 'production' ? '/cutler/public/' : '/'
     },
     modules: [
         '@nuxtjs/tailwindcss',
         '@pinia/nuxt',
     ],
     vite: {
-        base: '/_nuxt/',
 
         plugins: [
             ViteYaml(),

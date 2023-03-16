@@ -49,7 +49,7 @@ include ../assets/pug/index
             path
                 fill: $cut-black
     section
-        background-image: url('img/cut-bg-1.jpg')
+        background: url('img/cut-bg-1.jpg')
         background-size: cover
         background-position: 50% 50%
         margin: 0 -10% // idk ?
