@@ -25,6 +25,8 @@ export default defineNuxtConfig({
         '@pinia/nuxt',
     ],
     vite: {
+        base: '/',
+
         plugins: [
             ViteYaml(),
             pugPlugin(options, locals),
