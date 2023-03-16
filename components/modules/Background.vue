@@ -1,7 +1,5 @@
 <template lang='pug'>
 .background-module
-    .bg-game
-    .bg-main
 </template>
 
 <style lang='sass' scoped>

@@ -1,26 +1,48 @@
 <script setup>
 import { useGameStore } from '~/store/game'
-import { storeToRefs} from 'pinia'
+import { storeToRefs } from 'pinia'
+import { playSplash, playForm, playVideo } from '~/assets/gsap'
+
 const gameStore = useGameStore()
-const {currentView, introCopy} = storeToRefs(gameStore)
-</script >
+const { currentView, currentAnimate, introCopy, isForm } = storeToRefs(gameStore)
+const { handleAnimate } = gameStore
+
+watch(currentAnimate, async (val) => {
+    await nextTick()
+    val === 'form' && playForm()
+    val === 'video' && playVideo()
+    setTimeout(() => {
+        handleAnimate('')
+    }, 1000)
+})
+
+
+onMounted(() => {
+    playSplash()
+})
+
+
+
+</script>
 
 <template lang='pug'>
 include ../assets/pug/index
-.main-screen(:class='currentView')
-    header
-        h1 {{introCopy.title}}
-        +logo
-    section
-        <Intro v-if="currentView == 'intro'"/>
-        <Form v-if="currentView == 'form'"/>
-        <Questions v-if="currentView == 'questions'"/>
-    footer
-        h2 footer
-    ModulesBackground
+.dev-mobile
+    .main-screen(:class='currentView')
+        Splash(v-if='currentView == "splash"')
+        Intro(v-if='currentView == "intro"')
+        Video(v-if='currentView == "video"')
+        Questions(v-if='currentView == "questions"')
+        ModulesForm(v-if='isForm')
 </template>
 
 <style lang='sass'>
+.dev-mobile
+    container: inline-size
+    position: relative
+    width: 425px
+    height: 850px
+    outline: 20px solid rgb(255 255 255 / 8%)
 .main-screen
     @include flex-center-absolute
     display: grid
@@ -28,16 +50,13 @@ include ../assets/pug/index
     overflow: hidden
     font-size: 150%
     font-weight: 600
-    height: 100vh
+    background: $cut-white
     header, section, footer
         @include flex-center
         flex-direction: column
         position: relative
-        width: 100vw
+        width: 100%
         height: 100%
-        
-/* Extracted SVG Styles */
-path.cls-1
-    fill: white
-
+    &.splash
+        grid-template-columns: 1fr
 </style>

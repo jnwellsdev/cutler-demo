@@ -2,6 +2,10 @@
 @import font.css
 
 // colors
+$cut-white: #f6f7f8
+$cut-black: #000000
+
+//
 $fb-primary: #1d552e
 $fb-secondary: #64BF13
 $fb-blue: #30588f
@@ -15,13 +19,12 @@ $fb-red: #E13758
 :root
     --opacity: 0
 body, html
-    background-color: $fb-primary
+    background-color: black
+    color: $cut-black
+    font-family: 'Open Sans', sans-serif
     overscroll-behavior-y: contain
     overflow: hidden
     height: 100%
-    -webkit-perspective: 1000
-    -webkit-backface-visibility: hidden
-    -webkit-transform: translate3d(0,0,0)
 
 // mixins
 @mixin flex-center
@@ -96,45 +99,21 @@ body, html
 button
     width: 100%
     max-width: 350px
-    height: 70px
-    background: transparentize(#000, 0.95)
+    height: 40px
+    background: white
     margin: 0.15rem
-    padding: 0.85rem 0.25rem 0.65rem 0.25rem
-    border: 3px solid $fb-white
-    border-radius: 2px
-    @include font-round-reg
-    font-size: 1.55rem
-    letter-spacing: 3px
-    line-height: 1.1
+    padding: 0.55rem 0.25rem 0.65rem 0.25rem
+    border: 3px solid black
+    font-size: 1rem
+    font-weight: 700
+    line-height: 1
     text-transform: uppercase
-    color: $fb-secondary
+    color: black
     transition: border 0.25s ease, background 0.25s ease
     appearance: none
     cursor: pointer
     &:hover
-        border: 3px solid $fb-secondary
-        background: white
-    &.primary
-        background: $fb-white
-        border: 4px solid $fb-white
-        border-radius: 10px
-        font-family: 'sporty-pro', sans-serif
-        font-size: 1.6rem
-        letter-spacing: 1px
-        font-weight: 500
-        color: $fb-dark
-        &:hover
-            border: 4px solid transparentize(#fff, 0.2)
-            background: transparentize(#fff, 0.2)
-    &.secondary
-        background: transparentize(#000, 0.95)
-        border: 4px solid $fb-white
-        color: $fb-white
-        font-size: 1.45rem
-        border-radius: 5px
-        &:hover
-            border: 4px solid transparentize(#fff, 0.2)
-            background: transparentize(#000, 0.8)
+        background: #fafafa
     &.correct
         animation: correct ease-in-out 0.65s 3
 
@@ -148,78 +127,6 @@ button
 svg
     height: 100%
     overflow: visible
-// svg
-.target
-    ellipse:nth-child(1)
-        fill: #A00B2F
-    ellipse:nth-child(2)
-        fill: #BB2E49
-    ellipse:nth-child(3)
-        fill: #E13758
-.icon
-    path
-        stroke: none
-        fill: #FFFFFF
-.point
-    path:nth-child(1)
-        stroke: none
-        fill: white
-    path:nth-child(2)
-        stroke: none
-        fill: #A00B2F
-.aim, .wrong-ball
-    overflow: visible
-    .ring, #bounds
-        fill: none
-        stroke: none
-.bonus
-    path
-        opacity: 0
-        z-index: 800
-    path:nth-child(1)
-        stroke: none
-        fill: white
-    path:nth-child(2)
-        stroke: none
-        fill: #57A013
-.meters
-    position: absolute
-    top: 0
-    pointer-events: none
-    .meter
-        &:nth-child(1)
-            stroke-width: 16px
-            stroke-linecap: round
-            stroke-miterlimit: 10
-            stroke: rgb(255 255 255 / 50%)
-            fill: none
-            filter: drop-shadow(0px 0px 6px rgb(122 185 64 / 80%))
-        &:nth-child(2)
-            stroke-width: 4px
-            stroke-linecap: round
-            stroke-miterlimit: 10
-            stroke: rgb(255 255 255 / 50%)
-            fill: rgb(122 185 64)
-            filter: drop-shadow(0px 0px 0px rgb(122 185 64 / 50%))
-        &:nth-child(3)
-            stroke-linecap: round
-            stroke-miterlimit: 10
-            stroke: rgb(122 185 64)
-            fill: none
-            stroke-width: 10px
-        &:nth-child(4)
-            stroke-linecap: round
-            stroke-miterlimit: 10
-            stroke: rgb(122 185 64)
-            fill: none
-            stroke-width: 10px
-        &:nth-child(5)
-            stroke-linecap: round
-            stroke-miterlimit: 10
-            stroke-width: 0
-            fill: rgb(255 255 255 / 60%)
-            stroke: rgb(255 255 255 / 60%)
-//
 
-.welcome section .modal .copy strong
-    font-size: 2.2rem
+// svg
+@import svg.sass
