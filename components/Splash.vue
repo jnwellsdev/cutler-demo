@@ -8,7 +8,7 @@ const { handleView, handleNext } = useGameStore()
     section.top2
     section.mid
         p Do you know
-        img.logo(src='img/cut-logo-intro.svg')
+        img.logo(src='/img/cut-logo-intro.svg')
         button(@click='handleNext') take the quiz
     section.btm2
     section.btm

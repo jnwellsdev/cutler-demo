@@ -10,7 +10,7 @@ const { handleView, handleNext } = useGameStore()
 .intro-screen
     header
         p Do you know
-        img.logo(src='img/cut-logo-intro.svg')
+        img.logo(src='/img/cut-logo-intro.svg')
     section
         span(v-html='introCopy.copy')
         span.cta(v-html="introCopy.cta")

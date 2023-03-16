@@ -10,7 +10,7 @@ const { handleForm, handleNext } = gameStore
 .form-module
     .title
         p Do you know
-        img.logo(src='img/cut-logo-intro.svg')
+        img.logo(src='/img/cut-logo-intro.svg')
     .form
         p(v-if='!formResponse')
             input(type='text' placeholder='Name' v-model='formData.first_name')
