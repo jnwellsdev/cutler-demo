@@ -25,7 +25,7 @@ export default defineNuxtConfig({
         '@pinia/nuxt',
     ],
     vite: {
-        base: '/',
+        base: '/_nuxt/',
 
         plugins: [
             ViteYaml(),
