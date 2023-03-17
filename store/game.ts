@@ -103,8 +103,8 @@ export const useGameStore = defineStore({
 		isFreeze: (state) => state.freeze,
 		isCorrect: (state) => state.correct,
 		isAnswered: (state) => state.answered,
-		bg1: (state) => ({background: `url(cutler/public/img/cut-bg-${state.question}.jpg)`,backgroundSize: 'cover'}),
-		bg2: (state) => ({background: `url(cutler/public/img/cut-bg-${state.question + 1}.jpg)`,backgroundSize: 'cover'})
+		bg1: (state) => ({background: `url(public/img/cut-bg-${state.question}.jpg)`,backgroundSize: 'cover'}),
+		bg2: (state) => ({background: `url(public/img/cut-bg-${state.question + 1}.jpg)`,backgroundSize: 'cover'})
 	},
 })
 
