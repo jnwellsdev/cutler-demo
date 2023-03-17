@@ -26,7 +26,7 @@ include ../assets/pug/index
                     h1.wrong(v-if='!isCorrect') {{ currentQuestion.wrong }}
                     p {{  currentQuestion.response }}
                 .option(v-else v-for='option, i in currentQuestion.options.slice(1)')
-                    button(@click='handleOptionClick' :data-choice='option' :data-option='i' :key='i + 1' ) {{ option }}
+                    button(@click='handleOptionClick' :data-choice='option' :data-option='i + 1') {{ option }}
         .section-bg.first(:style='bg1')
         .section-bg.next(:style='bg2')
     section.video-response(v-else)
@@ -136,6 +136,7 @@ include ../assets/pug/index
                 .response
                     line-height: 1.35
                     color: $cut-white
+                    max-width: 86%
                     h1
                         font-size: 1.3rem
                         padding-bottom: 1rem
@@ -166,6 +167,7 @@ include ../assets/pug/index
             height: 40px
             border-radius: 20px 0
     &.video
+        background: $cut-black
         header
             .cut-logo
                 path

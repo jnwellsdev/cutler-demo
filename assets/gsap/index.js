@@ -31,6 +31,7 @@ export const playForm = () => {
 }
 
 export const playVideo = () => {
+  console.log('ok3')
     gsap.set('.video-screen .background, .video-screen span', {opacity: 0})
 
     const tl = gsap.timeline()
@@ -52,5 +53,27 @@ export const playNext = () => {
     .to('.question-screen .section-bg.first', {opacity: 0, duration: 0.5}, '> +0.5')
     .to('.question-screen .section-bg.first', {opacity: 1, duration: 0})
     .to('.question-screen .modal', {opacity: 1, duration: 0.5}, '> +0.5')
+}
 
+export const playResponse = () => { 
+  console.log('ok1')
+  const tl = gsap.timeline()
+  tl.to('.question-screen .modal, footer button', {opacity: 0, duration: 0})
+    .to('.question-screen .modal, footer button', {opacity: 1, duration: 0.25}, '> +0.25')
+}
+
+export const playNextVideo = () => { 
+  const tl = gsap.timeline()
+  tl.to('.question-screen section, .question-screen .modal, footer button', {opacity: 0, duration: 0})
+    .to('.question-screen section', {opacity: 1, duration: 0.5}, '> +1')
+    .to('.question-screen .modal, footer button', {opacity: 1, duration: 0.5}, '> +0.5')
+}
+
+export const playVideoResponse = () => { 
+  console.log('ok2')
+  gsap.set('.question-screen.video .video-bg, .question-screen.video .response', {opacity: 0})
+
+  const tl = gsap.timeline()
+  tl.to('.question-screen.video .video-bg', {opacity: 1, duration: 1, delay: 1})
+      .to('.question-screen.video .response', {opacity: 1, duration: 1}, '> -0.5')
 }

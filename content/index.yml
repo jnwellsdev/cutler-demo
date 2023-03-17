@@ -42,7 +42,7 @@ questions:
               - Beverly Hills Posh
               - A Corporate Franchise
               - Cool, Craft, Creativity, Connectivity
-          correct: 1
+          correct: 4
           right: CREATIVE CHOICE!
           wrong: INCORRECT
           response: 'We want to be cool, we want to nail the craft, we want to provide a space for stylists to be creative, and we want to connect with our partners and clients.'
@@ -53,7 +53,7 @@ questions:
               - To attract billionaire bank account clients
               - To be inspired by the ethos of New York
               - Both A and C
-          correct: 1
+          correct: 4
           right: INSPIRED ANSWER!
           wrong: INCORRECT
           response: 'Inspired by the ethos of New York, Cutler wants to be cool to help draw clients in, but it’s also an effort to be individualized and authentic.'
@@ -86,7 +86,7 @@ questions:
               - The Knicks
               - Peter Luger Steakhouse
               - Redken
-          correct: 1
+          correct: 4
           right: NAILED IT!
           wrong: INCORRECT
           response: 'Cutler has developed a strong relationship with Redken. We exclusively use only the Redken color line and are also a Redken flagship.'
@@ -172,5 +172,5 @@ questions:
 results:
     score1: YOU SCORED
     score2: OUT OF 14
-    button1: Go To CutlerSalons.com
-    copy: 'Thank you for taking our <strong>Do You Know Cutler?</strong> quiz. <br> To find out more about the style and attitude of Cutler Salons, visit CutlerSalon.com, our blog or check us out on Facebook, Instagram and YouTube.'
+    button: CutlerSalons.com
+    copy: 'Thank you for taking our <strong>Do You Know Cutler?</strong> quiz. <span class="break"></span> To find out more about the style and attitude of Cutler Salons, visit CutlerSalon.com, our blog or check us out on Facebook, Instagram and YouTube.'

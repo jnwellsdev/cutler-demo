@@ -1,11 +1,11 @@
 <script setup>
 import { useGameStore } from '~/store/game'
 import { storeToRefs } from 'pinia'
-import { playSplash, playForm, playVideo, playQuestion, playNext } from '~/assets/gsap'
+import { playSplash, playForm, playVideo, playQuestion, playNext, playResponse, playNextVideo, playVideoResponse } from '~/assets/gsap'
 
 const gameStore = useGameStore()
 const { currentView, currentAnimate, introCopy, isForm } = storeToRefs(gameStore)
-const { handleAnimate } = gameStore
+const { handleAnimate, preloadImages } = gameStore
 
 watch(currentAnimate, async (val) => {
     await nextTick()
@@ -13,6 +13,9 @@ watch(currentAnimate, async (val) => {
     val === 'video' && playVideo()
     val === 'question' && playQuestion()
     val === 'next' && playNext()
+    val === 'response' && playResponse()
+    val === 'nextVideo' && playNextVideo()
+    val === 'videoResponse' && playVideoResponse()
     setTimeout(() => {
         handleAnimate('')
     }, 1000)
@@ -20,6 +23,10 @@ watch(currentAnimate, async (val) => {
 
 onMounted(() => {
     playSplash()
+    preloadImages([
+        'cut-bg-1.jpg', 'cut-bg-2.jpg', 'cut-bg-3.jpg',
+        'cut-bg-4.jpg', 'cut-bg-5.jpg', 'cut-bg-6.jpg',
+        'cut-bg-7.jpg'])
 })
 
 </script>
@@ -32,6 +39,7 @@ include ../assets/pug/index
         Intro(v-if='currentView == "intro"')
         Video(v-if='currentView == "video"')
         Questions(v-if='currentView == "questions"')
+        Outro(v-if='currentView == "outro"')
         ModulesForm(v-if='isForm')
 </template>
 

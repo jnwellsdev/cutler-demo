@@ -39,7 +39,7 @@ export const useGameStore = defineStore({
 					this.animate = 'question'
 					break
 				case 'questions':
-					this.animate = 'next'
+					this.section === 1 ? this.animate = 'next' : this.animate = 'nextVideo'
 					setTimeout(() => this.handleQuestion(), 1000)
 					this.handleResponse(false)
 					break
@@ -63,14 +63,18 @@ export const useGameStore = defineStore({
 }
 		}) {
 			console.log(event.target.dataset.option == this.currentQuestion.correct),
-				event.target.dataset.option == this.currentQuestion.correct ? (this.handleAnswer(true), event.currentTarget.classList.add('correct')) : (this.handleAnswer(false), event.currentTarget.classList.add('incorrect')),
-				this.handleFreeze(true, 2500),
-				setTimeout(() => {
-					this.handleResponse(true)
-				}, 2000)
+			event.target.dataset.option == this.currentQuestion.correct
+				? ( this.handleAnswer(true), event.currentTarget.classList.add('correct') )
+				: ( this.handleAnswer(false), event.currentTarget.classList.add('incorrect') ),
+					this.handleFreeze(true, 2500),
+					setTimeout(() => {
+						this.section === 1 ? (this.animate = 'response') : (this.animate = 'videoResponse')
+						this.handleResponse(true)
+					}, 2000)
 		},
 		handleAnswer(val: boolean) {
 			this.correct = val
+			val && this.score++
 		},
 		handleResponse(val: boolean) {
 			this.section === 1
@@ -79,7 +83,9 @@ export const useGameStore = defineStore({
 		},
 		handleQuestion() {
 			this.question === 7
-				? (this.section = 2, this.question = 0, this.question++, this.view = "video")
+				? (this.section = 2, this.question = 0, this.question++, this.view = 'video', this.animate = 'video')
+				: this.question === 14
+				? (this.view = 'outro')
 				: this.question++
 		},
 		handleFreeze(val: boolean, time: number | undefined) {
@@ -92,6 +98,12 @@ export const useGameStore = defineStore({
 		setFreeze(val: boolean) {
 			this.freeze = val
 		},
+        preloadImages(val: any[]) {
+            let dir = process.env.NODE_ENV === 'production' ? 'public/img/' : 'img/'
+            let imgs: any[] = []
+            val.forEach(img => (imgs = [...imgs, `${dir}${img}`]))
+            imgs.forEach(path => (new Image().src = path))
+        }
 	},
 	getters: {
 		isForm: (state) => state.form,
@@ -99,6 +111,7 @@ export const useGameStore = defineStore({
 		currentAnimate: (state) => state.animate,
 		isQuestion:  (state) => state.question,
 		introCopy: (state) => state.data.intro,
+		outroCopy: (state) => state.data.results,
 		formCopy: (state) => state.data.form,
 		currentQuestion: (state) => state.data.questions[`section${state.section}`][state.question],
 		currentSection: (state) => state.section,
@@ -106,6 +119,7 @@ export const useGameStore = defineStore({
 		isVideoResponse: (state) => state.videoResponse,
 		isFreeze: (state) => state.freeze,
 		isCorrect: (state) => state.correct,
+		isScore: (state) => state.score,
 		bg1: (state) => (
 			process.env.NODE_ENV === 'production'
 				? {background: `url(public/img/cut-bg-${state.question}.jpg)`,backgroundSize: 'cover', backgroundPosition: '45% 50%'}
