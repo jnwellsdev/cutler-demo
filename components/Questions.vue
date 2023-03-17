@@ -134,11 +134,15 @@ include ../assets/pug/index
             justify-content: flex-start
             header
                 .response
+                    line-height: 1.35
                     color: $cut-white
                     h1
+                        font-size: 1.3rem
+                        padding-bottom: 1rem
                         font-weight: 600
                     p
-                        font-weight: 400
+                        font-size: 1.15rem
+                        font-weight: 500
             .video-bg
                 position: absolute
                 width: 100%
