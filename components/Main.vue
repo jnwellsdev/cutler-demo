@@ -1,7 +1,7 @@
 <script setup>
 import { useGameStore } from '~/store/game'
 import { storeToRefs } from 'pinia'
-import { playSplash, playForm, playVideo } from '~/assets/gsap'
+import { playSplash, playForm, playVideo, playQuestion, playNext } from '~/assets/gsap'
 
 const gameStore = useGameStore()
 const { currentView, currentAnimate, introCopy, isForm } = storeToRefs(gameStore)
@@ -11,17 +11,16 @@ watch(currentAnimate, async (val) => {
     await nextTick()
     val === 'form' && playForm()
     val === 'video' && playVideo()
+    val === 'question' && playQuestion()
+    val === 'next' && playNext()
     setTimeout(() => {
         handleAnimate('')
     }, 1000)
 })
 
-
 onMounted(() => {
     playSplash()
 })
-
-
 
 </script>
 
@@ -40,8 +39,8 @@ include ../assets/pug/index
 .dev-mobile
     container: inline-size
     position: relative
-    width: 425px
-    height: 850px
+    width: 350px
+    height: 725px
     outline: 20px solid rgb(255 255 255 / 8%)
 .main-screen
     @include flex-center-absolute
