@@ -6,21 +6,22 @@ export const useGameStore = defineStore({
 	state: () => ({
 		data: data,
 		view: 'splash',
-		animate: '',
+		score: 0,
+		section: 1,
 		question: 1,
-		response: false,
 		correct: false,
+		response: false,
+		videoResponse: false,
+		animate: '',
 		freeze: false,
-		answered: false,
-		currentSection: 'section1',
 		form: false,
+		formResponse: false,
 		formData: {
 			first_name: '',
 			last_name: '',
 			email: '',
 			score: '',
 		},
-		formResponse: false,
 	}),
 	actions: {
 		handleNext() {
@@ -28,18 +29,19 @@ export const useGameStore = defineStore({
 				case 'splash':
 					!this.form
 						? ( this.form = true,
-							this.animate = 'form' )
+							this.animate = 'form')
 						: ( this.form = false,
 							this.handleView('video'),
 						    this.animate = 'video' )
 					break
 				case 'video':
 					this.handleView('questions')
+					this.animate = 'question'
 					break
 				case 'questions':
-					this.handleQuestion()
+					this.animate = 'next'
+					setTimeout(() => this.handleQuestion(), 1000)
 					this.handleResponse(false)
-					this.handleView('questions')
 					break
 			}
 		},
@@ -57,21 +59,28 @@ export const useGameStore = defineStore({
 		},
 		handleOptionClick(event: {
 			target: { dataset: { option: any } },
-			currentTarget: { classList: { add: (arg0: string) => any } }
+			currentTarget: { classList: { add: (arg0: string) => any } 
+}
 		}) {
 			console.log(event.target.dataset.option == this.currentQuestion.correct),
 				event.target.dataset.option == this.currentQuestion.correct ? (this.handleAnswer(true), event.currentTarget.classList.add('correct')) : (this.handleAnswer(false), event.currentTarget.classList.add('incorrect')),
 				this.handleFreeze(true, 2500),
-				setTimeout(() => this.handleResponse(true), 2000)
+				setTimeout(() => {
+					this.handleResponse(true)
+				}, 2000)
 		},
 		handleAnswer(val: boolean) {
 			this.correct = val
 		},
 		handleResponse(val: boolean) {
-			this.response = val
+			this.section === 1
+				? this.response = val
+				: this.videoResponse = val
 		},
 		handleQuestion() {
-			this.question++
+			this.question === 7
+				? (this.section = 2, this.question = 0, this.question++, this.view = "video")
+				: this.question++
 		},
 		handleFreeze(val: boolean, time: number | undefined) {
 			this.freeze = val
@@ -91,11 +100,22 @@ export const useGameStore = defineStore({
 		isQuestion:  (state) => state.question,
 		introCopy: (state) => state.data.intro,
 		formCopy: (state) => state.data.form,
-		currentQuestion: (state) => state.data.questions[state.currentSection][state.question],
+		currentQuestion: (state) => state.data.questions[`section${state.section}`][state.question],
+		currentSection: (state) => state.section,
 		isResponse: (state) => state.response,
+		isVideoResponse: (state) => state.videoResponse,
 		isFreeze: (state) => state.freeze,
 		isCorrect: (state) => state.correct,
-		isAnswered: (state) => state.answered,
+		bg1: (state) => (
+			process.env.NODE_ENV === 'production'
+				? {background: `url(public/img/cut-bg-${state.question}.jpg)`,backgroundSize: 'cover', backgroundPosition: '45% 50%'}
+				: {background: `url(img/cut-bg-${state.question}.jpg)`,backgroundSize: 'cover', backgroundPosition: '45% 50%'}
+			),
+		bg2: (state) => (
+			process.env.NODE_ENV === 'production'
+				? {background: `url(public/img/cut-bg-${state.question + 1}.jpg)`, backgroundSize: 'cover', backgroundPosition: '45% 50%'}
+				: {background: `url(img/cut-bg-${state.question + 1}.jpg)`, backgroundSize: 'cover', backgroundPosition: '45% 50%'}
+			)
 	},
 })
 

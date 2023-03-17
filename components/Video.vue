@@ -3,7 +3,7 @@ import { useGameStore } from '~/store/game'
 import { storeToRefs } from 'pinia'
 const gameStore = useGameStore()
 
-const { introCopy, isIntro } = storeToRefs(gameStore)
+const { introCopy, isIntro, currentSection } = storeToRefs(gameStore)
 const { handleView, handleNext } = useGameStore()
 
 onMounted(() => {
@@ -23,11 +23,11 @@ include ../assets/pug/index
         span(v-html='introCopy.copy')
         span.cta(v-html="introCopy.cta")
     footer
-        button.primary(@click="handleNext") {{introCopy.button}}
+        button.primary(@click="handleNext") {{currentSection === 1 ? introCopy.button : 'next'}}
 
     .background
         .over
-        iframe(src='https://player.vimeo.com/video/68384616?loop=true&byline=false&portrait=false&title=false&speed=true&transparent=0&gesture=media&muted=1&autoplay=1' allowfullscreen allowtransparency muted autoplay allow='autoplay')
+        iframe(src='https://player.vimeo.com/video/68384616?loop=true&byline=false&background=1&portrait=true&title=false&speed=true&transparent=0&gesture=media&muted=1&autoplay=1' allowfullscreen allowtransparency muted autoplay allow='autoplay')
 </template>
 <style lang='sass' scoped>
 .video-screen
@@ -62,17 +62,21 @@ include ../assets/pug/index
         height: 100%
         z-index: 1
         .over
-            z-index: 1
+            position: relative
             width: 100%
             height: 100%
             background: rgb(0 0 0 / 20%)
-            position: relative
+            z-index: 1
         iframe
-            width: 120vw
-            height: 120vh
-            object-fit: cover
             position: absolute
-            top: -35%
-            left: -105%
+            width: 400%
+            height: 400%
+            object-fit: cover
+            object-position: 50% 50%
+            top: 0
+            bottom: 0
             z-index: 0
+            top: 50%
+            left: 50%
+            transform: translate(-50%, -50%)
 </style>

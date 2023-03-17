@@ -14,22 +14,43 @@ export const playSplash = () => {
       .to('.btm2', {opacity: 0.5, duration: 1, ease: 'sine'}, '> -0.25')
       .to('.btm', {opacity: 0.5, duration: 1, ease: 'sine'}, '> -0.25')
       .to(all, {opacity: 1, duration: 3}, '>')
-      .to('.mid', {opacity: 1, height: '100%', duration: 1.5, ease: 'circ.inOut'}, '<' )
-      .to('.mid button, .mid p', {opacity: 1, duration: 0.5, ease: 'circ.inOut'}, '< +0.25')
-      .to('.mid .logo', {opacity: 1, duration: 1, ease: 'circ.in'}, '< +1' )
+      .to('.mid', {opacity: 1, height: '100%', duration: 1, ease: 'circ.inOut'}, '> -1' )
+      .to('.mid button, .mid p', {opacity: 1, duration: 0.5, ease: 'circ.inOut'}, '> -0.25')
+      .to('.mid .logo', {opacity: 1, duration: 0.5, ease: 'circ.in'}, '> +0.25' )
     // console.log(gsap)
 }
 
 export const playForm = () => {
-  const tl = gsap.timeline()
-    gsap.set('.form-module, .title', {opacity: 0})
+    gsap.set('.title', {opacity: 0})
+    gsap.set('.form-module', {opacity: 0, x: '-50%'})
+
+    const tl = gsap.timeline()
     tl.to('.mid .logo, .mid p, .mid button', {opacity: 0, duration: 0.5})
-      .to('.form-module, .title', {opacity: 1, duration: 1}, '<')
+        .to('.title', {opacity: 1, duration: 1}, '<')
+        .to('.form-module', {opacity: 1, x: 0, duration: 0.5}, '<')
 }
 
 export const playVideo = () => {
-  const tl = gsap.timeline()
     gsap.set('.video-screen .background, .video-screen span', {opacity: 0})
+
+    const tl = gsap.timeline()
     tl.to('.video-screen .background', {opacity: 1, duration: 1, delay: 1})
-      .to('.video-screen span', {opacity: 1, duration: 1}, '> -0.5')
+        .to('.video-screen span', {opacity: 1, duration: 1}, '>')
+}
+
+export const playQuestion = () => {
+  gsap.set('.question-screen section, .question-screen .modal', {opacity: 0})
+
+  const tl = gsap.timeline()
+  tl.to('.question-screen section', {opacity: 1, duration: 1, delay: 0.5})
+      .to('.question-screen .modal', {opacity: 1, duration: 1}, '> -0.5')
+}
+
+export const playNext = () => { 
+  const tl = gsap.timeline()
+  tl.to('.question-screen .modal', {opacity: 0, duration: 0})
+    .to('.question-screen .section-bg.first', {opacity: 0, duration: 0.5}, '> +0.5')
+    .to('.question-screen .section-bg.first', {opacity: 1, duration: 0})
+    .to('.question-screen .modal', {opacity: 1, duration: 0.5}, '> +0.5')
+
 }

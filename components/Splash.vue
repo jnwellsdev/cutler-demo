@@ -42,7 +42,7 @@ const { handleView, handleNext } = useGameStore()
             justify-content: space-evenly
             .logo
                 max-width: 44%
-                margin: -2.5% 0 0 5%
+                margin: -2.5% 0 0 1.25%
             p
                 margin-top: -2%
             button
