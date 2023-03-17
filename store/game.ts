@@ -6,21 +6,22 @@ export const useGameStore = defineStore({
 	state: () => ({
 		data: data,
 		view: 'splash',
-		animate: '',
-		question: 1,
-		response: false,
-		correct: false,
-		freeze: false,
-		answered: false,
+		score: 0,
 		section: 1,
+		question: 6,
+		correct: false,
+		response: false,
+		videoResponse: false,
+		animate: '',
+		freeze: false,
 		form: false,
+		formResponse: false,
 		formData: {
 			first_name: '',
 			last_name: '',
 			email: '',
 			score: '',
 		},
-		formResponse: false,
 	}),
 	actions: {
 		handleNext() {
@@ -72,7 +73,9 @@ export const useGameStore = defineStore({
 			this.correct = val
 		},
 		handleResponse(val: boolean) {
-			this.response = val
+			this.section === 1
+				? this.response = val
+				: this.videoResponse = val
 		},
 		handleQuestion() {
 			this.question === 7
@@ -100,11 +103,19 @@ export const useGameStore = defineStore({
 		currentQuestion: (state) => state.data.questions[`section${state.section}`][state.question],
 		currentSection: (state) => state.section,
 		isResponse: (state) => state.response,
+		isVideoResponse: (state) => state.videoResponse,
 		isFreeze: (state) => state.freeze,
 		isCorrect: (state) => state.correct,
-		isAnswered: (state) => state.answered,
-		bg1: (state) => (process.env.NODE_ENV === 'production' ? {background: `url(public/img/cut-bg-${state.question}.jpg)`,backgroundSize: 'cover'} : {background: `url(img/cut-bg-${state.question}.jpg)`,backgroundSize: 'cover'}),
-		bg2: (state) => (process.env.NODE_ENV === 'production' ? {background: `url(public/img/cut-bg-${state.question + 1}.jpg)`,backgroundSize: 'cover'} : {background: `url(img/cut-bg-${state.question + 1}.jpg)`,backgroundSize: 'cover'})
+		bg1: (state) => (
+			process.env.NODE_ENV === 'production'
+				? {background: `url(public/img/cut-bg-${state.question}.jpg)`,backgroundSize: 'cover', backgroundPosition: '45% 50%'}
+				: {background: `url(img/cut-bg-${state.question}.jpg)`,backgroundSize: 'cover', backgroundPosition: '45% 50%'}
+			),
+		bg2: (state) => (
+			process.env.NODE_ENV === 'production'
+				? {background: `url(public/img/cut-bg-${state.question + 1}.jpg)`, backgroundSize: 'cover', backgroundPosition: '45% 50%'}
+				: {background: `url(img/cut-bg-${state.question + 1}.jpg)`, backgroundSize: 'cover', backgroundPosition: '45% 50%'}
+			)
 	},
 })
 
