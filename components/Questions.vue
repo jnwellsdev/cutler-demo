@@ -34,11 +34,11 @@ include ../assets/pug/index
             .response
                 h1 {{ `Answer ${currentSection === 1 ? isQuestion : isQuestion + 7}` }}
                 p {{ currentQuestion.options[currentQuestion.correct] }}
+        .over
         .video-bg
-            iframe(src='https://player.vimeo.com/video/68384616?loop=true&byline=false&background=1&portrait=true&title=false&speed=true&transparent=0&gesture=media&muted=1&autoplay=1' allowfullscreen allowtransparency muted autoplay allow='autoplay')
+            iframe(:src='`https://player.vimeo.com/video/${currentQuestion.videoId}?h=ff9b27b760?byline=false&portrait=true&title=false&transparent=0&gesture=media&autoplay=1`' width='640' height='1138' allowfullscreen allowtransparency autoplay allow='autoplay')
     footer
         button(v-if='isResponse || isVideoResponse' @click='handleNext').primary next
-
 </template>
 
 
@@ -132,6 +132,7 @@ include ../assets/pug/index
                 z-index: 0
         &.video-response
             justify-content: flex-start
+            position: relative
             header
                 .response
                     line-height: 1.35
@@ -141,25 +142,32 @@ include ../assets/pug/index
                         font-size: 1.3rem
                         padding-bottom: 1rem
                         font-weight: 600
+                        text-shadow: 0 0 12px rgb(0 0 0 / 30%)
                     p
                         font-size: 1.15rem
                         font-weight: 500
-            .video-bg
+                        text-shadow: 0 0 12px rgb(0 0 0 / 30%)
+            .over
                 position: absolute
                 width: 100%
-                height: 100%
+                height: calc(100% + 120px)
+                top: -120px
+                background: rgb(0 0 0 / 20%)
+                z-index: 1
+                pointer-events: none
+            .video-bg
+                position: absolute
+                width: calc(105% + 120px)
+                height: calc(105% + 120px)
+                top: calc(-120px - 5%)
+                left: calc((-5% - 120px) / 2)
                 iframe
                     position: absolute
-                    width: 400%
-                    height: 400%
+                    width: 100%
+                    height: 100%
                     object-fit: cover
-                    object-position: 50% 50%
-                    top: 0
-                    bottom: 0
                     z-index: 0
-                    top: 50%
-                    left: 50%
-                    transform: translate(-50%, -50%)
+
     footer
         max-height: 80px
         button

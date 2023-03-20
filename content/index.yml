@@ -102,7 +102,7 @@ questions:
           correct: 2
           right: CORRECT!
           wrong: INCORRECT
-          videoId: ''
+          videoId: 809801216
         - text: 'After shampooing, to make brushing out the hair easier, what product would you use?'
           options:
               -
@@ -113,7 +113,7 @@ questions:
           correct: 4
           right: CORRECT!
           wrong: INCORRECT
-          videoId: ''
+          videoId: 809801341
         - text: 'You take the client back to the bowl and find they have very dry, damaged hair. What would you suggest they take home to refresh and restore?'
           options:
               -
@@ -124,7 +124,7 @@ questions:
           correct: 4
           right: CORRECT!
           wrong: INCORRECT
-          videoId: ''
+          videoId: 809801470
         - text: "It's a hot and humid day in the city, and your client wants to maintain a frizz free look. What shampoo would you use at the bowl to help?"
           options:
               -
@@ -135,7 +135,7 @@ questions:
           correct: 1
           right: CORRECT!
           wrong: INCORRECT
-          videoId: ''
+          videoId: 809801696
         - text: 'When you’ve finished shampooing a client, do you …'
           options:
               -
@@ -146,7 +146,7 @@ questions:
           correct: 1
           right: CORRECT!
           wrong: INCORRECT
-          videoId: ''
+          videoId: 809801858
         - text: 'What type of shampoo do you use before a Keratin service?'
           options:
               -
@@ -157,7 +157,7 @@ questions:
           correct: 3
           right: CORRECT!
           wrong: INCORRECT
-          videoId: ''
+          videoId: 809801951
         - text: 'After finishing shampooing a guest, you should … '
           options:
               -
@@ -168,7 +168,7 @@ questions:
           correct: 3
           right: CORRECT!
           wrong: INCORRECT
-          videoId: ''
+          videoId: 809802205
 results:
     score1: YOU SCORED
     score2: OUT OF 14
