@@ -1,18 +1,18 @@
 <script setup>
 import { useGameStore } from '~/store/game'
 import { storeToRefs } from 'pinia'
-import { playSplash, playForm, playVideo, playQuestion, playNext, playResponse, playNextVideo, playVideoResponse } from '~/assets/gsap'
+import { playSplash, playForm, playVideo, playQuestion, playNext, playResponse, playNextVideo, playVideoResponse, playFade } from '~/assets/gsap'
 
 const gameStore = useGameStore()
 const { currentView, currentAnimate, introCopy, isForm } = storeToRefs(gameStore)
-const { handleAnimate, preloadImages } = gameStore
+const { handleAnimate, preloadImages, handleQuestion } = gameStore
 
 watch(currentAnimate, async (val) => {
     await nextTick()
     val === 'form' && playForm()
     val === 'video' && playVideo()
     val === 'question' && playQuestion()
-    val === 'next' && playNext()
+    val === 'next' && (playNext(), setTimeout(() => { playFade(), handleQuestion() }, 1000))
     val === 'response' && playResponse()
     val === 'nextVideo' && playNextVideo()
     val === 'videoResponse' && playVideoResponse()

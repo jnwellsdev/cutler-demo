@@ -5,6 +5,22 @@ const gameStore = useGameStore()
 const { currentQuestion, currentSection, isResponse, isVideoResponse, isFreeze, isCorrect, isAnswered, isQuestion, bg1, bg2 } = storeToRefs(gameStore)
 const { handleOptionClick, handleView, handleNext } = gameStore
 
+watch(isVideoResponse, async (val) => {
+    await nextTick()
+    if (val) {
+        const vid = document.querySelector('#vid')
+        const player = new Vimeo.Player(vid)
+
+        player.getVideoId().then((id) => console.log(`player: ${id}`))
+
+        player.on('ended', (data) => {
+            console.log('ended')
+            player.setCurrentTime(0)
+            player.pause()
+        })
+    }
+})
+
 </script>
 <template lang='pug'>
 include ../assets/pug/index
@@ -15,10 +31,11 @@ include ../assets/pug/index
         .modal
             header
                 .response(v-if='isResponse')
-                    h1 {{ `Answer ${currentSection === 1 ? isQuestion : isQuestion + 7}` }}
+                    //- h1(v-html='`Answer ${currentSection === 1 ? isQuestion : isQuestion + 7}`')
+                    h1 &nbsp;
                     p {{ currentQuestion.text }}
                 span(v-else)
-                    h1 {{ `Question ${currentSection === 1 ? isQuestion : isQuestion + 7}` }}
+                    h1(v-html='`Question ${currentSection === 1 ? isQuestion : isQuestion + 7} <span style="font-weight:400; color: #222">/ 14</span>`')
                     p {{ currentQuestion.text }}
             section
                 .response(v-if='isResponse')
@@ -32,11 +49,17 @@ include ../assets/pug/index
     section.video-response(v-else)
         header
             .response
-                h1 {{ `Answer ${currentSection === 1 ? isQuestion : isQuestion + 7}` }}
+                //- h1(v-html='`Answer ${currentSection === 1 ? isQuestion : isQuestion + 7}`')
+                h1(v-if='isCorrect') {{  currentQuestion.right}}
+                h1(v-if='!isCorrect') {{ currentQuestion.wrong }}
                 p {{ currentQuestion.options[currentQuestion.correct] }}
+                .caption
+                    span Mary Jones
+                    span Stylist
+                    span Cutler Soho
         .over
         .video-bg
-            iframe(:src='`https://player.vimeo.com/video/${currentQuestion.videoId}?h=ff9b27b760?byline=false&portrait=true&title=false&transparent=0&gesture=media&autoplay=1`' width='640' height='1138' allowfullscreen allowtransparency autoplay allow='autoplay')
+            iframe#vid(:src='`https://player.vimeo.com/video/${currentQuestion.videoId}?h=ff9b27b760?byline=false&portrait=true&title=false&transparent=0&gesture=media&autoplay=1`' width='640' height='1138' allowfullscreen allowtransparency autoplay allow='autoplay')
     footer
         button(v-if='isResponse || isVideoResponse' @click='handleNext').primary next
 </template>
@@ -131,7 +154,7 @@ include ../assets/pug/index
             &.next
                 z-index: 0
         &.video-response
-            justify-content: flex-start
+            justify-content: flex-end
             position: relative
             header
                 .response
@@ -140,13 +163,31 @@ include ../assets/pug/index
                     max-width: 86%
                     h1
                         font-size: 1.3rem
-                        padding-bottom: 1rem
+                        padding-bottom: 0.25rem
                         font-weight: 600
                         text-shadow: 0 0 12px rgb(0 0 0 / 30%)
                     p
                         font-size: 1.15rem
                         font-weight: 500
                         text-shadow: 0 0 12px rgb(0 0 0 / 30%)
+                        padding-bottom: 0.25rem
+                    .caption
+                        opacity: 0.88
+                        span
+                            font-size: 0.78rem
+                            font-weight: 400
+                            padding-left: 0.2rem
+                            text-shadow: 0 0 12px rgb(0 0 0 / 50%)
+                            &:nth-child(1)
+                                font-weight: 600
+                                &:after
+                                    content: '/' 
+                                    padding-left: 0.25rem
+                                    font-weight: 400
+                            &:nth-child(2)
+                                &:after
+                                    content: '/' 
+                                    padding-left: 0.25rem
             .over
                 position: absolute
                 width: 100%

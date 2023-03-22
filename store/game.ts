@@ -8,7 +8,7 @@ export const useGameStore = defineStore({
 		view: 'splash',
 		score: 0,
 		section: 1,
-		question: 7,
+		question: 1,
 		correct: false,
 		response: false,
 		videoResponse: false,
@@ -40,7 +40,6 @@ export const useGameStore = defineStore({
 					break
 				case 'questions':
 					this.section === 1 ? this.animate = 'next' : this.animate = 'nextVideo'
-					setTimeout(() => this.handleQuestion(), 1000)
 					this.handleResponse(false)
 					break
 			}
@@ -66,11 +65,11 @@ export const useGameStore = defineStore({
 			event.target.dataset.option == this.currentQuestion.correct
 				? ( this.handleAnswer(true), event.currentTarget.classList.add('correct') )
 				: ( this.handleAnswer(false), event.currentTarget.classList.add('incorrect') ),
-					this.handleFreeze(true, 2500),
+					this.handleFreeze(true, 2000),
 					setTimeout(() => {
 						this.section === 1 ? (this.animate = 'response') : (this.animate = 'videoResponse')
 						this.handleResponse(true)
-					}, 2000)
+					}, 1500)
 		},
 		handleAnswer(val: boolean) {
 			this.correct = val
