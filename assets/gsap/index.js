@@ -9,6 +9,7 @@ export const playSplash = () => {
 
     const tl = gsap.timeline()
     tl.timeScale(1.5)
+    tl.delay(1)
 
     tl.to('.top, .top2, .btm2, .btm', { opacity: 0.3, scale: 1,
       stagger: {
