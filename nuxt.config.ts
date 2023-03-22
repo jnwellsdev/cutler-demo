@@ -15,10 +15,10 @@ export default defineNuxtConfig({
                 { name: 'description', content: 'How well do you know Cutler Salons?' }
             ],
             link: [
-              { rel: 'icon', type: 'image/x-icon', href: process.env.NODE_ENV === 'production' ? '/public/favicon.png' : '/favicon.png' }
+              { rel: 'icon', type: 'image/x-icon', href: process.env.NODE_ENV === 'production' ? '/cutler/public/favicon.png' : '/favicon.png' }
             ],
             script: [
-                { src: process.env.NODE_ENV === 'production' ? '/public/player.js' : '/player.js' }
+                { src: process.env.NODE_ENV === 'production' ? '/cutler/public/player.js' : '/player.js' }
             ]
         },
         baseURL: process.env.NODE_ENV === 'production' ? '/cutler/public' : '/'
