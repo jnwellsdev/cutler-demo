@@ -19,7 +19,10 @@ include ../assets/pug/index
 .video-screen
     header
         +logo
-    section
+    section(v-if='currentSection === 1')
+        span(v-html='introCopy.copy')
+        span.cta(v-html="introCopy.cta")
+    section.fill(v-else)
         span(v-html='introCopy.copy')
         span.cta(v-html="introCopy.cta")
     footer
@@ -51,6 +54,8 @@ include ../assets/pug/index
         text-shadow: 0 0 6px rgb(0 0 0 / 30%)
         span:last-child
             margin-top: 1.35rem
+        &.fill
+            opacity: 0
     footer
         button
             height: 44px
