@@ -14,7 +14,7 @@ watch(currentAnimate, async (val) => {
     val === 'question' && playQuestion()
     val === 'next' && (playNext(), setTimeout(() => { playFade(), handleQuestion() }, 1000))
     val === 'response' && playResponse()
-    val === 'nextVideo' && playNextVideo()
+    val === 'nextVideo' && (playNextVideo(), setTimeout(() => { handleQuestion() }, 1000))
     val === 'videoResponse' && playVideoResponse()
     setTimeout(() => {
         handleAnimate('')
@@ -26,7 +26,7 @@ onMounted(() => {
     preloadImages([
         'cut-bg-1.jpg', 'cut-bg-2.jpg', 'cut-bg-3.jpg',
         'cut-bg-4.jpg', 'cut-bg-5.jpg', 'cut-bg-6.jpg',
-        'cut-bg-7.jpg'])
+        'cut-bg-7.jpg', 'cut-bg-8.jpg'])
 })
 
 </script>

@@ -15,7 +15,7 @@ const { handleView, handleNext } = useGameStore()
         .over
         .score
             h1(v-html='outroCopy.score1')
-            h2 {{ isScore }}
+            h2(:class='{right: isScore >= 8 }') {{ isScore }}
             h1(v-html='outroCopy.score2')
         p(v-html='outroCopy.copy')
     footer
@@ -39,9 +39,11 @@ const { handleView, handleNext } = useGameStore()
         line-height: 1.15
         max-height: 100%
         .score
-            background: $cut-white
+            background: transparentize($cut-white, 0.1 )
             padding: 1rem 2rem
             margin-bottom: 1.5rem
+            border-radius: 50px 0
+            box-shadow: -2px 2px 12px rgb(0 0 0 / 12%)
             z-index: 1
             h1
                 text-transform: uppercase
@@ -54,22 +56,27 @@ const { handleView, handleNext } = useGameStore()
             h2
                 font-size: 5rem
                 font-weight: 700
+                color: $cut-red
+                &.right
+                    color: $cut-green
         p
-            font-size: 1.3rem
-            font-weight: 700
-            padding: 1rem 0 3rem 0
+            font-size: 1.2rem
+            font-weight: 500
+            padding: 1.5rem 2rem
             max-width: 88%
-            text-shadow: 0 0 6px rgb(255 255 255 / 30%)
+            background: transparentize($cut-black, 0.15)
+            color: $cut-white
+            border-radius: 20px
             z-index: 1
         .over
             position: absolute
             width: 100%
             height: 100%
-            background: rgb(255 255 255 / 60%)
+            background: rgb(255 255 255 / 0%)
     footer
         max-height: 80px
         button
-            width: 250px
+            max-width: 265px
             height: 40px
             border-radius: 20px 0
 </style>
