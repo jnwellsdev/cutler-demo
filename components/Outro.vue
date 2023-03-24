@@ -3,15 +3,15 @@ import { useGameStore } from '~/store/game'
 import { storeToRefs } from 'pinia'
 const gameStore = useGameStore()
 
-const { outroCopy, isScore, bg1 } = storeToRefs(gameStore)
+const { outroCopy, isScore, bg3 } = storeToRefs(gameStore)
 const { handleView, handleNext } = useGameStore()
 </script>
 <template lang='pug'>
-.intro-screen
+.outro-screen
     header
         p Do you know
         img.cut-logo(src='/img/cut-logo-intro.svg')
-    section(:style='bg1')
+    section(:style='bg3')
         .over
         .score
             h1(v-html='outroCopy.score1')
@@ -22,7 +22,7 @@ const { handleView, handleNext } = useGameStore()
         button.primary(@click='window.open("https://www.cutlersalon.com/", "_blank")') {{outroCopy.button}}
 </template>
 <style lang='sass' scoped>
-.intro-screen
+.outro-screen
     @include flex-center-absolute
     flex-flow: column
     header, section, footer
@@ -72,7 +72,7 @@ const { handleView, handleNext } = useGameStore()
             position: absolute
             width: 100%
             height: 100%
-            background: rgb(255 255 255 / 0%)
+            background: rgb(0 0 0 / 8%)
     footer
         max-height: 80px
         button

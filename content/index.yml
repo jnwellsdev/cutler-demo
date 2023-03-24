@@ -4,6 +4,11 @@ intro:
     cta: So, we want to know … <br>Do You Know Cutler?
     button: Take the Quiz
     reminder: '– PLEASE, TURN ON YOUR AUDIO –'
+    video:
+        -
+        - '811044194'
+        - '811039129'
+        - '811039282'
 form:
     title: REGISTER
     endTitle: YOU'RE ALL SET
