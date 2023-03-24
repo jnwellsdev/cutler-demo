@@ -59,10 +59,10 @@ questions:
         - text: 'Why does Cutler want to be “cool”?'
           options:
               -
-              - To be individualized, authentic & ahead of the curve
-              - To attract billionaire bank account clients
-              - To be inspired by the ethos of New York
-              - Both A and C
+              - A. To be individualized, authentic & ahead of the curve
+              - B. To attract billionaire bank account clients
+              - C. To be inspired by the ethos of New York
+              - D. Both A and C
           correct: 4
           right: INSPIRED ANSWER!
           wrong: INCORRECT
@@ -77,7 +77,7 @@ questions:
           correct: 1
           right: CRAFTY CHOICE!
           wrong: INCORRECT
-          response: 'With in-house education and instruction, we prioritize nailing the craft (and not the 90s movie kind … unless that’s the look you’re going for).'
+          response: 'With in-house education and instruction, we prioritize nailing the craft.'
         - text: 'How does Cutler, as a brand, present creativity?'
           options:
               -
@@ -210,5 +210,5 @@ questions:
 results:
     score1: YOU SCORED
     score2: OUT OF 14
-    button: Visit CutlerSalons.com
-    copy: 'Thank you for taking our <strong>Do You Know Cutler?</strong> quiz. <span class="break"></span> To find out more about the style and attitude of Cutler Salons, visit CutlerSalon.com, our blog or check us out on Facebook, Instagram and YouTube.'
+    button: Visit CutlerSalon.com
+    copy: 'Thank you for taking our <strong>Do You Know Cutler?</strong> quiz. <span class="break"></span> To find out more about the style and attitude of Cutler Salons, visit cutlersalon.com, our blog or check us out on Facebook, Instagram and YouTube.'
