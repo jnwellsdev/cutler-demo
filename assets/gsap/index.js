@@ -32,6 +32,11 @@ export const playForm = () => {
         .to('.form-module', {opacity: 1, x: 0, duration: 0.5}, '<')
 }
 
+export const playFadeForm = () => {
+
+  const tl = gsap.timeline()
+  tl.to('.form-module', {opacity: 0, duration: 0.5})
+}
 export const playFormExit = () => { 
   const tl = gsap.timeline()
   tl.to('.form-module', {x: '-100%', duration: 0.5}, '>')

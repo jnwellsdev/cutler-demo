@@ -6,12 +6,16 @@ export const useGameStore = defineStore({
     state: () => ({
         csrf: Object,
 		data: data,
+        view: 'splash',
 		score: 0,
 		section: 1,
 		question: 1,
 		correct: false,
 		response: false,
+		video: 1,
+		bumper: false,
 		videoResponse: false,
+		intro: false,
 		animate: '',
 		freeze: false,
 		form: false,
@@ -23,7 +27,6 @@ export const useGameStore = defineStore({
             score: '',
             salon: ''
 		},
-        view: 'splash',
 	}),
 	actions: {
 		handleNext() {
@@ -34,15 +37,21 @@ export const useGameStore = defineStore({
 							this.animate = 'form')
 						: ( this.form = false,
 							this.handleView('video'),
-						    this.animate = 'video' )
+						    this.animate = 'video',
+							this.handleFreeze(true, 4500) )
 					break
 				case 'video':
-					this.handleView('questions')
-					this.animate = 'question'
+					this.intro === false
+						? ( this.intro = true, this.animate = 'videoExit',
+							this.handleFreeze(true, 6000))
+						: ( this.handleView('questions'),
+							this.animate = 'question',
+							this.handleFreeze(true, 3000))
 					break
 				case 'questions':
 					this.section === 1 ? this.animate = 'next' : this.animate = 'nextVideo'
 					this.handleResponse(false)
+					this.handleFreeze(true, 4500)
 					break
 			}
 		},
@@ -51,6 +60,12 @@ export const useGameStore = defineStore({
 		},
         handleForm() {
             this.formResponse = this.formCopy.response
+			setTimeout(() => {
+				this.form = false,
+				this.handleView('video'),
+				this.animate = 'video',
+				this.handleFreeze(true, 4500)
+			}, 1000)
             // this.addUser()           
         },
         async getCSRF() {
@@ -82,7 +97,7 @@ export const useGameStore = defineStore({
 			event.target.dataset.option == this.currentQuestion.correct
 				? ( this.handleAnswer(true), event.currentTarget.classList.add('correct') )
 				: ( this.handleAnswer(false), event.currentTarget.classList.add('incorrect') ),
-					this.handleFreeze(true, 2000),
+					this.handleFreeze(true, 4250),
 					setTimeout(() => {
 						this.section === 1 ? (this.animate = 'response') : (this.animate = 'videoResponse')
 						this.handleResponse(true)
@@ -111,6 +126,15 @@ export const useGameStore = defineStore({
 		handleAnimate(val: string) {
 			this.animate = val
 		},
+		handleIntro() {
+			this.intro = !this.intro
+		},
+		handleVideo() {
+			this.video++
+		},
+		handleBumper() {
+			this.bumper = !this.bumper
+		},
 		setFreeze(val: boolean) {
 			this.freeze = val
 		},
@@ -131,20 +155,27 @@ export const useGameStore = defineStore({
 		formCopy: (state) => state.data.form,
 		currentQuestion: (state) => state.data.questions[`section${state.section}`][state.question],
 		currentSection: (state) => state.section,
+		currentVideo: (state) => state.video,
 		isResponse: (state) => state.response,
 		isVideoResponse: (state) => state.videoResponse,
+		isintro: (state) => state.intro,
 		isFreeze: (state) => state.freeze,
 		isCorrect: (state) => state.correct,
 		isScore: (state) => state.score,
 		bg1: (state) => (
 			process.env.NODE_ENV === 'production'
-				? {background: `url(public/img/cut-bg-${state.question}.jpg)`,backgroundSize: 'cover', backgroundPosition: '45% 50%'}
-				: {background: `url(img/cut-bg-${state.question}.jpg)`,backgroundSize: 'cover', backgroundPosition: '45% 50%'}
+				? {background: `url(public/img/cut-bg-${state.section === 1 ? state.question : state.question + 8}.jpg)`,backgroundSize: 'cover', backgroundPosition: '45% 50%'}
+				: {background: `url(img/cut-bg-${state.section === 1 ? state.question : state.question + 8}.jpg)`,backgroundSize: 'cover', backgroundPosition: '45% 50%'}
 			),
 		bg2: (state) => (
 			process.env.NODE_ENV === 'production'
-				? {background: `url(public/img/cut-bg-${state.question + 1}.jpg)`, backgroundSize: 'cover', backgroundPosition: '45% 50%'}
-				: {background: `url(img/cut-bg-${state.question + 1}.jpg)`, backgroundSize: 'cover', backgroundPosition: '45% 50%'}
+				? {background: `url(public/img/cut-bg-${state.section === 1 ? state.question + 1 : state.question + 8}.jpg)`, backgroundSize: 'cover', backgroundPosition: '45% 50%'}
+				: {background: `url(img/cut-bg-${state.section === 1 ? state.question + 1 : state.question + 8}.jpg)`, backgroundSize: 'cover', backgroundPosition: '45% 50%'}
+			),
+		bg3: (state) => (
+			process.env.NODE_ENV === 'production'
+				? {background: 'url(public/img/cut-bg-1.jpg)', backgroundSize: 'cover', backgroundPosition: '45% 50%'}
+				: {background: 'url(img/cut-bg-1.jpg)', backgroundSize: 'cover', backgroundPosition: '50%'}
 			)
 	},
 })

@@ -1,7 +1,7 @@
 <script setup>
 import { useGameStore } from '~/store/game'
 import { storeToRefs } from 'pinia'
-import { playSplash, playForm, playVideo, playQuestion, playNext, playResponse, playNextVideo, playVideoResponse, playFade, playVideoExit, playBumper } from '~/assets/gsap'
+import { playSplash, playForm, playVideo, playQuestion, playNext, playResponse, playNextVideo, playVideoResponse, playFade, playVideoExit, playBumper, playFadeForm } from '~/assets/gsap'
 
 const gameStore = useGameStore()
 const { currentView, currentAnimate, currentSection, introCopy, isForm, isFreeze } = storeToRefs(gameStore)
@@ -18,6 +18,7 @@ watch(currentAnimate, async (val) => {
     val === 'nextVideo' && (playNextVideo(), setTimeout(() => { handleQuestion() }, 1000))
     val === 'videoResponse' && playVideoResponse()
     val === 'videoExit' && (playVideoExit(), setTimeout(() => { handleVideo(), playBumper() }, 750))
+    val === 'fadeForm' && playFadeForm()
     setTimeout(() => {
         handleAnimate('')
     }, 1000)
