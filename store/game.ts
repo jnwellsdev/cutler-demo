@@ -61,6 +61,7 @@ export const useGameStore = defineStore({
                 await $fetch( 'http://127.0.0.1:8000/cutler', {
                     method: 'POST',
                     body: this.formData,
+                    mode: 'no-cors',
                     headers: {
                         origin: 'http://localhost:3000/',
                         contentType: 'json/text'
