@@ -23,19 +23,19 @@ const { handleView, handleNext } = useGameStore()
         justify-content: center
         align-items: center
         &:nth-child(1)
-            background: url('img/cut-bg-1.jpg')
+            background: url('img/cut-splash-1.jpg')
             background-size: cover
             background-position: 50% 70%
         &:nth-child(2)
-            background: url('img/cut-bg-2.jpg')
+            background: url('img/cut-splash-2.jpg')
             background-size: cover
             background-position: 50% 65%
         &:nth-child(4)
-            background: url('img/cut-bg-3.jpg')
+            background: url('img/cut-splash-3.jpg')
             background-size: cover
             background-position: 50% 80%
         &:nth-child(5)
-            background: url('img/cut-bg-4.jpg')
+            background: url('img/cut-splash-4.jpg')
             background-size: cover
             background-position: 50% 40%
         &.mid

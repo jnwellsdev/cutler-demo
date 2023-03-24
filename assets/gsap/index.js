@@ -32,12 +32,10 @@ export const playForm = () => {
         .to('.form-module', {opacity: 1, x: 0, duration: 0.5}, '<')
 }
 
-export const playVideo = () => {
-    gsap.set('.video-screen .background, .video-screen span', {opacity: 0})
-
-    const tl = gsap.timeline()
-    tl.to('.video-screen .background', {opacity: 1, duration: 1, delay: 1})
-        .to('.video-screen span', {opacity: 1, duration: 1}, '>')
+export const playFormExit = () => { 
+  const tl = gsap.timeline()
+  tl.to('.form-module', {x: '-100%', duration: 0.5}, '>')
+    .to('.form-module', {opacity: 0, duration: 0})
 }
 
 export const playQuestion = () => {
@@ -45,25 +43,23 @@ export const playQuestion = () => {
 
   const tl = gsap.timeline()
   tl.to('.question-screen section', {opacity: 1, duration: 1, delay: 0.5})
-      .to('.question-screen .modal', {opacity: 1, duration: 1}, '> -0.5')
+      .to('.question-screen .modal', {opacity: 1, duration: 1}, '> +0.5')
 }
 
 export const playNext = () => { 
   const tl = gsap.timeline()
   tl.to('.question-screen .modal', {opacity: 0, duration: 0})
     .to('.question-screen .section-bg.first', {opacity: 0, duration: 0.5}, '> +0.5')
-    .to('.question-screen .modal', {opacity: 1, duration: 0.5}, '> +0.5')
+    .to('.question-screen .modal', {opacity: 1, duration: 0.5}, '> +1.5')
 }
 
-export const playFade = () => { 
-  const tl = gsap.timeline()
-  tl.to('.question-screen .section-bg.first', {opacity: 1, duration: 0})
-}
+export const playVideo = () => {
+  gsap.set('.video-screen .background, .video-screen section, .video-screen footer', {opacity: 0})
 
-export const playResponse = () => { 
   const tl = gsap.timeline()
-  tl.to('.question-screen .modal, footer button', {opacity: 0, duration: 0})
-    .to('.question-screen .modal, footer button', {opacity: 1, duration: 0.5})
+  tl.to('.video-screen .background', {opacity: 1, duration: 1, delay: 1})
+      .to('.video-screen section', {opacity: 1, duration: 1}, '> -0.5')
+      .to('.video-screen footer', {opacity: 1, duration: 1}, '> +1')
 }
 
 export const playNextVideo = () => { 
@@ -79,4 +75,31 @@ export const playVideoResponse = () => {
   const tl = gsap.timeline()
   tl.to('.question-screen.video .video-bg', {opacity: 1, duration: 1, delay: 1})
       .to('.question-screen.video .response', {opacity: 1, duration: 1}, '> -0.5')
+}
+
+export const playVideoExit = () => { 
+  const tl = gsap.timeline()
+  tl.to('.video-screen header, .video-screen section, .video-screen footer', {opacity: 0, duration: 0.15})
+    .to('.video-screen .background', {x: '-100%', duration: 0.5}, '>')
+    .to('.video-screen .background', {opacity: 0, duration: 0})
+}
+
+export const playFade = () => { 
+  const tl = gsap.timeline()
+  tl.to('.question-screen .section-bg.first', {opacity: 1, duration: 0})
+}
+
+export const playResponse = () => { 
+  const tl = gsap.timeline()
+  tl.to('.question-screen .modal, footer button', {opacity: 0, duration: 0})
+    .to('.question-screen .modal', {opacity: 1, duration: 1}, '>')
+    .to('footer button', {opacity: 1, duration: 1}, '> +1.5')
+}
+
+export const playBumper = () => { 
+  const tl = gsap.timeline()
+    .to('.video-screen .background', {x: 0, duration: 0})
+    .to('.video-screen .background', {opacity: 1, duration: 0.5}, '0.5')
+    .to('.video-screen header', {opacity: 1, duration: 0.5})
+    .to('.video-screen footer', {opacity: 1, duration: 0.5}, '> +4')
 }

@@ -54,9 +54,9 @@ include ../assets/pug/index
                 h1(v-if='!isCorrect') {{ currentQuestion.wrong }}
                 p {{ currentQuestion.options[currentQuestion.correct] }}
                 .caption
-                    span Mary Jones
-                    span Stylist
-                    span Cutler Soho
+                    span(v-html='currentQuestion.caption[0]')
+                    span(v-html='currentQuestion.caption[1]')
+                    span(v-html='currentQuestion.caption[2]')
         .over
         .video-bg
             iframe#vid(:src='`https://player.vimeo.com/video/${currentQuestion.videoId}?h=ff9b27b760?byline=false&portrait=true&title=false&transparent=0&gesture=media&autoplay=1`' width='640' height='1138' allowfullscreen allowtransparency autoplay allow='autoplay')
@@ -160,7 +160,7 @@ include ../assets/pug/index
                 .response
                     line-height: 1.35
                     color: $cut-white
-                    max-width: 86%
+                    max-width: 94%
                     h1
                         font-size: 1.3rem
                         padding-bottom: 0.25rem
@@ -173,6 +173,7 @@ include ../assets/pug/index
                         padding-bottom: 0.25rem
                     .caption
                         opacity: 0.88
+                        line-height: 0.7
                         span
                             font-size: 0.78rem
                             font-weight: 400

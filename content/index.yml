@@ -4,6 +4,11 @@ intro:
     cta: So, we want to know … <br>Do You Know Cutler?
     button: Take the Quiz
     reminder: '– PLEASE, TURN ON YOUR AUDIO –'
+    video:
+        -
+        - '811044194'
+        - '811039129'
+        - '811039282'
 form:
     title: REGISTER
     endTitle: YOU'RE ALL SET
@@ -108,6 +113,10 @@ questions:
           right: CORRECT!
           wrong: INCORRECT
           videoId: 809801216
+          caption:
+              - Brittany Torres
+              - Colorist
+              - Cutler Soho & 58th Street
         - text: 'After shampooing, to make brushing out the hair easier, what product would you use?'
           options:
               -
@@ -119,6 +128,10 @@ questions:
           right: CORRECT!
           wrong: INCORRECT
           videoId: 809801341
+          caption:
+              - Cody Cros
+              - Colorist
+              - Cutler Brooklyn and Soho
         - text: 'You take the client back to the bowl and find they have very dry, damaged hair. What would you suggest they take home to refresh and restore?'
           options:
               -
@@ -130,6 +143,10 @@ questions:
           right: CORRECT!
           wrong: INCORRECT
           videoId: 809801470
+          caption:
+              - Jenny Balding
+              - Cut Artist
+              - Cutler Arlo
         - text: "It's a hot and humid day in the city, and your client wants to maintain a frizz free look. What shampoo would you use at the bowl to help?"
           options:
               -
@@ -141,6 +158,10 @@ questions:
           right: CORRECT!
           wrong: INCORRECT
           videoId: 809801696
+          caption:
+              - Madeline Bittner
+              - Cut Assistant
+              - Cutler Soho
         - text: 'When you’ve finished shampooing a client, do you …'
           options:
               -
@@ -152,6 +173,10 @@ questions:
           right: CORRECT!
           wrong: INCORRECT
           videoId: 809801858
+          caption:
+              - Loura Carly
+              - Cut Artist
+              - Cutler Soho & 58th Street
         - text: 'What type of shampoo do you use before a Keratin service?'
           options:
               -
@@ -163,6 +188,10 @@ questions:
           right: CORRECT!
           wrong: INCORRECT
           videoId: 809801951
+          caption:
+              - Bianca LaCagnina
+              - Cut Artist
+              - Cutler West Hollywood
         - text: 'After finishing shampooing a guest, you should … '
           options:
               -
@@ -174,6 +203,10 @@ questions:
           right: CORRECT!
           wrong: INCORRECT
           videoId: 809802205
+          caption:
+              - Madeline Bittner
+              - Cut Assistant
+              - Cutler Soho
 results:
     score1: YOU SCORED
     score2: OUT OF 14
