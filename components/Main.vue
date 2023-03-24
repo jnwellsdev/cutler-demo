@@ -5,7 +5,7 @@ import { playSplash, playForm, playVideo, playQuestion, playNext, playResponse, 
 
 const gameStore = useGameStore()
 const { currentView, currentAnimate, currentSection, introCopy, isForm, isFreeze } = storeToRefs(gameStore)
-const { handleAnimate, preloadImages, handleQuestion, handleVideo, handleFreeze } = gameStore
+const { handleAnimate, preloadImages, handleQuestion, handleVideo, handleFreeze, getCSRF } = gameStore
 
 // watcher for gsap animations
 watch(currentAnimate, async (val) => {
@@ -31,6 +31,7 @@ onMounted(() => {
         'cut-bg-1.jpg', 'cut-bg-2.jpg', 'cut-bg-3.jpg', 'cut-bg-4.jpg', 'cut-bg-5.jpg',
         'cut-bg-6.jpg', 'cut-bg-7.jpg', 'cut-bg-8.jpg', 'cut-bg-9.jpg', 'cut-bg-10.jpg',
         'cut-bg-11.jpg', 'cut-bg-12.jpg', 'cut-bg-13.jpg', 'cut-bg-14.jpg', 'cut-bg-15.jpg'])
+    getCSRF()
 })
 
 </script>
