@@ -20,7 +20,8 @@ export const useGameStore = defineStore({
 			first_name: '',
 			last_name: '',
 			email: '',
-			score: '',
+            score: '',
+            salon: ''
 		},
 	}),
 	actions: {
@@ -51,11 +52,24 @@ export const useGameStore = defineStore({
 			first_name: string,
 			last_name: string,
 			email: string,
-			score: string
+            salon: string
 		}) {
-			this.formData = payload
-			this.formResponse = this.formCopy.response
-		},
+            this.formData = payload
+            this.addUser()           
+        },
+        async addUser( ){
+                await $fetch( 'http://127.0.0.1:8000/cutler', {
+                    method: 'POST',
+                    body: this.formData,
+                    headers: {
+                        origin: 'http://localhost:3000/',
+                        contentType: 'json/text'
+                    },
+                }).then(() => {
+                    this.formResponse = this.formCopy.response
+                });
+        },
+        
 		handleOptionClick(event: {
 			target: { dataset: { option: any } },
 			currentTarget: { classList: { add: (arg0: string) => any } 

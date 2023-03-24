@@ -4,6 +4,8 @@ import { storeToRefs } from 'pinia'
 const gameStore = useGameStore()
 const { formCopy, formResponse, formData } = storeToRefs(gameStore)
 const { handleForm, handleNext } = gameStore
+
+
 </script>
 
 <template lang='pug'>
@@ -13,12 +15,21 @@ const { handleForm, handleNext } = gameStore
         img.logo(src='/img/cut-logo-intro.svg')
     .form
         p(v-if='!formResponse')
-            input(type='text' placeholder='Name' v-model='formData.first_name')
+            input(type='text' placeholder='First Name' v-model='formData.first_name')
+            input(type='text' placeholder='Last Name' v-model='formData.last_name')
             input(type='email' placeholder='Email' v-model='formData.email')
+            select(name="salon" v-model='formData.salon')
+                option(value="" selected="true") -- SELECT --
+                option(value="Soho") Soho
+                option(value="58th Street") 58th Street
+                option(value="Brooklyn") Brooklyn
+                option(value="West Hollywood") West Hollywood
         .response(v-else)
             p.form-response(v-html='formResponse')
-    .submit
-        button(@click='handleNext') Submit
+    .submit(v-if='!formResponse')
+        button(@click='handleForm(formData)') Submit
+    .submit(v-else)
+        button(@click='handleNext') Next
 </template>
 
 <script>
@@ -27,8 +38,8 @@ export default {
         return {
             // formData: {
             //     first_name: '',
-            //     last_name: '',
             //     email: '',
+            //     salon: '',
             //     score: '35',
             // }
         }
@@ -45,12 +56,12 @@ export default {
     .title
         position: absolute
         height: 100px
-        top: 24%
+        top: 15%
         p
             margin-top: -2%
     .form
         @include flex-center
-        input
+        input, select
             padding: 0.25rem 0.25rem 0.35rem 1rem
             margin: 0.75rem 0
             border: 3px solid $cut-black
@@ -72,7 +83,7 @@ export default {
     .submit
         position: absolute
         height: 100px
-        bottom: 24%
+        bottom: 10%
         button
             width: 175px
             height: 40px
