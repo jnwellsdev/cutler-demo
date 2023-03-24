@@ -53,6 +53,7 @@ include ../assets/pug/index
     position: relative
     width: 350px
     height: 725px
+    margin-top: 1rem
     outline: 20px solid rgb(255 255 255 / 8%)
 .main-screen
     @include flex-center-absolute
@@ -70,4 +71,11 @@ include ../assets/pug/index
         height: 100%
     &.splash
         grid-template-columns: 1fr
+@media only screen and (min-device-width: 320px) and (max-device-width: 920px) and (orientation: portrait)
+    .dev-mobile
+        width: 100%
+        height: 100vh
+        outline: none
+        overflow: hidden
+        margin: 0
 </style>
