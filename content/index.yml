@@ -6,18 +6,18 @@ intro:
     reminder: '– PLEASE, TURN ON YOUR AUDIO –'
     video:
         -
-        - '811044194'
-        - '811039129'
-        - '811039282'
+        - 811044194
+        - 811039129
+        - 811039282
 form:
     title: REGISTER
     endTitle: YOU'RE ALL SET
     copy: Please provide your contact info.
     salons:
-      -
-      - Soho
-      - Midtown
-      - Uptown
+        -
+        - Soho
+        - Midtown
+        - Uptown
     response: 'Thanks for putting your information in.'
     button: Submit
 questions:

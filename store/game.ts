@@ -9,7 +9,7 @@ export const useGameStore = defineStore({
         view: 'splash',
 		score: 0,
 		section: 1,
-		question: 1,
+		question: 7,
 		correct: false,
 		response: false,
 		video: 1,

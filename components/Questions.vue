@@ -8,18 +8,57 @@ const { handleOptionClick, handleView, handleNext } = gameStore
 watch(isVideoResponse, async (val) => {
     await nextTick()
     if (val) {
-        const vid = document.querySelector('#vid')
-        const player = new Vimeo.Player(vid)
+        const options = {
+            id: currentQuestion.value.videoId,
+            responsive: true,
+            autoplay: true,
+            width: 'auto',
+            background: 1,
+            muted: 0
+        }
+
+        const bg = document.querySelector('.video-bg')
+        const player = new Vimeo.Player(bg, options)
+        player.setVolume('0.35')
 
         player.getVideoId().then((id) => console.log(`player: ${id}`))
-
-        player.on('ended', (data) => {
-            console.log('ended')
-            player.setCurrentTime(0)
-            player.pause()
-        })
+        player.getVolume().then((vol) => console.log(`volume: ${vol}`))
     }
+
 })
+
+// watch(isVideoResponse, async (val) => {
+//     await nextTick()
+//     const options = {
+//         id: +gameStore.introCopy.video[gameStore.currentVideo],
+//         responsive: true,
+//         autoplay: true,
+//         loop: true,
+//         width: 'auto',
+//         background: 0,
+//         muted: 0
+//     }
+//     const bg = document.querySelector('.background')
+//     const player = new Vimeo.Player(bg, options)
+//     player.setVolume('0.35')
+//     val === 2 && player.loadVideo(+gameStore.introCopy.video[gameStore.currentVideo])
+//     val === 3 && player.loadVideo(+gameStore.introCopy.video[gameStore.currentVideo])
+//     player.getVideoId().then((id) => console.log(`player: ${id}`))
+//     player.getVolume().then((vol) => console.log(`volume: ${vol}`))
+//     // await nextTick()
+//     // if (val) {
+//     //     const vid = document.querySelector('#vid')
+//     //     const player = new Vimeo.Player(vid)
+
+//     //     player.getVideoId().then((id) => console.log(`player: ${id}`))
+
+//     //     player.on('ended', (data) => {
+//     //         console.log('ended')
+//     //         player.setCurrentTime(0)
+//     //         player.pause()
+//     //     })
+//     // }
+// })
 
 </script>
 <template lang='pug'>
@@ -59,7 +98,6 @@ include ../assets/pug/index
                     span(v-html='currentQuestion.caption[2]')
         .over
         .video-bg
-            iframe#vid(:src='`https://player.vimeo.com/video/${currentQuestion.videoId}?h=ff9b27b760?byline=false&portrait=true&title=false&transparent=0&gesture=media&autoplay=1`' width='640' height='1138' allowfullscreen allowtransparency autoplay allow='autoplay')
     footer
         button(v-if='isResponse || isVideoResponse' @click='handleNext').primary next
 </template>
@@ -199,16 +237,7 @@ include ../assets/pug/index
                 pointer-events: none
             .video-bg
                 position: absolute
-                width: calc(105% + 120px)
-                height: calc(105% + 120px)
-                top: calc(-120px - 5%)
-                left: calc((-5% - 120px) / 2)
-                iframe
-                    position: absolute
-                    width: 100%
-                    height: 100%
-                    object-fit: cover
-                    z-index: 0
+                width: 100%
 
     footer
         max-height: 80px

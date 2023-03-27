@@ -7,20 +7,75 @@ const { introCopy, isIntro, currentSection, currentVideo } = storeToRefs(gameSto
 const { handleView, handleNext } = useGameStore()
 
 onMounted(() => {
-    const iframe = document.querySelector('iframe')
-    const player = new Vimeo.Player(iframe)
-    player.setVolume('0.25')
+    const options = {
+        id: gameStore.introCopy.video[gameStore.currentVideo],
+        responsive: true,
+        autoplay: true,
+        loop: true,
+        width: 'auto',
+        background: 1,
+        muted: 0
+    }
+    const bg = document.querySelector('.background')
+    const player = new Vimeo.Player(bg, options)
+    player.setVolume('0')
+
     player.getVideoId().then((id) => console.log(`player: ${id}`))
     player.getVolume().then((vol) => console.log(`volume: ${vol}`))
 })
 
-// watch(currentVideo, async (val) => {
-//     const iframe = document.querySelector('iframe')
-//     const player = new Vimeo.Player(iframe)
-//     await nextTick()
-//     val === 2 && player.loadVideo(+gameStore.introCopy.video[gameStore.currentVideo])
-//     val === 3 && player.loadVideo(+gameStore.introCopy.video[gameStore.currentVideo])
-// })
+watch(currentVideo, async (val) => {
+    await nextTick()
+    const options = {
+        id: gameStore.introCopy.video[gameStore.currentVideo],
+        responsive: true,
+        autoplay: true,
+        loop: true,
+        width: 'auto',
+        background: 0,
+        muted: 0
+    }
+    const bg = document.querySelector('.background')
+    const player = new Vimeo.Player(bg, options)
+    player.setVolume('0.35')
+    val === 2 && player.loadVideo(gameStore.introCopy.video[gameStore.currentVideo])
+    val === 3 && player.loadVideo(gameStore.introCopy.video[gameStore.currentVideo])
+    player.getVideoId().then((id) => console.log(`player: ${id}`))
+    player.getVolume().then((vol) => console.log(`volume: ${vol}`))
+    // if (val === 2) {
+    //     const bg = document.querySelector('.background')
+    //     const player = new Vimeo.Player(bg)
+    //     // player.destroy()
+    //     const bg2 = document.querySelector('.background2')
+    //     const player2 = new Vimeo.Player(bg2, options)
+    //     player2.setVolume('0.35')
+    //     // player2.play()
+    //     player2.getVideoId().then((id) => console.log(`player: ${id}`))
+    //     player2.getVolume().then((vol) => console.log(`volume: ${vol}`))
+    // }
+    // if (val === 3) {
+    //     const bg3 = document.querySelector('.background3')
+    //     const player3 = new Vimeo.Player(bg3, options)
+    //     player3.setVolume('0.35')
+    //     // player3.play()
+    //     player3.getVideoId().then((id) => console.log(`player: ${id}`))
+    //     player3.getVolume().then((vol) => console.log(`volume: ${vol}`))
+    // }
+
+    // if (val === 2) {
+    //     const options = {
+    //         id: 811039129,
+    //         responsive: true,
+    //         autoplay: true,
+    //         loop: true,
+    //         width: 'auto'
+    //     }
+    //     const bg = document.querySelector('.background2')
+    //     const player2 = new Vimeo.Player(bg, options)
+    // }
+    // val === 2 && player.loadVideo(+gameStore.introCopy.video[gameStore.currentVideo])
+    // val === 3 && player.loadVideo(+gameStore.introCopy.video[gameStore.currentVideo])
+})
 
 </script>
 <template lang='pug'>
@@ -41,9 +96,12 @@ include ../assets/pug/index
     footer
         span(v-if='currentVideo === 1') – PLEASE, TURN ON YOUR AUDIO – 
         button.primary(@click="handleNext") {{currentVideo === 1 ? 'next' : currentVideo === 2 ? 'Take the Quiz' : currentVideo === 3 ? 'Continue the Quiz' : 'next'}}
-    .background(:class='{bumper: currentVideo !== 1}')
+    .background(:class='{bumper: currentVideo !== 1, current: currentVideo === 1}')
         .over
-        iframe(:src='`https://player.vimeo.com/video/${introCopy.video[currentVideo]}?loop=true&byline=false&portrait=true&title=false&speed=true&transparent=0&gesture=media&autoplay=1&${currentVideo === 1 && "background=1"}`' allow='autoplay')
+    .background2(:class='{bumper: currentVideo !== 1, current: currentVideo === 2}')
+        .over
+    .background3(:class='{bumper: currentVideo !== 1, current: currentVideo === 3}')
+        .over
 </template>
 <style lang='sass' scoped>
 .video-screen
@@ -52,7 +110,7 @@ include ../assets/pug/index
     background: $cut-black
     header, section, footer
         @include flex-center
-        z-index: 2
+        z-index: 3
     header
         .cut-logo
             max-width: 30%
@@ -91,24 +149,21 @@ include ../assets/pug/index
             height: 44px
             border-radius: 22px 0
             background: rgb(255 255 255 / 60%)
-    .background
+    .background, .background2, .background3
         position: absolute
         width: 100%
         height: 100%
-        z-index: 1
+        z-index: 2
         width: calc(100% + 90px)
         height: calc(100% + 90px)
         top: -45px
-        right: -15px
-        &.bumper
-            right: auto
-            left: -45px
+        left: -45px
         .over
             position: relative
             width: 100%
             height: 100%
             background: rgb(0 0 0 / 20%)
-            z-index: 1
+            z-index: 2
             position: absolute
             pointer-events: none
         iframe
@@ -116,5 +171,5 @@ include ../assets/pug/index
             width: 100%
             height: 100%
             object-fit: cover
-            z-index: 0
+            z-index: 1
 </style>
