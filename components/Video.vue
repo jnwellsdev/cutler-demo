@@ -99,7 +99,7 @@ include ../assets/pug/index
         width: calc(100% + 90px)
         height: calc(100% + 90px)
         top: -45px
-        right: 0
+        right: -15px
         &.bumper
             right: auto
             left: -45px

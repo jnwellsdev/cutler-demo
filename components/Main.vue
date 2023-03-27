@@ -34,7 +34,6 @@ onMounted(() => {
         'cut-bg-11.jpg', 'cut-bg-12.jpg', 'cut-bg-13.jpg', 'cut-bg-14.jpg', 'cut-bg-15.jpg'])
     getCSRF()
 })
-
 </script>
 
 <template lang='pug'>
@@ -74,9 +73,10 @@ include ../assets/pug/index
     &.splash
         grid-template-columns: 1fr
 @media only screen and (min-device-width: 320px) and (max-device-width: 920px) and (orientation: portrait)
+    body, html
+        background-color: $cut-white
     .dev-mobile
         width: 100%
-        height: 100vh
         outline: none
         overflow: hidden
         margin: 0

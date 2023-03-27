@@ -78,6 +78,7 @@ export default {
         button
             margin: 2rem auto
         .response
+            max-width: 80%
             p
                 line-height: 1.1
     .submit
