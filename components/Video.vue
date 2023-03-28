@@ -130,7 +130,7 @@ include ../assets/pug/index
             position: relative
             width: 100%
             height: 100%
-            background: rgb(0 0 0 / 20%)
+            background: rgb(0 0 0 / 30%)
             z-index: 2
             position: absolute
             pointer-events: none
@@ -140,4 +140,7 @@ include ../assets/pug/index
             height: 100%
             object-fit: cover
             z-index: 1
+        &.bumper
+            .over
+                background: rgb(0 0 0 / 15%)
 </style>
