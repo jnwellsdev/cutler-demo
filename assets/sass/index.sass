@@ -7,26 +7,23 @@ $cut-black: #000000
 $cut-green: #099f48
 $cut-red: #d02646
 
-//
-$fb-primary: #1d552e
-$fb-secondary: #64BF13
-$fb-blue: #30588f
-$fb-green: #88E143
-$fb-lightblue: #9DBFE2
-$fb-white: #f8fff8
-$fb-dark: #125135
-$fb-red: #E13758
-
 // css variables
 :root
     --opacity: 0
+
+//
 body, html
     background-color: black
     color: $cut-black
     font-family: 'Open Sans', sans-serif
+    -webkit-perspective: 1000
+    -webkit-backface-visibility: hidden
+    -webkit-transform: translate3d(0,0,0)
     // overscroll-behavior-y: contain
     // overflow: hidden
+
     height: 100%
+
 // mixins
 @mixin flex-center
     display: flex

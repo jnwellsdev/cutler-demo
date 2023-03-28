@@ -27,39 +27,6 @@ watch(isVideoResponse, async (val) => {
 
 })
 
-// watch(isVideoResponse, async (val) => {
-//     await nextTick()
-//     const options = {
-//         id: +gameStore.introCopy.video[gameStore.currentVideo],
-//         responsive: true,
-//         autoplay: true,
-//         loop: true,
-//         width: 'auto',
-//         background: 0,
-//         muted: 0
-//     }
-//     const bg = document.querySelector('.background')
-//     const player = new Vimeo.Player(bg, options)
-//     player.setVolume('0.35')
-//     val === 2 && player.loadVideo(+gameStore.introCopy.video[gameStore.currentVideo])
-//     val === 3 && player.loadVideo(+gameStore.introCopy.video[gameStore.currentVideo])
-//     player.getVideoId().then((id) => console.log(`player: ${id}`))
-//     player.getVolume().then((vol) => console.log(`volume: ${vol}`))
-//     // await nextTick()
-//     // if (val) {
-//     //     const vid = document.querySelector('#vid')
-//     //     const player = new Vimeo.Player(vid)
-
-//     //     player.getVideoId().then((id) => console.log(`player: ${id}`))
-
-//     //     player.on('ended', (data) => {
-//     //         console.log('ended')
-//     //         player.setCurrentTime(0)
-//     //         player.pause()
-//     //     })
-//     // }
-// })
-
 </script>
 <template lang='pug'>
 include ../assets/pug/index

@@ -19,9 +19,10 @@ onMounted(() => {
     const bg = document.querySelector('.background')
     const player = new Vimeo.Player(bg, options)
     player.setVolume('0')
-
+    player.setPlaybackRate('1.5')
     player.getVideoId().then((id) => console.log(`player: ${id}`))
     player.getVolume().then((vol) => console.log(`volume: ${vol}`))
+    player.getPlaybackRate().then((val) => console.log(`speed: ${val}`))
 })
 
 watch(currentVideo, async (val) => {
@@ -37,44 +38,16 @@ watch(currentVideo, async (val) => {
     }
     const bg = document.querySelector('.background')
     const player = new Vimeo.Player(bg, options)
+    player.setPlaybackRate('1')
     player.setVolume('0.35')
+
     val === 2 && player.loadVideo(gameStore.introCopy.video[gameStore.currentVideo])
     val === 3 && player.loadVideo(gameStore.introCopy.video[gameStore.currentVideo])
+
     player.getVideoId().then((id) => console.log(`player: ${id}`))
     player.getVolume().then((vol) => console.log(`volume: ${vol}`))
-    // if (val === 2) {
-    //     const bg = document.querySelector('.background')
-    //     const player = new Vimeo.Player(bg)
-    //     // player.destroy()
-    //     const bg2 = document.querySelector('.background2')
-    //     const player2 = new Vimeo.Player(bg2, options)
-    //     player2.setVolume('0.35')
-    //     // player2.play()
-    //     player2.getVideoId().then((id) => console.log(`player: ${id}`))
-    //     player2.getVolume().then((vol) => console.log(`volume: ${vol}`))
-    // }
-    // if (val === 3) {
-    //     const bg3 = document.querySelector('.background3')
-    //     const player3 = new Vimeo.Player(bg3, options)
-    //     player3.setVolume('0.35')
-    //     // player3.play()
-    //     player3.getVideoId().then((id) => console.log(`player: ${id}`))
-    //     player3.getVolume().then((vol) => console.log(`volume: ${vol}`))
-    // }
+    player.getPlaybackRate().then((val) => console.log(`speed: ${val}`))
 
-    // if (val === 2) {
-    //     const options = {
-    //         id: 811039129,
-    //         responsive: true,
-    //         autoplay: true,
-    //         loop: true,
-    //         width: 'auto'
-    //     }
-    //     const bg = document.querySelector('.background2')
-    //     const player2 = new Vimeo.Player(bg, options)
-    // }
-    // val === 2 && player.loadVideo(+gameStore.introCopy.video[gameStore.currentVideo])
-    // val === 3 && player.loadVideo(+gameStore.introCopy.video[gameStore.currentVideo])
 })
 
 </script>
