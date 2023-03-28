@@ -10,7 +10,7 @@ watch(isVideoResponse, async (val) => {
     if (val) {
         const options = {
             id: currentQuestion.value.videoId,
-            responsive: true,
+            // responsive: true,
             autoplay: true,
             width: 'auto',
             background: 1,
