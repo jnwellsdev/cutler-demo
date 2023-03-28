@@ -75,10 +75,10 @@ export const playNextVideo = () => {
 }
 
 export const playVideoResponse = () => { 
-  gsap.set('.question-screen.video .response', {opacity: 0})
+  gsap.set('.question-screen.video .video-bg, .question-screen.video .response', {opacity: 0})
 
   const tl = gsap.timeline()
-  tl.to('.question-screen.video', {opacity: 1, duration: 1, delay: 1})
+  tl.to('.question-screen.video .video-bg', {opacity: 1, duration: 1, delay: 1})
       .to('.question-screen.video .response', {opacity: 1, duration: 1}, '> -0.5')
 }
 

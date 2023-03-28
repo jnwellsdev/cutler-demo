@@ -40,7 +40,6 @@ include ../assets/pug/index
         .modal
             header
                 .response(v-if='isResponse')
-                    //- h1(v-html='`Answer ${currentSection === 1 ? isQuestion : isQuestion + 7}`')
                     h1 &nbsp;
                     p {{ currentQuestion.text }}
                 span(v-else)
@@ -58,7 +57,6 @@ include ../assets/pug/index
     section.video-response(v-else)
         header
             .response
-                //- h1(v-html='`Answer ${currentSection === 1 ? isQuestion : isQuestion + 7}`')
                 h1(v-if='isCorrect') {{  currentQuestion.right}}
                 h1(v-if='!isCorrect') {{ currentQuestion.wrong }}
                 p {{ currentQuestion.options[currentQuestion.correct] }}
@@ -206,9 +204,10 @@ include ../assets/pug/index
                 z-index: 2
                 pointer-events: none
             .video-bg
-                z-index: 1
                 position: absolute
                 width: 100%
+                width: 100%
+                z-index: 1
                 // height: 100%
                 // top: -120px
 
