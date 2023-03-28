@@ -38,11 +38,11 @@ watch(currentVideo, async (val) => {
     }
     const bg = document.querySelector('.background')
     const player = new Vimeo.Player(bg, options)
-    player.setPlaybackRate('1')
+
     player.setVolume('0.35')
 
-    val === 2 && player.loadVideo(gameStore.introCopy.video[gameStore.currentVideo])
-    val === 3 && player.loadVideo(gameStore.introCopy.video[gameStore.currentVideo])
+    val === 2 && (player.loadVideo(gameStore.introCopy.video[gameStore.currentVideo]), player.setPlaybackRate('1'))
+    val === 3 && (player.loadVideo(gameStore.introCopy.video[gameStore.currentVideo]), player.setPlaybackRate('1'))
 
     player.getVideoId().then((id) => console.log(`player: ${id}`))
     player.getVolume().then((vol) => console.log(`volume: ${vol}`))

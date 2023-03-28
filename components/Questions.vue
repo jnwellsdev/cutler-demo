@@ -10,7 +10,7 @@ watch(isVideoResponse, async (val) => {
     if (val) {
         const options = {
             id: currentQuestion.value.videoId,
-            // responsive: true,
+            responsive: true,
             autoplay: true,
             width: 'auto',
             background: 1,
@@ -209,8 +209,8 @@ include ../assets/pug/index
                 z-index: 1
                 position: absolute
                 width: 100%
-                height: 100%
-                top: -120px
+                // height: 100%
+                // top: -120px
 
     footer
         max-height: 80px
