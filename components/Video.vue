@@ -69,12 +69,7 @@ include ../assets/pug/index
     footer
         span(v-if='currentVideo === 1') – PLEASE, TURN ON YOUR AUDIO – 
         button.primary(@click="handleNext") {{currentVideo === 1 ? 'next' : currentVideo === 2 ? 'Take the Quiz' : currentVideo === 3 ? 'Continue the Quiz' : 'next'}}
-    .background(:class='{bumper: currentVideo !== 1, current: currentVideo === 1}')
-        .over
-    .background2(:class='{bumper: currentVideo !== 1, current: currentVideo === 2}')
-        .over
-    .background3(:class='{bumper: currentVideo !== 1, current: currentVideo === 3}')
-        .over
+    .background(:class='{bumper: currentVideo !== 1}')
 </template>
 <style lang='sass' scoped>
 .video-screen
@@ -122,7 +117,7 @@ include ../assets/pug/index
             height: 44px
             border-radius: 22px 0
             background: rgb(255 255 255 / 60%)
-    .background, .background2, .background3
+    .background
         position: absolute
         width: 100%
         height: 100%

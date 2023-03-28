@@ -23,6 +23,9 @@ watch(isVideoResponse, async (val) => {
 
         player.getVideoId().then((id) => console.log(`player: ${id}`))
         player.getVolume().then((vol) => console.log(`volume: ${vol}`))
+
+        // const vid = document.querySelector('.video-bg iframe')
+        // console.log(vid)
     }
 
 })
@@ -78,7 +81,7 @@ include ../assets/pug/index
     header, section, footer
         @include flex-center
         width: 100%
-        // z-index: 2
+        z-index: 3
     header
         max-height: 120px
         z-index: 10
@@ -96,7 +99,7 @@ include ../assets/pug/index
             border-radius: 50px 0
             color: $cut-black
             background: rgb(255 255 255 / 82%)
-            z-index: 2
+            z-index: 3
             header, section, footer
                 @include flex-center
                 padding: 0 5%
@@ -200,11 +203,14 @@ include ../assets/pug/index
                 height: calc(100% + 120px)
                 top: -120px
                 background: rgb(0 0 0 / 20%)
-                z-index: 1
+                z-index: 2
                 pointer-events: none
             .video-bg
+                z-index: 1
                 position: absolute
                 width: 100%
+                height: 100%
+                top: -120px
 
     footer
         max-height: 80px
