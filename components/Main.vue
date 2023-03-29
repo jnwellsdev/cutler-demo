@@ -4,7 +4,7 @@ import { storeToRefs } from 'pinia'
 import { playSplash, playForm, playVideo, playQuestion, playNext, playResponse, playNextVideo, playVideoResponse, playFade, playVideoExit, playBumper, playFadeForm } from '~/assets/gsap'
 
 const gameStore = useGameStore()
-const { currentView, currentAnimate, currentSection, introCopy, isForm, isFreeze } = storeToRefs(gameStore)
+const { currentView, currentAnimate, currentSection, introCopy, isForm, isVideoResponse, isFreeze } = storeToRefs(gameStore)
 const { handleAnimate, preloadImages, handleQuestion, handleVideo, handleFreeze, getCSRF } = gameStore
 
 // watcher for gsap animations
@@ -42,7 +42,7 @@ include ../assets/pug/index
     .main-screen(:class='[currentView, {freeze: isFreeze}]')
         Splash(v-if='currentView == "splash"')
         Intro(v-if='currentView == "intro"')
-        Video(v-if='currentView == "video"')
+        Video(:class='{hide: currentView !== "video", show: isVideoResponse === true}')
         Questions(v-if='currentView == "questions"')
         Outro(v-if='currentView == "outro"')
         ModulesForm(v-if='isForm')
@@ -77,6 +77,7 @@ include ../assets/pug/index
         background-color: $cut-white
     .dev-mobile
         width: 100%
+        height: 89vh
         outline: none
         overflow: hidden
         margin: 0

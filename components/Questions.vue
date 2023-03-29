@@ -5,27 +5,51 @@ const gameStore = useGameStore()
 const { currentQuestion, currentSection, isResponse, isVideoResponse, isFreeze, isCorrect, isAnswered, isQuestion, bg1, bg2 } = storeToRefs(gameStore)
 const { handleOptionClick, handleView, handleNext } = gameStore
 
-watch(isVideoResponse, async (val) => {
-    await nextTick()
-    if (val) {
+onMounted(() => {
+
+    console.log('mounted')
+    if (currentQuestion.value === 1) {
+        console.log('vr1')
         const options = {
-            id: currentQuestion.value.videoId,
+            id: 809801216,
             responsive: true,
             autoplay: true,
+            loop: true,
             width: 'auto',
             background: 1,
             muted: 0
         }
-
-        const bg = document.querySelector('.video-bg')
+        const bg = document.querySelector('.background')
         const player = new Vimeo.Player(bg, options)
-        player.setVolume('0.35')
+        player.setVolume('0')
+        // player.setPlaybackRate('1.5')
+        player.getVideoId().then((id) => console.log(`player: ${id}`))
+        player.getVolume().then((vol) => console.log(`volume: ${vol}`))
+        // player.getPlaybackRate().then((val) => console.log(`speed: ${val}`))
+    }
+})
+
+watch(isVideoResponse, async (val) => {
+    await nextTick()
+    if (val) {
+        const bg = document.querySelector('.background')
+        const player = new Vimeo.Player(bg)
+        console.log('vr3')
+        player.loadVideo(currentQuestion.value.videoId)
+        setTimeout(() => player.setVolume('0.35'), 500)
 
         player.getVideoId().then((id) => console.log(`player: ${id}`))
         player.getVolume().then((vol) => console.log(`volume: ${vol}`))
 
         // const vid = document.querySelector('.video-bg iframe')
         // console.log(vid)
+    } else {
+        const bg = document.querySelector('.background')
+        const player = new Vimeo.Player(bg)
+        player.setVolume('0')
+
+        player.getVideoId().then((id) => console.log(`player: ${id}`))
+        player.getVolume().then((vol) => console.log(`volume: ${vol}`))
     }
 
 })
@@ -33,7 +57,7 @@ watch(isVideoResponse, async (val) => {
 </script>
 <template lang='pug'>
 include ../assets/pug/index
-.question-screen(:class='{video: isVideoResponse}')
+.question-screen(:class='{video: isVideoResponse, last: currentSection === 2}')
     header
         +logo
     section(v-if='!isVideoResponse')
@@ -64,8 +88,6 @@ include ../assets/pug/index
                     span(v-html='currentQuestion.caption[0]')
                     span(v-html='currentQuestion.caption[1]')
                     span(v-html='currentQuestion.caption[2]')
-        .over
-        .video-bg
     footer
         button(v-if='isResponse || isVideoResponse' @click='handleNext').primary next
 </template>
@@ -217,8 +239,9 @@ include ../assets/pug/index
             width: 225px
             height: 40px
             border-radius: 20px 0
+    &.last
+        z-index: 99
     &.video
-        background: $cut-black
         header
             .cut-logo
                 path

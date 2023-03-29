@@ -3,58 +3,71 @@ import { useGameStore } from '~/store/game'
 import { storeToRefs } from 'pinia'
 const gameStore = useGameStore()
 
-const { introCopy, isIntro, currentSection, currentVideo } = storeToRefs(gameStore)
+const { introCopy, isIntro, isVideoResponse, currentView, currentSection, currentVideo } = storeToRefs(gameStore)
 const { handleView, handleNext } = useGameStore()
 
 onMounted(() => {
-    const options = {
-        id: gameStore.introCopy.video[gameStore.currentVideo],
-        responsive: true,
-        autoplay: true,
-        loop: true,
-        width: 'auto',
-        background: 1,
-        muted: 0
+    console.log('mounted')
+    if (currentVideo.value === 1) {
+        console.log('ok1')
+        console.log(currentVideo)
+        console.log(currentVideo.value)
+        const options = {
+            id: 812165079,
+            responsive: true,
+            autoplay: true,
+            loop: true,
+            width: 'auto',
+            background: 1,
+            muted: 0
+        }
+        const bg = document.querySelector('.background')
+        const player = new Vimeo.Player(bg, options)
+        player.setVolume('0')
+        player.setPlaybackRate('1.5')
+        player.getVideoId().then((id) => console.log(`player: ${id}`))
+        player.getVolume().then((vol) => console.log(`volume: ${vol}`))
+        player.getPlaybackRate().then((val) => console.log(`speed: ${val}`))
     }
-    const bg = document.querySelector('.background')
-    const player = new Vimeo.Player(bg, options)
-    player.setVolume('0')
-    player.setPlaybackRate('1.5')
-    player.getVideoId().then((id) => console.log(`player: ${id}`))
-    player.getVolume().then((vol) => console.log(`volume: ${vol}`))
-    player.getPlaybackRate().then((val) => console.log(`speed: ${val}`))
 })
 
 watch(currentVideo, async (val) => {
     await nextTick()
-    const options = {
-        id: gameStore.introCopy.video[gameStore.currentVideo],
-        responsive: true,
-        autoplay: true,
-        loop: true,
-        width: 'auto',
-        background: 0,
-        muted: 0
+    if (val === 2) {
+        const bg = document.querySelector('.background')
+        const player = new Vimeo.Player(bg)
+        console.log('ok2')
+        player.loadVideo(811039129)
+        player.setVolume('0.35')
+        player.setPlaybackRate('1')
+        player.getVideoId().then((id) => console.log(`player: ${id}`))
+        player.getVolume().then((vol) => console.log(`volume: ${vol}`))
+        player.getPlaybackRate().then((val) => console.log(`speed: ${val}`))
     }
+    if (val === 3) {
+        const bg = document.querySelector('.background')
+        const player = new Vimeo.Player(bg)
+        console.log('ok2')
+        player.loadVideo(811039282)
+        player.setVolume('0.35')
+        player.getVideoId().then((id) => console.log(`player: ${id}`))
+        player.getVolume().then((vol) => console.log(`volume: ${vol}`))
+        player.getPlaybackRate().then((val) => console.log(`speed: ${val}`))
+    }
+})
+
+watch(currentView, async (val) => {
+    await nextTick()
     const bg = document.querySelector('.background')
-    const player = new Vimeo.Player(bg, options)
-
-    player.setVolume('0.35')
-
-    val === 2 && (player.loadVideo(gameStore.introCopy.video[gameStore.currentVideo]), player.setPlaybackRate('1'))
-    val === 3 && (player.loadVideo(gameStore.introCopy.video[gameStore.currentVideo]), player.setPlaybackRate('1'))
-
-    player.getVideoId().then((id) => console.log(`player: ${id}`))
-    player.getVolume().then((vol) => console.log(`volume: ${vol}`))
-    player.getPlaybackRate().then((val) => console.log(`speed: ${val}`))
-
+    const player = new Vimeo.Player(bg)
+    val === 'video' && currentVideo.value !== 1 ? player.setVolume('0.35') : player.setVolume('0')
 })
 
 </script>
 <template lang='pug'>
 include ../assets/pug/index
 .video-screen
-    header
+    header(v-if='!isVideoResponse')
         +logo
         .section-text(v-if='currentVideo !== 1')
             span(v-html='currentSection === 1 ? " The Cutler Brand" : " Services & Products"')
@@ -66,10 +79,10 @@ include ../assets/pug/index
     section.fill(v-else)
         span(v-html='introCopy.copy')
         span.cta(v-html='introCopy.cta')
-    footer
+    footer(v-if='!isVideoResponse')
         span(v-if='currentVideo === 1') – PLEASE, TURN ON YOUR AUDIO – 
         button.primary(@click="handleNext") {{currentVideo === 1 ? 'next' : currentVideo === 2 ? 'Take the Quiz' : currentVideo === 3 ? 'Continue the Quiz' : 'next'}}
-    .background(:class='{bumper: currentVideo !== 1}')
+    .background(:class='{bumper: currentVideo !== 1, vidres: isVideoResponse}')
         .over
 </template>
 <style lang='sass' scoped>
@@ -80,6 +93,12 @@ include ../assets/pug/index
     header, section, footer
         @include flex-center
         z-index: 3
+    &.hide
+        opacity: 0
+        pointer-events: none
+        &.show
+            opacity: 1
+            pointer-events: all
     header
         .cut-logo
             max-width: 30%
@@ -143,5 +162,14 @@ include ../assets/pug/index
             z-index: 1
         &.bumper
             .over
-                background: rgb(0 0 0 / 15%)
+                background: rgb(0 0 0 / 8%)
+        &.vidres
+            top: 0
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 920px) and (orientation: portrait)
+    .background
+        position: absolute
+        width: 100%
+        height: 100%
+        z-index: 2 
 </style>

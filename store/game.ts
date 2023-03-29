@@ -97,7 +97,7 @@ export const useGameStore = defineStore({
 			event.target.dataset.option == this.currentQuestion.correct
 				? ( this.handleAnswer(true), event.currentTarget.classList.add('correct') )
 				: ( this.handleAnswer(false), event.currentTarget.classList.add('incorrect') ),
-					this.handleFreeze(true, 4250),
+					this.handleFreeze(true, 3750),
 					setTimeout(() => {
 						this.section === 1 ? (this.animate = 'response') : (this.animate = 'videoResponse')
 						this.handleResponse(true)
@@ -130,6 +130,7 @@ export const useGameStore = defineStore({
 			this.intro = !this.intro
 		},
 		handleVideo() {
+			console.log('handleVideo')
 			this.video++
 		},
 		handleBumper() {

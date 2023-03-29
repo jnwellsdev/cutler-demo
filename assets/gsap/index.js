@@ -59,12 +59,13 @@ export const playNext = () => {
 }
 
 export const playVideo = () => {
+  gsap.set('.video-screen.hide', {display: 'grid !important'})
   gsap.set('.video-screen .background, .video-screen section, .video-screen footer', {opacity: 0})
 
   const tl = gsap.timeline()
   tl.to('.video-screen .background', {opacity: 1, duration: 1, delay: 1})
-      .to('.video-screen section', {opacity: 1, duration: 1}, '> -0.5')
-      .to('.video-screen footer', {opacity: 1, duration: 1}, '> +1')
+    .to('.video-screen section', {opacity: 1, duration: 1}, '> -0.5')
+    .to('.video-screen footer', {opacity: 1, duration: 1}, '> +1')
 }
 
 export const playNextVideo = () => { 
