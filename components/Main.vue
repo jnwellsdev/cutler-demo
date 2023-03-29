@@ -77,7 +77,7 @@ include ../assets/pug/index
         background-color: $cut-white
     .dev-mobile
         width: 100%
-        height: 90vh
+        height: 89vh
         outline: none
         overflow: hidden
         margin: 0
