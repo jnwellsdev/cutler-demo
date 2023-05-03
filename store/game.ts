@@ -103,6 +103,9 @@ export const useGameStore = defineStore({
 						this.handleResponse(true)
 					}, 1500)
 		},
+		handleUrl() {
+			window.open("https://www.cutlersalon.com", "_blank")
+		},
 		handleAnswer(val: boolean) {
 			this.correct = val
 			val && this.score++

@@ -1,8 +1,8 @@
 intro:
     title: Do You Know Cutler?
-    copy: 'From  backstage at New York Fashion Week to the streets of Midtown and beyond—we’ve been cutting and coloring the hair of New York City for over 20 years.<br><br> Our salons are home to talented, creative stylists, colorists  and more, with the expertise and flair to bring out the right look for our clients.'
+    copy: From backstage at New York Fashion Week to the streets of Midtown and beyond—we’ve been cutting and coloring the hair of New York City for over 20 years.<br><br> Our salons are home to talented, creative stylists, colorists  and more, with the expertise and flair to bring out the right look for our clients.
     cta: So, we want to know … <br>Do You Know Cutler?
-    button: Take the Quiz
+    button: Let’s get it started!
     reminder: '– PLEASE, TURN ON YOUR AUDIO –'
     video:
         -
@@ -31,8 +31,8 @@ questions:
               - 2001
               - 2010
           correct: 3
-          right: JUST RIGHT!
-          wrong: INCORRECT
+          right: THAT’S RIGHT! GOOD START!
+          wrong: AHH, NO. BAD BEGINNING.
           response: 'Younger than Rita Ora, but older than Olivia Rodrigo, Cutler was founded in 2001.'
         - text: 'What was the location of the first Cutler Salon?'
           options:
@@ -42,8 +42,8 @@ questions:
               - West Broadway
               - West Hollywood
           correct: 1
-          right: CORRECT!
-          wrong: INCORRECT
+          right: YOU GOT THAT RIGHT!
+          wrong: NOPE, IT STARTED IN MIDTOWN.
           response: 'Although Rodney Cutler is from Melbourne, Australia, the first Cutler Salon opened on 57th St. in New York City.'
         - text: 'How does Cutler view its own identity?'
           options:
@@ -53,9 +53,9 @@ questions:
               - A Corporate Franchise
               - Cool, Craft, Creativity, Connectivity
           correct: 4
-          right: CREATIVE CHOICE!
-          wrong: INCORRECT
-          response: 'We want to be cool, we want to nail the craft, we want to provide a space for stylists to be creative, and we want to connect with our partners and clients.'
+          right: YES! AS WE SHOULD!
+          wrong: NAW, IT’S THE 4 C’S
+          response: 'We’re a craft-driven brand. A space where stylists can express their <strong>creativity</strong>, their <strong>craft</strong>, enjoy the <strong>connectivity</strong> with their clients and that is <strong>cool</strong>!'
         - text: 'Why does Cutler want to be “cool”?'
           options:
               -
@@ -64,60 +64,60 @@ questions:
               - C. To be inspired by the ethos of New York
               - D. Both A and C
           correct: 4
-          right: INSPIRED ANSWER!
-          wrong: INCORRECT
-          response: 'Inspired by the ethos of New York, Cutler wants to be cool to help draw clients in, but it’s also an effort to be individualized and authentic.'
+          right: YES, TRICKY! BOTH A AND C!
+          wrong: WRONG, AND YOU HAD 2 CHANCES!
+          response: 'Inspired by the ethos of New York but, most importantly, creating looks that are authentic and individualized for our clients.'
         - text: 'What is most important to Culter?'
           options:
               -
-              - The craft, because it’s what keeps creativity flowing
+              - The craft, it allows us the ability to execute our creative ideas
               - Having only celebrity clients in our chairs
               - Overcharging for services
               - Starting our own reality show about the salon
           correct: 1
-          right: CRAFTY CHOICE!
-          wrong: INCORRECT
-          response: 'With in-house education and instruction, we prioritize nailing the craft.'
+          right: YES, YOU GET IT!
+          wrong: NO, IT’S ALWAYS THE CRAFT.
+          response: 'The backbone of our continued success is creating great hairdressers with technique and vision.'
         - text: 'How does Cutler, as a brand, present creativity?'
           options:
               -
-              - Being heavily involved in New York Fashion Week
+              - Being an authority at New York Fashion Week
               - Doing the same trendy haircut on every client
               - Having Rodney’s face on every product bottle
               - Putting up billboards across the city
           correct: 1
-          right: CREATIVE & CORRECT
-          wrong: INCORRECT
-          response: 'We showcase our creativity every day working with our clients, but where our creativity really shines is when working major events like Fashion Week. '
+          right: YES! FROM HAUTE TO HOT!
+          wrong: NO, CUTLER IS SYNONYMOUS WITH NYFW.
+          response: 'Beauty starts on the runway. We create looks backstage and we re-interpret for wearable looks in the salons.'
         - text: 'Who has Cutler forged connecting partnerships with?'
           options:
               -
-              - Dyson
+              - Salon Tools, Inc.
               - The Knicks
               - Peter Luger Steakhouse
               - Redken
           correct: 4
-          right: NAILED IT!
-          wrong: INCORRECT
-          response: 'Cutler has developed a strong relationship with Redken. We exclusively use only the Redken color line and are also a Redken flagship.'
+          right: YES, REDKEN OF COURSE!
+          wrong: NO, THAT’S KINDA SILLY.
+          response: 'Cutler has been a flagship Redken salon for over 20 years developing a strong creative partnership.'
     section2:
         - sectionTitle: SERVICES & PRODUCTS
         - text: 'If a guest is having a color service done, which shampoo would you use to rinse out the color?'
           options:
               -
               - Aussie Total Miracle Shampoo
-              - Color Extend Magnetics
+              - Redken Color Extend Magnetics
               - Homemade apple cider vinegar shampoo
               - Pantene Illuminating Color Care Shampoo
           correct: 2
-          right: CORRECT!
-          wrong: INCORRECT
+          right: YES, YOU’VE GOT THIS!
+          wrong: NO, BRITTANY WILL LET YOU KNOW.
           videoId: 809801216
           caption:
               - Brittany Torres
               - Colorist
               - Cutler Soho & 58th Street
-        - text: 'After shampooing, to make brushing out the hair easier, what product would you use?'
+        - text: 'After shampooing and conditioning, what ideal product would help detangle the best?'
           options:
               -
               - Coconut oil
@@ -125,14 +125,14 @@ questions:
               - Johnson's No More Tangles spray
               - Redken One United Leave In
           correct: 4
-          right: CORRECT!
-          wrong: INCORRECT
+          right: YES, OF COURSE!
+          wrong: WRONG, LET CODY TELL YOU.
           videoId: 809801341
           caption:
               - Cody Cros
               - Colorist
               - Cutler Brooklyn and Soho
-        - text: 'You take the client back to the bowl and find they have very dry, damaged hair. What would you suggest they take home to refresh and restore?'
+        - text: 'You notice that your client has damaged, dry hair from excess color, overprocessing or, chemically treated hair. What do you recommend?'
           options:
               -
               - Coconut milk conditioner
@@ -140,59 +140,59 @@ questions:
               - Sea salt spray
               - Redken Acidic Bonding Concentrate line
           correct: 4
-          right: CORRECT!
-          wrong: INCORRECT
+          right: YES, THE BEST SOLUTION!
+          wrong: NO, BUT JENNY KNOWS.
           videoId: 809801470
           caption:
               - Jenny Balding
               - Cut Artist
               - Cutler Arlo
-        - text: "It's a hot and humid day in the city, and your client wants to maintain a frizz free look. What shampoo would you use at the bowl to help?"
+        - text: "It's a hot and humid day in the city, and your client wants to maintain a frizz free look. What shampoo would you recommend?"
           options:
               -
-              - Frizz Dismiss Shampoo + Conditioner
-              - Ice water
-              - Sunscreen infused shampoo
+              - Redken Frizz Dismiss Shampoo and Conditioner
+              - Really, really, cold Ice water
+              - '#10 Sunscreen infused shampoo'
               - Tell them to stay in air conditioning
           correct: 1
-          right: CORRECT!
-          wrong: INCORRECT
+          right: YES, OF COURSE!
+          wrong: SERIOUSLY, NO. Listen to Madeline.
           videoId: 809801696
           caption:
               - Madeline Bittner
               - Cut Assistant
               - Cutler Soho
-        - text: 'When you’ve finished shampooing a client, do you …'
+        - text: 'When you’ve finished shampooing and conditioning a client, do you …'
           options:
               -
               - Detangle by brushing bottom to top
               - Detangle by brushing top to bottom
-              - Leave it in knots
-              - Ignore the whole situation
+              - Leave it in knots it gives the hair more volume
+              - Ignore the whole situation - it’ll work out
           correct: 1
-          right: CORRECT!
-          wrong: INCORRECT
+          right: YES, SMOOTH ANSWER!
+          wrong: NO, LET LOURA EXPLAIN.
           videoId: 809801858
           caption:
               - Loura Carly
               - Cut Artist
               - Cutler Soho & 58th Street
-        - text: 'What type of shampoo do you use before a Keratin service?'
+        - text: 'What type of shampoo do you use before a Keratin straightening service?'
           options:
               -
-              - Curly hair shampoo
+              - Redken Curly hair shampoo
               - Moroccan oil shampoo
               - Redken Hair Cleansing Cream
               - Suave Smoothing Shampoo
           correct: 3
-          right: CORRECT!
-          wrong: INCORRECT
+          right: YES, Its C!
+          wrong: NO, BIANCA KNOWS BETTER.
           videoId: 809801951
           caption:
               - Bianca LaCagnina
               - Cut Artist
               - Cutler West Hollywood
-        - text: 'After finishing shampooing a guest, you should … '
+        - text: 'After finishing shampooing and conditioning a guest, you should …'
           options:
               -
               - Don’t bother with conditioner, unless they ask
@@ -200,8 +200,8 @@ questions:
               - Ask if they want conditioner all over or just the ends
               - Talk about yourself the whole time, clients love that
           correct: 3
-          right: CORRECT!
-          wrong: INCORRECT
+          right: YES, OF COURSE ASK!
+          wrong: WRONG, DID IT BREAK YOUR STREAK?
           videoId: 809802205
           caption:
               - Madeline Bittner
@@ -210,5 +210,5 @@ questions:
 results:
     score1: YOU SCORED
     score2: OUT OF 14
-    button: Visit CutlerSalon.com
-    copy: 'Thank you for taking our <strong>Do You Know Cutler?</strong> quiz. <span class="break"></span> To find out more about the style and attitude of Cutler Salons, visit cutlersalon.com, our blog or check us out on Facebook, Instagram and YouTube.'
+    button: Thanks for Playing!
+    copy: 'Thank you for taking our <strong>Do You Know Cutler?</strong> quiz. <span class="break"></span> We hope you did well! <span class="break"></span> Remember, don’t be afraid to ask questions we’re here to help you enjoy your experience at Cutler Salons.'

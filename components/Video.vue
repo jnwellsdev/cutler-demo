@@ -70,7 +70,7 @@ include ../assets/pug/index
     header(v-if='!isVideoResponse')
         +logo
         .section-text(v-if='currentVideo !== 1')
-            span(v-html='currentSection === 1 ? " The Cutler Brand" : " Services & Products"')
+            span(v-html='currentSection === 1 ? " Cutler, The Brand." : " The Client Experience."')
         .section-text(v-else)
             span Who is Cutler?
     section(v-if='currentSection === 1')
@@ -81,7 +81,7 @@ include ../assets/pug/index
         span.cta(v-html='introCopy.cta')
     footer(v-if='!isVideoResponse')
         span(v-if='currentVideo === 1') – PLEASE, TURN ON YOUR AUDIO – 
-        button.primary(@click="handleNext") {{currentVideo === 1 ? 'next' : currentVideo === 2 ? 'Take the Quiz' : currentVideo === 3 ? 'Continue the Quiz' : 'next'}}
+        button.primary(@click="handleNext") {{currentVideo === 1 ? 'Let’s see what you know!' : currentVideo === 2 ? 'Let’s Go!' : currentVideo === 3 ? 'Continue with the Quiz' : 'next'}}
     .background(:class='{bumper: currentVideo !== 1, vidres: isVideoResponse}')
         .over
 </template>

@@ -4,7 +4,7 @@ import { storeToRefs } from 'pinia'
 const gameStore = useGameStore()
 
 const { outroCopy, isScore, bg3 } = storeToRefs(gameStore)
-const { handleView, handleNext } = useGameStore()
+const { handleView, handleNext, handleUrl } = useGameStore()
 </script>
 <template lang='pug'>
 .outro-screen
@@ -19,7 +19,7 @@ const { handleView, handleNext } = useGameStore()
             h1(v-html='outroCopy.score2')
         p(v-html='outroCopy.copy')
     footer
-        button.primary(@click='window.open("https://www.cutlersalon.com/", "_blank")') {{outroCopy.button}}
+        button.primary(@click='handleUrl') {{outroCopy.button}}
 </template>
 <style lang='sass' scoped>
 .outro-screen
@@ -61,18 +61,19 @@ const { handleView, handleNext } = useGameStore()
                     color: $cut-green
         p
             font-size: 1.2rem
+            line-height: 1.3
             font-weight: 500
-            padding: 1.5rem 2rem
-            max-width: 88%
-            background: transparentize($cut-black, 0.15)
+            padding: 2.5rem 1.5rem
+            max-width: 100%
+            // background: transparentize($cut-black, 0.35)
+            text-shadow: 0 0 6px rgb(0 0 0 / 44%)
             color: $cut-white
-            border-radius: 20px
             z-index: 1
         .over
             position: absolute
             width: 100%
             height: 100%
-            background: rgb(0 0 0 / 8%)
+            background: rgb(0 0 0 / 44%)
     footer
         max-height: 80px
         button

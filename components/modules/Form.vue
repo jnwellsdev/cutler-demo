@@ -11,23 +11,23 @@ const { handleForm, handleNext } = gameStore
 <template lang='pug'>
 .form-module
     .title
-        p Do you know
-        img.logo(src='/img/cut-logo-intro.svg')
+        p First,
+        p does <strong>Cutler</strong> know you?
     .form
         p(v-if='!formResponse')
             input(type='text' placeholder='First Name' v-model='formData.first_name')
             input(type='text' placeholder='Last Name' v-model='formData.last_name')
             input(type='email' placeholder='Email' v-model='formData.email')
-            select(name="salon" v-model='formData.salon')
-                option(value="" selected="true") -- SELECT --
-                option(value="Soho") Soho
-                option(value="58th Street") 58th Street
-                option(value="Brooklyn") Brooklyn
-                option(value="West Hollywood") West Hollywood
+            //- select(name="salon" v-model='formData.salon')
+            //-     option(value="" selected="true") -- SELECT --
+            //-     option(value="Soho") Soho
+            //-     option(value="58th Street") 58th Street
+            //-     option(value="Brooklyn") Brooklyn
+            //-     option(value="West Hollywood") West Hollywood
         .response(v-else)
             p.form-response(v-html='formResponse')
     .submit(v-if='!formResponse')
-        button(@click='handleForm(formData)') Submit
+        button(@click='handleForm(formData)') Let’s get it started!
     //- .submit(v-else)
     //-     button(@click='handleNext') Next
 </template>
@@ -55,6 +55,7 @@ export default {
     background: rgb(255 255 255 / 88%)
     .title
         position: absolute
+        text-align: center
         height: 100px
         top: 15%
         p
@@ -86,7 +87,7 @@ export default {
         height: 100px
         bottom: 10%
         button
-            width: 175px
+            width: 245px
             height: 40px
             border-radius: 20px 0          
     ::placeholder
