@@ -28,35 +28,35 @@ const { handleView, handleNext } = useGameStore()
         width: 50%
         height: 20%
         &:nth-child(1)
-            background: url('img/cut-splash-1.jpg')
+            background: url('img/cut-splash-01.jpg')
             background-size: 210%
             background-position: 50% 25%
         &:nth-child(2)
-            background: url('img/cut-splash-2.jpg')
+            background: url('img/cut-splash-02.jpg')
             background-size: 120%
             background-position: 80% 40%
         &:nth-child(3)
-            background: url('img/cut-splash-3.jpg')
+            background: url('img/cut-splash-03.jpg')
             background-size: 120%
             background-position: 50% 35%
         &:nth-child(4)
-            background: url('img/cut-splash-4.jpg')
+            background: url('img/cut-splash-04.jpg')
             background-size: 145%
             background-position: 40% 50%
         &:nth-child(6)
-            background: url('img/cut-splash-5.jpg')
+            background: url('img/cut-splash-05.jpg')
             background-size: 185%
             background-position: 45% 20%
         &:nth-child(7)
-            background: url('img/cut-splash-6.jpg')
+            background: url('img/cut-splash-06.jpg')
             background-size: 162%
             background-position: 50% 12%
         &:nth-child(8)
-            background: url('img/cut-splash-7.jpg')
+            background: url('img/cut-splash-07.jpg')
             background-size: 110%
             background-position: 80% 45%
         &:nth-child(9)
-            background: url('img/cut-splash-8.jpg')
+            background: url('img/cut-splash-08.jpg')
             background-size: 145%
             background-position: 50% 45%
         &.mid
