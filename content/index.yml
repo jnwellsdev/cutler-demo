@@ -67,7 +67,7 @@ questions:
           right: YES, TRICKY!<br>BOTH A AND C!
           wrong: WRONG,<br>AND YOU HAD 2 CHANCES!
           response: 'Inspired by the ethos of New York but, most importantly, creating looks that are authentic and individualized for our clients.'
-        - text: 'What is most important to Culter?'
+        - text: 'What is most important to Cutler?'
           options:
               -
               - The craft, it allows us to execute our creative ideas
@@ -89,7 +89,7 @@ questions:
           right: YES!<br>FROM HAUTE TO HOT!
           wrong: NO, CUTLER IS SYNONYMOUS WITH NYFW.
           response: 'Beauty starts on the runway. We create looks backstage and we re-interpret for wearable looks in the salons.'
-        - text: 'Who has Cutler forged connecting partnerships with?'
+        - text: 'Who has Cutler forged a connecting partnership with?'
           options:
               -
               - Salon Tools, Inc.
@@ -129,7 +129,7 @@ questions:
           wrong: WRONG,<br>LET CODY TELL YOU.
           videoId: 809801341
           caption:
-              - Cody Cros
+              - Cody Cross
               - Colorist
               - Cutler Brooklyn and Soho
         - text: 'You notice that your client has damaged, dry hair from excess color, overprocessing or, chemically treated hair. What do you recommend?'

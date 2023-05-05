@@ -27,7 +27,7 @@ const { handleForm, handleNext } = gameStore
         .response(v-else)
             p.form-response(v-html='formResponse')
     .submit(v-if='!formResponse')
-        button(@click='handleForm(formData)') Let’s get it started!
+        button(@click='handleForm(formData)') Let’s get started!
     //- .submit(v-else)
     //-     button(@click='handleNext') Next
 </template>
