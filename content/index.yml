@@ -31,8 +31,8 @@ questions:
               - 2001
               - 2010
           correct: 3
-          right: THAT’S RIGHT! GOOD START!
-          wrong: AHH, NO. BAD BEGINNING.
+          right: THAT’S RIGHT!<br>GOOD START!
+          wrong: AHH, NO.<br>BAD BEGINNING.
           response: 'Younger than Rita Ora, but older than Olivia Rodrigo, Cutler was founded in 2001.'
         - text: 'What was the location of the first Cutler Salon?'
           options:
@@ -43,7 +43,7 @@ questions:
               - West Hollywood
           correct: 1
           right: YOU GOT THAT RIGHT!
-          wrong: NOPE, IT STARTED IN MIDTOWN.
+          wrong: NOPE,<br>IT STARTED IN MIDTOWN.
           response: 'Although Rodney Cutler is from Melbourne, Australia, the first Cutler Salon opened on 57th St. in New York City.'
         - text: 'How does Cutler view its own identity?'
           options:
@@ -53,8 +53,8 @@ questions:
               - A Corporate Franchise
               - Cool, Craft, Creativity, Connectivity
           correct: 4
-          right: YES! AS WE SHOULD!
-          wrong: NAW, IT’S THE 4 C’S
+          right: YES!<br>AS WE SHOULD!
+          wrong: NAW,<br>IT’S THE 4 C’S
           response: 'We’re a craft-driven brand. A space where stylists can express their <strong>creativity</strong>, their <strong>craft</strong>, enjoy the <strong>connectivity</strong> with their clients and that is <strong>cool</strong>!'
         - text: 'Why does Cutler want to be “cool”?'
           options:
@@ -64,19 +64,19 @@ questions:
               - C. To be inspired by the ethos of New York
               - D. Both A and C
           correct: 4
-          right: YES, TRICKY! BOTH A AND C!
-          wrong: WRONG, AND YOU HAD 2 CHANCES!
+          right: YES, TRICKY!<br>BOTH A AND C!
+          wrong: WRONG,<br>AND YOU HAD 2 CHANCES!
           response: 'Inspired by the ethos of New York but, most importantly, creating looks that are authentic and individualized for our clients.'
         - text: 'What is most important to Culter?'
           options:
               -
-              - The craft, it allows us the ability to execute our creative ideas
+              - The craft, it allows us to execute our creative ideas
               - Having only celebrity clients in our chairs
               - Overcharging for services
               - Starting our own reality show about the salon
           correct: 1
-          right: YES, YOU GET IT!
-          wrong: NO, IT’S ALWAYS THE CRAFT.
+          right: YES,<br>YOU GET IT!
+          wrong: NO,<br>IT’S ALWAYS THE CRAFT.
           response: 'The backbone of our continued success is creating great hairdressers with technique and vision.'
         - text: 'How does Cutler, as a brand, present creativity?'
           options:
@@ -86,7 +86,7 @@ questions:
               - Having Rodney’s face on every product bottle
               - Putting up billboards across the city
           correct: 1
-          right: YES! FROM HAUTE TO HOT!
+          right: YES!<br>FROM HAUTE TO HOT!
           wrong: NO, CUTLER IS SYNONYMOUS WITH NYFW.
           response: 'Beauty starts on the runway. We create looks backstage and we re-interpret for wearable looks in the salons.'
         - text: 'Who has Cutler forged connecting partnerships with?'
@@ -97,8 +97,8 @@ questions:
               - Peter Luger Steakhouse
               - Redken
           correct: 4
-          right: YES, REDKEN OF COURSE!
-          wrong: NO, THAT’S KINDA SILLY.
+          right: YES,<br>REDKEN OF COURSE!
+          wrong: NO,<br>THAT’S KINDA SILLY.
           response: 'Cutler has been a flagship Redken salon for over 20 years developing a strong creative partnership.'
     section2:
         - sectionTitle: SERVICES & PRODUCTS
@@ -110,8 +110,8 @@ questions:
               - Homemade apple cider vinegar shampoo
               - Pantene Illuminating Color Care Shampoo
           correct: 2
-          right: YES, YOU’VE GOT THIS!
-          wrong: NO, BRITTANY WILL LET YOU KNOW.
+          right: YES,<br>YOU’VE GOT THIS!
+          wrong: NO,<br>BRITTANY WILL LET YOU KNOW.
           videoId: 809801216
           caption:
               - Brittany Torres
@@ -125,8 +125,8 @@ questions:
               - Johnson's No More Tangles spray
               - Redken One United Leave In
           correct: 4
-          right: YES, OF COURSE!
-          wrong: WRONG, LET CODY TELL YOU.
+          right: YES,<br>OF COURSE!
+          wrong: WRONG,<br>LET CODY TELL YOU.
           videoId: 809801341
           caption:
               - Cody Cros
@@ -138,10 +138,10 @@ questions:
               - Coconut milk conditioner
               - Mayo
               - Sea salt spray
-              - Redken Acidic Bonding Concentrate line
+              - Redken Acidic Bonding Concentrate
           correct: 4
-          right: YES, THE BEST SOLUTION!
-          wrong: NO, BUT JENNY KNOWS.
+          right: YES,<br>THE BEST SOLUTION!
+          wrong: NO,<br>BUT JENNY KNOWS.
           videoId: 809801470
           caption:
               - Jenny Balding
@@ -155,8 +155,8 @@ questions:
               - '#10 Sunscreen infused shampoo'
               - Tell them to stay in air conditioning
           correct: 1
-          right: YES, OF COURSE!
-          wrong: SERIOUSLY, NO. Listen to Madeline.
+          right: YES,<br>OF COURSE!
+          wrong: SERIOUSLY, NO.<br>LISTEN TO MADELINE.
           videoId: 809801696
           caption:
               - Madeline Bittner
@@ -170,8 +170,8 @@ questions:
               - Leave it in knots it gives the hair more volume
               - Ignore the whole situation - it’ll work out
           correct: 1
-          right: YES, SMOOTH ANSWER!
-          wrong: NO, LET LOURA EXPLAIN.
+          right: YES,<br>SMOOTH ANSWER!
+          wrong: NO,<br>LET LOURA EXPLAIN.
           videoId: 809801858
           caption:
               - Loura Carly
@@ -185,8 +185,8 @@ questions:
               - Redken Hair Cleansing Cream
               - Suave Smoothing Shampoo
           correct: 3
-          right: YES, Its C!
-          wrong: NO, BIANCA KNOWS BETTER.
+          right: YES,<br>IT'S C!
+          wrong: NO,<br>BIANCA KNOWS BETTER.
           videoId: 809801951
           caption:
               - Bianca LaCagnina
@@ -200,8 +200,8 @@ questions:
               - Ask if they want conditioner all over or just the ends
               - Talk about yourself the whole time, clients love that
           correct: 3
-          right: YES, OF COURSE ASK!
-          wrong: WRONG, DID IT BREAK YOUR STREAK?
+          right: YES,<br>OF COURSE ASK!
+          wrong: WRONG,<br>DID IT BREAK YOUR STREAK?
           videoId: 809802205
           caption:
               - Madeline Bittner

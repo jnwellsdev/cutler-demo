@@ -65,25 +65,25 @@ include ../assets/pug/index
             header
                 .response(v-if='isResponse')
                     h1 &nbsp;
-                    p {{ currentQuestion.text }}
+                    p(v-html='currentQuestion.text')
                 span(v-else)
                     h1(v-html='`Question ${currentSection === 1 ? isQuestion : isQuestion + 7} <span style="font-weight:400; color: #222">/ 14</span>`')
-                    p {{ currentQuestion.text }}
+                    p(v-html='currentQuestion.text')
             section
                 .response(v-if='isResponse')
-                    h1.right(v-if='isCorrect') {{  currentQuestion.right}}
-                    h1.wrong(v-if='!isCorrect') {{ currentQuestion.wrong }}
-                    p {{  currentQuestion.response }}
+                    h1.right(v-if='isCorrect' v-html='currentQuestion.right')
+                    h1.wrong(v-if='!isCorrect' v-html='currentQuestion.wrong')
+                    p(v-html='currentQuestion.response')
                 .option(v-else v-for='option, i in currentQuestion.options.slice(1)')
-                    button(@click='handleOptionClick' :data-choice='option' :data-option='i + 1') {{ option }}
+                    button(@click='handleOptionClick' :data-choice='option' :data-option='i + 1' v-html='option')
         .section-bg.first(:style='bg1')
         .section-bg.next(:style='bg2')
     section.video-response(v-else)
         header
             .response
-                h1(v-if='isCorrect') {{  currentQuestion.right}}
-                h1(v-if='!isCorrect') {{ currentQuestion.wrong }}
-                p {{ currentQuestion.options[currentQuestion.correct] }}
+                h1(v-if='isCorrect' v-html='currentQuestion.right')
+                h1(v-if='!isCorrect' v-html='currentQuestion.wrong')
+                p(v-html='currentQuestion.options[currentQuestion.correct]')
                 .caption
                     span(v-html='currentQuestion.caption[0]')
                     span(v-html='currentQuestion.caption[1]')
@@ -154,7 +154,7 @@ include ../assets/pug/index
                 .response
                     display: flex
                     align-items: center
-                    justify-content: center
+                    justify-content: space-around
                     flex-flow: column
                     min-height: 200px
                     line-height: 1.35
@@ -185,6 +185,7 @@ include ../assets/pug/index
             justify-content: flex-end
             position: relative
             header
+                max-height: 155px
                 .response
                     line-height: 1.35
                     color: $cut-white

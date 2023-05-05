@@ -2,24 +2,25 @@ import gsap from 'gsap'
 // gsap.registerPlugin()
 
 export const playSplash = () => {
-    const all = '.top, .top2, .btm, .btm2'
+    const all = '.top, .top2, .top3, .top4, .btm, .btm2, .btm3, .btm4'
     gsap.set('.mid, .mid .logo, .mid p, .mid button', {opacity: 0})
     gsap.set('.mid', {height: '0%'})
-    gsap.set(all, {opacity: 0, scale: 0.8})
+    gsap.set(all, {opacity: 0, scale: 0.8, height: '25%'})
 
     const tl = gsap.timeline()
     tl.timeScale(1.5)
 
-    tl.to('.top, .top2, .btm2, .btm', { opacity: 0.3, scale: 1, delay: 0.75,
+    tl.to(all, { opacity: 0.4, scale: 1, delay: 0.75,
       stagger: {
-      grid: [1,4],
+      grid: [2,8],
       each: 0.3
     }})
       .to(all, {opacity: 1, duration: 2}, '>')
-      .to('.mid', {opacity: 1, height: '100%', duration: 1, ease: 'circ.inOut'}, '> -1' )
+      .to('.mid', {opacity: 1, height: '20%', duration: 1, ease: 'circ.inOut'}, '> -1' )
+      .to(all, {height: '20%', duration: 1, ease: 'circ.inOut'}, '<' )
       .to('.mid button, .mid p', {opacity: 1, duration: 0.5, ease: 'circ.inOut'}, '> -0.25')
       .to('.mid .logo', {opacity: 1, duration: 0.5, ease: 'circ.in'}, '> +0.25' )
-    // console.log(gsap)
+
 }
 
 export const playForm = () => {
