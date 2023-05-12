@@ -168,18 +168,18 @@ export const useGameStore = defineStore({
 		isScore: (state) => state.score,
 		bg1: (state) => (
 			process.env.NODE_ENV === 'production'
-				? {background: `url(public/img/cut-bg-${state.section === 1 ? state.question : state.question + 8}.jpg)`,backgroundSize: 'cover', backgroundPosition: '45% 50%'}
-				: {background: `url(img/cut-bg-${state.section === 1 ? state.question : state.question + 8}.jpg)`,backgroundSize: 'cover', backgroundPosition: '45% 50%'}
+				? {background: `url(public/img/cut-bg-${state.section === 1 ? state.question : state.question + 8}b.jpg)`,backgroundSize: 'cover', backgroundPosition: '45% 50%'}
+				: {background: `url(img/cut-bg-${state.section === 1 ? state.question : state.question + 8}b.jpg)`,backgroundSize: 'cover', backgroundPosition: '45% 50%'}
 			),
 		bg2: (state) => (
 			process.env.NODE_ENV === 'production'
-				? {background: `url(public/img/cut-bg-${state.section === 1 ? state.question + 1 : state.question + 8}.jpg)`, backgroundSize: 'cover', backgroundPosition: '45% 50%'}
-				: {background: `url(img/cut-bg-${state.section === 1 ? state.question + 1 : state.question + 8}.jpg)`, backgroundSize: 'cover', backgroundPosition: '45% 50%'}
+				? {background: `url(public/img/cut-bg-${state.section === 1 ? state.question + 1 : state.question + 8}b.jpg)`, backgroundSize: 'cover', backgroundPosition: '45% 50%'}
+				: {background: `url(img/cut-bg-${state.section === 1 ? state.question + 1 : state.question + 8}b.jpg)`, backgroundSize: 'cover', backgroundPosition: '45% 50%'}
 			),
 		bg3: (state) => (
 			process.env.NODE_ENV === 'production'
-				? {background: 'url(public/img/cut-bg-1.jpg)', backgroundSize: 'cover', backgroundPosition: '45% 50%'}
-				: {background: 'url(img/cut-bg-1.jpg)', backgroundSize: 'cover', backgroundPosition: '50%'}
+				? {background: 'url(public/img/cut-bg-1b.jpg)', backgroundSize: 'cover', backgroundPosition: '45% 50%'}
+				: {background: 'url(img/cut-bg-1b.jpg)', backgroundSize: 'cover', backgroundPosition: '50%'}
 			)
 	},
 })

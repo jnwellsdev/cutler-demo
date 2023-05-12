@@ -28,10 +28,11 @@ onMounted(() => {
     playSplash()
     handleFreeze(true, 3000)
     preloadImages([
-        'cut-splash-1.jpg', 'cut-splash-2.jpg', 'cut-splash-3.jpg', 'cut-splash-4.jpg',
-        'cut-bg-1.jpg', 'cut-bg-2.jpg', 'cut-bg-3.jpg', 'cut-bg-4.jpg', 'cut-bg-5.jpg',
-        'cut-bg-6.jpg', 'cut-bg-7.jpg', 'cut-bg-8.jpg', 'cut-bg-9.jpg', 'cut-bg-10.jpg',
-        'cut-bg-11.jpg', 'cut-bg-12.jpg', 'cut-bg-13.jpg', 'cut-bg-14.jpg', 'cut-bg-15.jpg'])
+        'cut-splash-01.jpg', 'cut-splash-02.jpg', 'cut-splash-03.jpg', 'cut-splash-04.jpg',
+        'cut-splash-05.jpg', 'cut-splash-06.jpg', 'cut-splash-07.jpg', 'cut-splash-08.jpg',
+        'cut-bg-1b.jpg', 'cut-bg-2b.jpg', 'cut-bg-3b.jpg', 'cut-bg-4b.jpg', 'cut-bg-5b.jpg',
+        'cut-bg-6b.jpg', 'cut-bg-7b.jpg', 'cut-bg-8b.jpg', 'cut-bg-9b.jpg', 'cut-bg-10b.jpg',
+        'cut-bg-11b.jpg', 'cut-bg-12b.jpg', 'cut-bg-13b.jpg', 'cut-bg-14b.jpg', 'cut-bg-15b.jpg'])
     getCSRF()
 })
 </script>

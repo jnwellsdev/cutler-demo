@@ -189,10 +189,11 @@ questions:
           wrong: NO,<br>BIANCA KNOWS BETTER.
           videoId: 809801951
           caption:
-              - Bianca LaCagnina
+              - Bianca Garcia
               - Cut Artist
               - Cutler West Hollywood
-        - text: 'After finishing shampooing and conditioning a guest, you should …'
+        - text: 'After finishing shampooing a guest, you should …'
+
           options:
               -
               - Don’t bother with conditioner, unless they ask
