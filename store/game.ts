@@ -29,8 +29,8 @@ export const useGameStore = defineStore({
             score: '',
             salon: ''
         },
-        axiosLink: 'https://training-api.cutlersalon.com',
-        // axiosLink: 'http://127.0.0.1:8000'
+        // axiosLink: 'https://training-api.cutlersalon.com',
+        axiosLink: 'http://api.monkeys.test'
 	}),
 	actions: {
 		handleNext() {
@@ -74,7 +74,6 @@ export const useGameStore = defineStore({
           })  
         },
         async addUser() {
-            
             await $fetch(this.axiosLink + '/sanctum/csrf-cookie').then((res)=>{
                 $fetch(this.axiosLink+'/cutler', {
                         method: 'POST',
@@ -91,6 +90,7 @@ export const useGameStore = defineStore({
                     }, 1000)
                 }).catch(error => {
                     console.log(error.response._data.error)
+                    this.formError = true
                     this.errorMessage = error.response._data.error
                 });
             })

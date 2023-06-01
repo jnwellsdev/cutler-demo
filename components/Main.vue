@@ -35,7 +35,7 @@ onMounted(() => {
             'cut-bg-6b.jpg', 'cut-bg-7b.jpg', 'cut-bg-8b.jpg', 'cut-bg-9b.jpg', 'cut-bg-10b.jpg',
             'cut-bg-11b.jpg', 'cut-bg-12b.jpg', 'cut-bg-13b.jpg', 'cut-bg-14b.jpg', 'cut-bg-15b.jpg'])
     }, 2000);
-    getCSRF()
+    // getCSRF()
 })
 </script>
 
