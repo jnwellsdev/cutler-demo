@@ -29,8 +29,8 @@ export const useGameStore = defineStore({
             score: '',
             salon: ''
         },
-        // axiosLink: 'https://training-api.cutlersalon.com',
-        axiosLink: 'http://api.monkeys.test'
+        axiosLink: 'https://training-api.cutlersalon.com',
+        // axiosLink: 'http://api.monkeys.test'
 	}),
 	actions: {
 		handleNext() {
