@@ -19,6 +19,7 @@ const { handleView, handleNext, handleUrl } = useGameStore()
             h1(v-html='outroCopy.score2')
         p(v-html='outroCopy.copy')
     footer
+        //- button.primary(@click='handleUrl') {{outroCopy.buttonSurvey}}
         button.primary(@click='handleUrl') {{outroCopy.button}}
 </template>
 <style lang='sass' scoped>

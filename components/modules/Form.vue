@@ -2,10 +2,11 @@
 import { useGameStore } from '~/store/game'
 import { storeToRefs } from 'pinia'
 const gameStore = useGameStore()
-const { formCopy, formResponse, formData } = storeToRefs(gameStore)
-const { handleForm, handleNext } = gameStore
-
-
+const { formCopy, formResponse, formData, formError, errorMessage } = storeToRefs(gameStore)
+const { handleForm, handleNext, handleError } = gameStore
+function validateForm(formData) {
+    (formData.email !== '' && formData.first_name !== '' && formData.last_name !== '') ?  handleForm(formData) : handleError()
+}
 </script>
 
 <template lang='pug'>
@@ -18,6 +19,7 @@ const { handleForm, handleNext } = gameStore
             input(type='text' placeholder='First Name' v-model='formData.first_name')
             input(type='text' placeholder='Last Name' v-model='formData.last_name')
             input(type='email' placeholder='Email' v-model='formData.email')
+            span.errors(v-if='formError') {{ errorMessage }}
             //- select(name="salon" v-model='formData.salon')
             //-     option(value="" selected="true") -- SELECT --
             //-     option(value="Soho") Soho
@@ -27,21 +29,13 @@ const { handleForm, handleNext } = gameStore
         .response(v-else)
             p.form-response(v-html='formResponse')
     .submit(v-if='!formResponse')
-        button(@click='handleForm(formData)') Let’s get started!
-    //- .submit(v-else)
-    //-     button(@click='handleNext') Next
+        button(@click='validateForm(formData)') Let’s get started!
 </template>
 
 <script>
 export default {
     data() {
         return {
-            // formData: {
-            //     first_name: '',
-            //     email: '',
-            //     salon: '',
-            //     score: '35',
-            // }
         }
     },
 }
@@ -76,12 +70,23 @@ export default {
             &:focus-visible
                 outline-color: green
                 outline-style: solid
+            &::placeholder
+                opacity: .8
         button
             margin: 2rem auto
         .response
             max-width: 80%
             p
                 line-height: 1.1
+        .errors
+            color: #fafafa
+            font-size: medium
+            display: block
+            border: 3px solid
+            width: 80%
+            margin: 20px auto
+            background: #444
+            padding: 3px
     .submit
         position: absolute
         height: 100px

@@ -19,14 +19,18 @@ export const useGameStore = defineStore({
 		animate: '',
 		freeze: false,
 		form: false,
-		formResponse: false,
+        formResponse: false,
+        formError: false,
+        errorMessage: 'All fields are required.',
 		formData: {
             first_name: '',
 			last_name: '',
 			email: '',
             score: '',
             salon: ''
-		},
+        },
+        axiosLink: 'https://training-api.cutlersalon.com',
+        // axiosLink: 'http://127.0.0.1:8000'
 	}),
 	actions: {
 		handleNext() {
@@ -59,33 +63,37 @@ export const useGameStore = defineStore({
 			this.view = val
 		},
         handleForm() {
-            this.formResponse = this.formCopy.response
-			setTimeout(() => {
-				this.form = false,
-				this.handleView('video'),
-				this.animate = 'video',
-				this.handleFreeze(true, 4500)
-			}, 1000)
-            // this.addUser()           
+            this.addUser()           
         },
-        async getCSRF() {
-            await $fetch('http://localhost:8000/sanctum/csrf-cookie').then((res) => {
+        handleError() {
+            this.formError = true
+        },
+        getCSRF() {
+            $fetch(this.axiosLink + '/sanctum/csrf-cookie').then((res) => {
                console.table(res)
           })  
         },
         async addUser() {
-            await $fetch('http://localhost:8000/cutler', {
-                method: 'POST',
-                header: {
-                   'X-XSRF-TOKEN': this.csrf  
-                },
-                body: this.formData,
-                mode: 'cors',
-                credentials: 'include',
-
-            }).then(() => {
-                this.formResponse = this.formCopy.response
-            });
+            
+            await $fetch(this.axiosLink + '/sanctum/csrf-cookie').then((res)=>{
+                $fetch(this.axiosLink+'/cutler', {
+                        method: 'POST',
+                        body: this.formData,
+                        credentials: "include"
+                }).then((res) => {
+                        console.log(res)
+                    this.formResponse = this.formCopy.response
+                    setTimeout(() => {
+                        this.form = false,
+                        this.handleView('video'),
+                        this.animate = 'video',
+                        this.handleFreeze(true, 4500)
+                    }, 1000)
+                }).catch(error => {
+                    console.log(error.response._data.error)
+                    this.errorMessage = error.response._data.error
+                });
+            })
         },
         
 		handleOptionClick(event: {
@@ -104,6 +112,7 @@ export const useGameStore = defineStore({
 					}, 1500)
 		},
 		handleUrl() {
+			// window.open("https://www.surveymonkey.com/r/D8223ZV", "_blank")
 			window.open("https://www.cutlersalon.com", "_blank")
 		},
 		handleAnswer(val: boolean) {
@@ -143,7 +152,8 @@ export const useGameStore = defineStore({
 			this.freeze = val
 		},
         preloadImages(val: any[]) {
-            let dir = process.env.NODE_ENV === 'production' ? 'public/img/' : 'img/'
+            // let dir = process.env.NODE_ENV === 'production' ? 'public/img/' : 'img/'
+            let dir = process.env.NODE_ENV === 'production' ? 'img/' : 'img/'
             let imgs: any[] = []
             val.forEach(img => (imgs = [...imgs, `${dir}${img}`]))
             imgs.forEach(path => (new Image().src = path))

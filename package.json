@@ -1,25 +1,25 @@
 {
-	"private": true,
-	"scripts": {
-		"build": "nuxt build",
-		"dev": "nuxt dev",
-		"generate": "nuxt generate",
-		"preview": "nuxt preview",
-		"postinstall": "nuxt prepare"
-	},
-	"devDependencies": {
-		"@modyfi/vite-plugin-yaml": "^1.0.4",
-		"@volar/vue-language-plugin-pug": "latest",
-		"@nuxtjs/tailwindcss": "^6.4.1",
-		"nuxt": "^3.2.3",
-		"sass": "^1.58.3",
-		"vite-plugin-pug": "^0.3.2",
-		"vite-plugin-singlefile": "^0.13.3",
-		"vite-plugin-yaml2": "^1.1.5"
-	},
-	"dependencies": {
-		"@pinia/nuxt": "^0.4.7",
-		"gsap": "file:gsap-bonus.tgz",
-		"pinia": "^2.0.32"
-	}
+    "private": true,
+    "scripts": {
+        "build": "nuxt build",
+        "dev": "nuxt dev",
+        "generate": "nuxt generate",
+        "preview": "nuxt preview",
+        "postinstall": "nuxt prepare"
+    },
+    "devDependencies": {
+        "@modyfi/vite-plugin-yaml": "^1.0.4",
+        "@volar/vue-language-plugin-pug": "latest",
+        "@nuxtjs/tailwindcss": "^6.4.1",
+        "nuxt": "^3.2.3",
+        "sass": "^1.58.3",
+        "vite-plugin-pug": "^0.3.2",
+        "vite-plugin-singlefile": "^0.13.3",
+        "vite-plugin-yaml2": "^1.1.5"
+    },
+    "dependencies": {
+        "@pinia/nuxt": "^0.4.7",
+        "gsap": "file:gsap-bonus.tgz",
+        "pinia": "^2.0.32"
+    }
 }
