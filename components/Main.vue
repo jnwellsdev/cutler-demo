@@ -15,7 +15,7 @@ watch(currentAnimate, async (val) => {
     val === 'question' && playQuestion()
     val === 'next' && (playNext(), setTimeout(() => { playFade(), handleQuestion() }, 1100))
     val === 'response' && playResponse()
-    val === 'nextVideo' && (playNextnpmVideo(), setTimeout(() => { handleQuestion() }, 1000))
+    val === 'nextVideo' && (playNextVideo(), setTimeout(() => { handleQuestion() }, 1000))
     val === 'videoResponse' && playVideoResponse()
     val === 'videoExit' && (playVideoExit(), setTimeout(() => { handleVideo(), playBumper() }, 750))
     val === 'fadeForm' && playFadeForm()
