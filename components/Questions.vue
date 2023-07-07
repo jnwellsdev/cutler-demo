@@ -34,7 +34,6 @@ watch(isVideoResponse, async (val) => {
     if (val) {
         const bg = document.querySelector('.background')
         const player = new Vimeo.Player(bg)
-        console.log('vr3')
         player.loadVideo(currentQuestion.value.videoId)
         setTimeout(() => player.setVolume('0.35'), 500)
 
@@ -77,7 +76,7 @@ include ../assets/pug/index
                 .option(v-else v-for='option, i in currentQuestion.options.slice(1)')
                     button(@click='handleOptionClick' :data-choice='option' :data-option='i + 1' v-html='option')
         .section-bg.first(:style='bg1')
-        .section-bg.next(:style='bg2')
+        .section-bg.next(:style='isQuestion !== 7 ? bg2 : bg1')
     section.video-response(v-else)
         header
             .response
