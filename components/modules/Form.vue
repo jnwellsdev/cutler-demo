@@ -5,7 +5,7 @@ const gameStore = useGameStore()
 const { formCopy, formResponse, formData, formError, errorMessage } = storeToRefs(gameStore)
 const { handleForm, handleNext, handleError } = gameStore
 function validateForm(formData) {
-    (formData.email !== '' && formData.first_name !== '' && formData.last_name !== '') ?  handleForm(formData) : handleError()
+    (formData.email !== '' && formData.first_name !== '' && formData.last_name !== '') ? handleForm(formData) : handleError()
 }
 </script>
 

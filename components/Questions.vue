@@ -174,7 +174,7 @@ include ../assets/pug/index
             width: 100%
             height: 100%
             position: absolute
-            background: url('img/cut-bg-1.jpg')
+            background: url('/img/cut-bg-1.jpg')
             background-size: cover
             background-position: 50% 50%
             &.first
