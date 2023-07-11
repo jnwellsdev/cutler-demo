@@ -65,13 +65,6 @@ export const useGameStore = defineStore({
 		},
         handleForm() {
             this.addUser()    
-			//
-			setTimeout(() => {
-				this.form = false,
-				this.handleView('video'),
-				this.animate = 'video',
-				this.handleFreeze(true, 4500)
-			}, 1000)       
         },
         handleError() {
             this.formError = true
