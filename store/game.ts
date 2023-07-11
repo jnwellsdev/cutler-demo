@@ -126,13 +126,19 @@ export const useGameStore = defineStore({
 				: this.videoResponse = val
 		},
 		handleQuestion() {
-			let num = this.isDemo ? 2 : 7
-			
-			this.question === num && this.section === 1
-				? (this.section = 2, this.question = 0, this.question++, this.view = 'video', this.animate = 'video')
-				: this.question === num && this.section === 2
+			if(this.isDemo) {
+				this.question === 2 && this.section === 1
+				? (this.section = 2, this.question = 1, this.question++, this.view = 'video', this.animate = 'video')
+				: this.question === 3 && this.section === 2
 				? (this.view = 'outro')
 				: this.question++
+			} else {
+				this.question === 7 && this.section === 1
+				? (this.section = 2, this.question = 0, this.question++, this.view = 'video', this.animate = 'video')
+				: this.question === 7 && this.section === 2
+				? (this.view = 'outro')
+				: this.question++
+			}
 		},
 		handleFreeze(val: boolean, time: number | undefined) {
 			this.freeze = val

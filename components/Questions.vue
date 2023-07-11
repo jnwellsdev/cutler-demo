@@ -66,7 +66,7 @@ include ../assets/pug/index
                     h1 &nbsp;
                     p(v-html='currentQuestion.text')
                 span(v-else)
-                    h1(v-if='isDemo' v-html='`Question ${currentSection === 1 ? isQuestion : isQuestion + 2} <span style="font-weight:400; color: #222">/ 4</span>`')
+                    h1(v-if='isDemo' v-html='`Question ${currentSection === 1 ? isQuestion : isQuestion + 1} <span style="font-weight:400; color: #222">/ 4</span>`')
                     h1(v-else v-html='`Question ${currentSection === 1 ? isQuestion : isQuestion + 7} <span style="font-weight:400; color: #222">/ 14</span>`')
                     p(v-html='currentQuestion.text')
             section
@@ -242,6 +242,11 @@ include ../assets/pug/index
             border-radius: 20px 0
     &.last
         z-index: 99
+        section
+            .modal
+                header
+                    p
+                        font-size: 1.25rem
     &.video
         header
             .cut-logo
