@@ -211,6 +211,7 @@ questions:
 results:
     score1: YOU SCORED
     score2: OUT OF 14
+    score3: OUT OF 4
     button: Thanks for Playing!
     buttonSurvey: Take a Quick Survey?
     copy: 'Thank you for taking our <strong>Do You Know Cutler?</strong> quiz. <span class="break"></span> We hope you did well! <span class="break"></span> Remember, don’t be afraid to ask questions we’re here to help you enjoy your experience at Cutler Salons.'

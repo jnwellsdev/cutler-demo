@@ -18,6 +18,7 @@ export const useGameStore = defineStore({
 		intro: false,
 		animate: '',
 		freeze: false,
+		isDemo: false,
 		form: false,
         formResponse: false,
         formError: false,
@@ -63,7 +64,14 @@ export const useGameStore = defineStore({
 			this.view = val
 		},
         handleForm() {
-            this.addUser()           
+            this.addUser()    
+			//
+			setTimeout(() => {
+				this.form = false,
+				this.handleView('video'),
+				this.animate = 'video',
+				this.handleFreeze(true, 4500)
+			}, 1000)       
         },
         handleError() {
             this.formError = true
@@ -125,9 +133,11 @@ export const useGameStore = defineStore({
 				: this.videoResponse = val
 		},
 		handleQuestion() {
-			this.question === 7 && this.section === 1
+			let num = this.isDemo ? 2 : 7
+			
+			this.question === num && this.section === 1
 				? (this.section = 2, this.question = 0, this.question++, this.view = 'video', this.animate = 'video')
-				: this.question === 7 && this.section === 2
+				: this.question === num && this.section === 2
 				? (this.view = 'outro')
 				: this.question++
 		},
@@ -142,7 +152,6 @@ export const useGameStore = defineStore({
 			this.intro = !this.intro
 		},
 		handleVideo() {
-			console.log('handleVideo')
 			this.video++
 		},
 		handleBumper() {
@@ -150,6 +159,9 @@ export const useGameStore = defineStore({
 		},
 		setFreeze(val: boolean) {
 			this.freeze = val
+		},
+		handleDemo() {
+			this.isDemo = true
 		},
         preloadImages(val: any[]) {
             // let dir = process.env.NODE_ENV === 'production' ? 'img/' : 'img/'

@@ -2,7 +2,7 @@
 import { useGameStore } from '~/store/game'
 import { storeToRefs } from 'pinia'
 const gameStore = useGameStore()
-const { currentQuestion, currentSection, isResponse, isVideoResponse, isFreeze, isCorrect, isAnswered, isQuestion, bg1, bg2 } = storeToRefs(gameStore)
+const { currentQuestion, currentSection, isResponse, isVideoResponse, isFreeze, isCorrect, isAnswered, isQuestion, bg1, bg2, isDemo } = storeToRefs(gameStore)
 const { handleOptionClick, handleView, handleNext } = gameStore
 
 onMounted(() => {
@@ -66,7 +66,8 @@ include ../assets/pug/index
                     h1 &nbsp;
                     p(v-html='currentQuestion.text')
                 span(v-else)
-                    h1(v-html='`Question ${currentSection === 1 ? isQuestion : isQuestion + 7} <span style="font-weight:400; color: #222">/ 14</span>`')
+                    h1(v-if='isDemo' v-html='`Question ${currentSection === 1 ? isQuestion : isQuestion + 2} <span style="font-weight:400; color: #222">/ 4</span>`')
+                    h1(v-else v-html='`Question ${currentSection === 1 ? isQuestion : isQuestion + 7} <span style="font-weight:400; color: #222">/ 14</span>`')
                     p(v-html='currentQuestion.text')
             section
                 .response(v-if='isResponse')
@@ -76,7 +77,7 @@ include ../assets/pug/index
                 .option(v-else v-for='option, i in currentQuestion.options.slice(1)')
                     button(@click='handleOptionClick' :data-choice='option' :data-option='i + 1' v-html='option')
         .section-bg.first(:style='bg1')
-        .section-bg.next(:style='isQuestion !== 7 ? bg2 : bg1')
+        .section-bg.next(:style='(isDemo && isQuestion !== 2) || (!isDemo && isQuestion !== 7) ? bg2 : bg1')
     section.video-response(v-else)
         header
             .response

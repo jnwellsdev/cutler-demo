@@ -4,7 +4,7 @@ import { storeToRefs } from 'pinia'
 const gameStore = useGameStore()
 
 const { outroCopy, isScore, bg3 } = storeToRefs(gameStore)
-const { handleView, handleNext, handleUrl } = useGameStore()
+const { handleView, handleNext, handleUrl, isDemo } = useGameStore()
 </script>
 <template lang='pug'>
 .outro-screen
@@ -15,8 +15,8 @@ const { handleView, handleNext, handleUrl } = useGameStore()
         .over
         .score
             h1(v-html='outroCopy.score1')
-            h2(:class='{right: isScore >= 8 }') {{ isScore }}
-            h1(v-html='outroCopy.score2')
+            h2(:class='{right: isScore >= 8 || isDemo }') {{ isScore }}
+            h1(v-html='isDemo ? outroCopy.score3 : outroCopy.score2')
         p(v-html='outroCopy.copy')
     footer
         //- button.primary(@click='handleUrl') {{outroCopy.buttonSurvey}}

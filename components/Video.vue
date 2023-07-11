@@ -9,7 +9,6 @@ const { handleView, handleNext } = useGameStore()
 onMounted(() => {
     console.log('mounted')
     if (currentVideo.value === 1) {
-        console.log('ok1')
         console.log(currentVideo)
         console.log(currentVideo.value)
         const options = {
@@ -36,7 +35,6 @@ watch(currentVideo, async (val) => {
     if (val === 2) {
         const bg = document.querySelector('.background')
         const player = new Vimeo.Player(bg)
-        console.log('ok2')
         player.loadVideo(811039129)
         player.setVolume('0.35')
         player.setPlaybackRate('1')
@@ -47,7 +45,6 @@ watch(currentVideo, async (val) => {
     if (val === 3) {
         const bg = document.querySelector('.background')
         const player = new Vimeo.Player(bg)
-        console.log('ok2')
         player.loadVideo(811039282)
         player.setVolume('0.35')
         player.getVideoId().then((id) => console.log(`player: ${id}`))
