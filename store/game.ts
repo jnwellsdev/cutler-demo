@@ -158,7 +158,7 @@ export const useGameStore = defineStore({
 		},
         preloadImages(val: any[]) {
             // let dir = process.env.NODE_ENV === 'production' ? 'img/' : 'img/'
-			let dir = this.isDemo ? 'demo/img/' : 'img/'
+			let dir = '/img/'
             let imgs: any[] = []
             val.forEach(img => (imgs = [...imgs, `${dir}${img}`]))
             imgs.forEach(path => (new Image().src = path))
