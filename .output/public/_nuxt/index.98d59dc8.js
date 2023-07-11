@@ -1,0 +1,1 @@
+import{_ as c}from"./Main.f953917d.js";import{f as t,o,b as n,e as s}from"./entry.97cd2734.js";const r={},_={class:"w-full flex flex-col items-center justify-center"};function a(f,i){const e=c;return o(),n("div",_,[s(e)])}const d=t(r,[["render",a]]);export{d as default};

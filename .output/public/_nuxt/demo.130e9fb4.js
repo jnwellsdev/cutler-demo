@@ -1,0 +1,1 @@
+import{u as t,_ as s}from"./Main.f953917d.js";import{a,o as n,b as c,e as r}from"./entry.97cd2734.js";const _={class:"w-full flex flex-col items-center justify-center"},p={__name:"demo",setup(m){const{handleDemo:e}=t();return a(()=>e()),(l,f)=>{const o=s;return n(),c("div",_,[r(o)])}}};export{p as default};
