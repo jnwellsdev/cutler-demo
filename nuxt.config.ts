@@ -1,6 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
-import ViteYaml from '@modyfi/vite-plugin-yaml';
+import ViteYaml from '@modyfi/vite-plugin-yaml'
 import pugPlugin from "vite-plugin-pug"
+import path from 'path'
 
 const options = { pretty: true }
 const locals = { name: "My Pug" }
@@ -21,7 +22,7 @@ export default defineNuxtConfig({
                 { src: process.env.NODE_ENV === 'production' ? '/player.js' : '/player.js' }
             ]
         },
-        baseURL: process.env.NODE_ENV === 'production' ? '/' : '/'
+        baseURL: process.env.NODE_ENV === 'production' ? '/' : '/',
     },
     modules: [
         '@nuxtjs/tailwindcss',
@@ -49,8 +50,13 @@ export default defineNuxtConfig({
             }
         }
     },
+    nitro: {
+        output: {
+          publicDir: path.join(__dirname, 'dist')
+        }
+      },
     gtm: {
-        id: 'GTM-TXBVH3M', // Your GTM single container ID, array of container ids ['GTM-xxxxxx', 'GTM-yyyyyy'] or array of objects [{id: 'GTM-xxxxxx', queryParams: { gtm_auth: 'abc123', gtm_preview: 'env-4', gtm_cookies_win: 'x'}}, {id: 'GTM-yyyyyy', queryParams: {gtm_auth: 'abc234', gtm_preview: 'env-5', gtm_cookies_win: 'x'}}], // Your GTM single container ID or array of container ids ['GTM-xxxxxx', 'GTM-yyyyyy']
+        id: '', // Your GTM single container ID, array of container ids ['GTM-xxxxxx', 'GTM-yyyyyy'] or array of objects [{id: 'GTM-xxxxxx', queryParams: { gtm_auth: 'abc123', gtm_preview: 'env-4', gtm_cookies_win: 'x'}}, {id: 'GTM-yyyyyy', queryParams: {gtm_auth: 'abc234', gtm_preview: 'env-5', gtm_cookies_win: 'x'}}], // Your GTM single container ID or array of container ids ['GTM-xxxxxx', 'GTM-yyyyyy']
         defer: false, 
         compatibility: false, 
         nonce: '2726c7f26c', 

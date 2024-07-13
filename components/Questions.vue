@@ -129,11 +129,14 @@ include ../assets/pug/index
                 max-height: 100%
                 h1
                     text-transform: uppercase
-                    font-size: 1.15rem
+                    font-size: 1.35rem
                 p
                     font-size: 1.35rem
                     font-weight: 700
                     padding: 1rem 0
+                .response
+                    p
+                        font-size: 1.5rem
             section
                 background: none // idk ?
                 width: 100%
@@ -143,14 +146,15 @@ include ../assets/pug/index
                     width: 100%
                     margin: 2.5% 0
                     button
-                        height: 50px
+                        height: 80px
+                        max-width: 400px
                         border-radius: 20px 0
                         border: 3px solid transparent
-                        padding: 0.55rem 0.7rem 0.65rem 0.7rem
+                        padding: 0.55rem 0.5rem 0.65rem 0.5rem
                         box-shadow: -4px 4px 4px rgb(0 0 0 / 8%)
                         font-weight: 600
                         line-height: 1.05
-                        font-size: 0.88rem
+                        // font-size: 1.12rem
                 .response
                     display: flex
                     align-items: center
@@ -158,16 +162,19 @@ include ../assets/pug/index
                     flex-flow: column
                     min-height: 200px
                     line-height: 1.35
+                    padding: 2rem 0
                     h1
-                        font-size: 1.3rem
-                        padding-bottom: 0.5rem
+                        font-size: 1.5rem
+                        font-weight: 700
+                        padding-bottom: 2.75rem
+                        width: 100%
                         &.right
                             color: $cut-green
                         &.wrong
                             color: $cut-red
                     p
-                        font-size: 1.15rem
-                        font-weight: 500
+                        font-size: 1.3rem
+                        font-weight: 600
                         padding-bottom: 1rem
         .section-bg
             @include flex-center
@@ -185,27 +192,27 @@ include ../assets/pug/index
             justify-content: flex-end
             position: relative
             header
-                max-height: 155px
+                max-height: 255px
                 .response
                     line-height: 1.35
                     color: $cut-white
                     max-width: 94%
                     h1
-                        font-size: 1.3rem
+                        font-size: 1.5rem
                         padding-bottom: 0.25rem
                         font-weight: 600
                         text-shadow: 0 0 12px rgb(0 0 0 / 30%)
                     p
-                        font-size: 1.15rem
-                        font-weight: 500
+                        font-size: 1.35rem
+                        font-weight: 600
                         text-shadow: 0 0 12px rgb(0 0 0 / 30%)
                         padding-bottom: 0.25rem
                     .caption
                         opacity: 0.88
                         line-height: 0.7
                         span
-                            font-size: 0.78rem
-                            font-weight: 400
+                            font-size: 0.9rem
+                            font-weight: 500
                             padding-left: 0.2rem
                             text-shadow: 0 0 12px rgb(0 0 0 / 50%)
                             &:nth-child(1)
@@ -235,10 +242,11 @@ include ../assets/pug/index
                 // top: -120px
 
     footer
-        max-height: 80px
+        max-height: 120px
         button
-            width: 225px
-            height: 40px
+            max-width: 400px
+            height: 68px
+            font-size: 1.15rem
             border-radius: 20px 0
     &.last
         z-index: 99

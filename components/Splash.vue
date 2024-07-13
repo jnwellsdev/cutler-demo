@@ -68,7 +68,8 @@ const { handleView, handleNext } = useGameStore()
             p
                 margin-top: -2%
             button
-                width: 175px
-                height: 40px
+                font-size: 1.2rem
+                width: 300px
+                height: 62px
                 border-radius: 20px 0
 </style>

@@ -98,12 +98,12 @@ include ../assets/pug/index
             pointer-events: all
     header
         .cut-logo
-            max-width: 30%
+            max-width: 50%
             path
                 fill: $cut-white
         .section-text
             color: $cut-white
-            font-size: 1rem
+            font-size: 1.3rem
             font-weight: 700
             letter-spacing: 0.01rem
             text-transform: uppercase
@@ -131,16 +131,19 @@ include ../assets/pug/index
             text-shadow: 0 0 6px rgb(0 0 0 / 30%)
             height: 40px
         button
-            height: 44px
+            height: 72px
+            max-width: 450px
+            font-size: 1.12rem
             border-radius: 22px 0
+            margin-top: 1rem
             background: rgb(255 255 255 / 60%)
     .background
         position: absolute
         width: 100%
         height: 100%
         z-index: 2
-        width: calc(100% + 90px)
-        height: calc(100% + 90px)
+        width: calc(110% + 90px)
+        height: calc(110% + 90px)
         top: -45px
         left: -45px
         .over
@@ -153,8 +156,8 @@ include ../assets/pug/index
             pointer-events: none
         iframe
             position: absolute
-            width: 100%
-            height: 100%
+            width: 110%
+            height: 110%
             object-fit: cover
             z-index: 1
         &.bumper

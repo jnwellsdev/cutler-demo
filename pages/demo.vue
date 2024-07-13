@@ -1,4 +1,3 @@
-
 <script setup>
 import { useGameStore } from '~/store/game'
 const { handleDemo } = useGameStore()
@@ -11,4 +10,3 @@ onMounted(() => handleDemo())
         <Main />
     </div>
 </template>
-  

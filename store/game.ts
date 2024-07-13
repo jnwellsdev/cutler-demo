@@ -37,13 +37,16 @@ export const useGameStore = defineStore({
 		handleNext() {
 			switch (this.view) {
 				case 'splash':
-					!this.form
-						? ( this.form = true,
-							this.animate = 'form')
-						: ( this.form = false,
-							this.handleView('video'),
-						    this.animate = 'video',
-							this.handleFreeze(true, 4500) )
+					this.handleView('video'),
+					this.animate = 'video',
+					this.handleFreeze(true, 4500)
+					// !this.form
+					// 	? ( this.form = true,
+					// 		this.animate = 'form')
+					// 	: ( this.form = false,
+					// 		this.handleView('video'),
+					// 	    this.animate = 'video',
+					// 		this.handleFreeze(true, 4500) )
 					break
 				case 'video':
 					this.intro === false

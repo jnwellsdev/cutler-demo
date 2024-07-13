@@ -3,4 +3,3 @@
         <Main />
     </div>
 </template>
-  
