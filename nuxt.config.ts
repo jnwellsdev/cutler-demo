@@ -27,7 +27,6 @@ export default defineNuxtConfig({
     modules: [
         '@nuxtjs/tailwindcss',
         '@pinia/nuxt',
-        '@zadigetvoltaire/nuxt-gtm',
     ],
     vite: {
 
@@ -55,18 +54,6 @@ export default defineNuxtConfig({
           publicDir: path.join(__dirname, 'dist')
         }
       },
-    gtm: {
-        id: '', // Your GTM single container ID, array of container ids ['GTM-xxxxxx', 'GTM-yyyyyy'] or array of objects [{id: 'GTM-xxxxxx', queryParams: { gtm_auth: 'abc123', gtm_preview: 'env-4', gtm_cookies_win: 'x'}}, {id: 'GTM-yyyyyy', queryParams: {gtm_auth: 'abc234', gtm_preview: 'env-5', gtm_cookies_win: 'x'}}], // Your GTM single container ID or array of container ids ['GTM-xxxxxx', 'GTM-yyyyyy']
-        defer: false, 
-        compatibility: false, 
-        nonce: '2726c7f26c', 
-        enabled: true, 
-        debug: true,
-        loadScript: true, 
-        enableRouterSync: true, 
-        trackOnNextTick: false, // Whether or not call trackView in Vue.nextTick
-        devtools: true, 
-    },
     // pinia: {
     //     autoImports: [
     //     'defineStore', 
