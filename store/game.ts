@@ -18,7 +18,7 @@ export const useGameStore = defineStore({
 		intro: false,
 		animate: '',
 		freeze: false,
-		isDemo: false,
+		isDemo: true,
 		form: false,
         formResponse: false,
         formError: false,
