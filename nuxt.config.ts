@@ -10,7 +10,7 @@ export default defineNuxtConfig({
         head: {
             charset: 'utf-16',
             viewport: 'initial-scale=1',
-            title: 'Cutler Salons',
+            title: 'Cutler Salons Demo',
             meta: [
                 // <meta name="description" content="My amazing site">
                 { name: 'description', content: 'How well do you know Cutler Salons?' }
