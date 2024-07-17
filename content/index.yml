@@ -6,9 +6,9 @@ intro:
     reminder: '– PLEASE, TURN ON YOUR AUDIO –'
     video:
         -
-        - 812165079
-        - 811039129
-        - 811039282
+        - 985889372
+        - 985889271
+        - 985889309
 form:
     title: REGISTER
     endTitle: YOU'RE ALL SET
@@ -112,7 +112,7 @@ questions:
           correct: 2
           right: YES,<br>YOU’VE GOT THIS!
           wrong: NO,<br>BRITTANY WILL LET YOU KNOW.
-          videoId: 809801216
+          videoId: 985889495
           caption:
               - Brittany Torres
               - Colorist
@@ -127,7 +127,7 @@ questions:
           correct: 4
           right: YES,<br>OF COURSE!
           wrong: WRONG,<br>LET CODY TELL YOU.
-          videoId: 809801341
+          videoId: 985889546
           caption:
               - Cody Cross
               - Colorist
@@ -142,7 +142,7 @@ questions:
           correct: 4
           right: YES,<br>THE BEST SOLUTION!
           wrong: NO,<br>BUT JENNY KNOWS.
-          videoId: 809801470
+          videoId: 985889600
           caption:
               - Jenny Balding
               - Cut Artist
@@ -157,7 +157,7 @@ questions:
           correct: 1
           right: YES,<br>OF COURSE!
           wrong: SERIOUSLY, NO.<br>LISTEN TO MADELINE.
-          videoId: 809801696
+          videoId: 985889670
           caption:
               - Madeline Bittner
               - Cut Assistant
@@ -172,7 +172,7 @@ questions:
           correct: 1
           right: YES,<br>SMOOTH ANSWER!
           wrong: NO,<br>LET LOURA EXPLAIN.
-          videoId: 809801858
+          videoId: 985889717
           caption:
               - Loura Carly
               - Cut Artist
@@ -187,7 +187,7 @@ questions:
           correct: 3
           right: YES,<br>IT'S C!
           wrong: NO,<br>BIANCA KNOWS BETTER.
-          videoId: 809801951
+          videoId: 985889755
           caption:
               - Bianca Garcia
               - Cut Artist
@@ -203,7 +203,7 @@ questions:
           correct: 3
           right: YES,<br>OF COURSE ASK!
           wrong: WRONG,<br>DID IT BREAK YOUR STREAK?
-          videoId: 809802205
+          videoId: 985889795
           caption:
               - Madeline Bittner
               - Cut Assistant

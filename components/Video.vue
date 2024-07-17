@@ -12,7 +12,7 @@ onMounted(() => {
         console.log(currentVideo)
         console.log(currentVideo.value)
         const options = {
-            id: 812165079,
+            id: 985889372,
             responsive: true,
             autoplay: true,
             loop: true,
@@ -35,7 +35,7 @@ watch(currentVideo, async (val) => {
     if (val === 2) {
         const bg = document.querySelector('.background')
         const player = new Vimeo.Player(bg)
-        player.loadVideo(811039129)
+        player.loadVideo(985889271)
         player.setVolume('0.35')
         player.setPlaybackRate('1')
         player.getVideoId().then((id) => console.log(`player: ${id}`))
@@ -45,7 +45,7 @@ watch(currentVideo, async (val) => {
     if (val === 3) {
         const bg = document.querySelector('.background')
         const player = new Vimeo.Player(bg)
-        player.loadVideo(811039282)
+        player.loadVideo(985889309)
         player.setVolume('0.35')
         player.getVideoId().then((id) => console.log(`player: ${id}`))
         player.getVolume().then((vol) => console.log(`volume: ${vol}`))
