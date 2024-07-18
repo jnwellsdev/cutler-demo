@@ -16,7 +16,7 @@ export default defineNuxtConfig({
                 { name: 'description', content: 'How well do you know Cutler Salons?' }
             ],
             link: [
-              { rel: 'icon', type: 'image/x-icon', href: process.env.NODE_ENV === 'production' ? '/favicon.png' : '/favicon.png' }
+              { rel: 'icon', type: 'image/x-icon', href: process.env.NODE_ENV === 'production' ? '/favicon.ico' : '/favicon.ico' }
             ],
             script: [
                 { src: process.env.NODE_ENV === 'production' ? '/player.js' : '/player.js' }
